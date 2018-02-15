@@ -18,11 +18,11 @@
 
 <!DOCTYPE html>
 <html>
-    <?php get_header(); ?>
+<?php get_header(); ?>
 <body <?php body_class();  ?>>
-    <main>
-        <div class="div--error">You should not be able to see this page. If you do, click <a href="<?php get_home_url(); ?>">here</a> to go back to the homepage.</div>
-    </main>
-    <?php get_footer(); ?>
+<main>
+
+</main>
+<?php get_footer(); ?>
 </body>
 </html>

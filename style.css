@@ -1,18 +1,50 @@
 /*
-Theme Name: Twenty Seventeen
-Theme URI: https://wordpress.org/themes/twentyseventeen/
+Theme Name: Shuffle
+Theme URI: https://wordpress.org/themes/shuffle/
 Author: the WordPress team
 Author URI: https://wordpress.org/
-Description: Twenty Seventeen brings your site to life with immersive featured images and subtle animations. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device.
+Description: Custom made theme for the Shuffle Cards site by Cartamundi Digital
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: twentyseventeen
+Text Domain: shuffle
 Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-h1{
-    color: red;
+@font-face{
+    font-family: 'MuseoSans';
+    src: url('assets/font/MuseoSans-300.otf') format('opentype');
 }
+
+body{
+    font-family: 'MuseoSans' ;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+}
+
+.header__h1{
+    flex-grow: 1;
+    font-size: 200%;
+    font-weight: 700;
+}
+
+.header__nav{
+    flex-grow: 2;
+    margin-left: 15%;
+}
+
+.menu-main-menu-container ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu-main-menu-container ul li{
+    margin: 0 15px;
+}
+
