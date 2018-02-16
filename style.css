@@ -1,50 +1,125 @@
-/*
-Theme Name: Shuffle
-Theme URI: https://wordpress.org/themes/shuffle/
-Author: the WordPress team
-Author URI: https://wordpress.org/
-Description: Custom made theme for the Shuffle Cards site by Cartamundi Digital
-Version: 1.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: shuffle
-Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-*/
+@font-face {
+  font-family: 'MuseoSans';
+  src: url("assets/font/MuseoSans-300.otf") format("opentype"); }
+body {
+  font-family: "MuseoSans", SansSerif; }
 
-@font-face{
-    font-family: 'MuseoSans';
-    src: url('assets/font/MuseoSans-300.otf') format('opentype');
-}
+a {
+  text-decoration: none;
+  color: #000; }
 
-body{
-    font-family: 'MuseoSans' ;
-}
+.h1 {
+  font-size: 200%;
+  font-weight: 700; }
 
-.header{
-    display: flex;
-    flex-direction: row;
-}
+.header {
+  padding-top: 10px; }
 
-.header__h1{
-    flex-grow: 1;
-    font-size: 200%;
+.header__div {
+  display: flex;
+  flex-direction: row; }
+
+.header__div-bottom {
+  height: 150px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -moz-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 25px;
+  -moz-border-bottom-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0; }
+
+.header__div-top {
+  height: 35px; }
+
+.header__a-logo {
+  flex-grow: 1;
+  background-image: url("assets/img/Shuffle_Clip_CorporateTop.png");
+  display: block;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  height: 150px;
+  margin-top: -10px;
+  z-index: 2; }
+
+.a-logo__h1 {
+  text-indent: -9000px; }
+
+.header__nav {
+  flex-grow: 1;
+  margin-left: 15%; }
+
+.header__figure-swirl-banner {
+  display: flex;
+  flex-direction: row;
+  width: 100%; }
+
+.figure-swirl-banner__div {
+  flex-grow: 1;
+  height: 100%; }
+
+.figure-swirl-banner__div-orange {
+  background: #f59b00; }
+
+.figure-swirl-banner__div-purple {
+  background: #923a80; }
+
+.figure-swirl-banner__div-blue {
+  background: #008ad2; }
+
+.figure-swirl-banner__div-red {
+  background: #e2261b; }
+
+.figure-swirl-banner__div-green {
+  background: #64b32b; }
+
+.figure-swirl-banner__div-swirl {
+  background: url(assets/img/Shuffle_Pattern_White.png);
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  -webkit-background-size: 450px;
+  background-size: 450px; }
+
+/* NAV STYLING */
+.menu-main-menu-container ul,
+.menu-footer-menu-container ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row; }
+  .menu-main-menu-container ul li,
+  .menu-footer-menu-container ul li {
+    margin: 0 25px;
+    white-space: nowrap;
     font-weight: 700;
-}
+    font-size: 120%; }
 
-.header__nav{
-    flex-grow: 2;
-    margin-left: 15%;
-}
+/* FOOTER */
+.footer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  align-items: center;
+  justify-content: center; }
 
-.menu-main-menu-container ul{
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-}
+.menu-footer-menu-container ul li {
+  margin: 0;
+  padding: 0 15px;
+  border-right: 1px solid black; }
 
-.menu-main-menu-container ul li{
-    margin: 0 15px;
-}
+.menu-footer-menu-container ul li:last-of-type {
+  border: none; }
 
+.footer__p--copyright {
+  display: block; }
+
+/*# sourceMappingURL=style.css.map */

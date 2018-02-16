@@ -43,8 +43,22 @@
 </head>
 <body <?php body_class(); ?>>
     <header class="header">
-        <nav class="header__nav"><?php wp_nav_menu(array ( 'theme_location' => 'header-menu'));?></nav>
-        <h1 class="header__h1">Shuffle</h1>
+        <div class="header__div header__div-top">
+            <nav class="nav header__nav"><?php wp_nav_menu(array('theme_location' => 'header-menu')); ?></nav>
+            <a href="<?php echo get_home_url(); ?>" class="a header__a header__a-logo">
+                <h1 class="h1 a-logo__h1">Shuffle</h1>
+            </a>
+        </div>
+        <div class="header__div header__div-bottom">
+            <figure class="figure header__figure-swirl-banner">
+                <div class="figure-swirl-banner__div figure-swirl-banner__div-orange"></div>
+                <div class="figure-swirl-banner__div figure-swirl-banner__div-purple"></div>
+                <div class="figure-swirl-banner__div figure-swirl-banner__div-blue"></div>
+                <div class="figure-swirl-banner__div figure-swirl-banner__div-red"></div>
+                <div class="figure-swirl-banner__div figure-swirl-banner__div-green"></div>
+                <div class="figure-swirl-banner__div figure-swirl-banner__div-swirl"></div>
+            </figure>
+        </div>
     </header>
 </body>
 </html>

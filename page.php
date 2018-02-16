@@ -19,7 +19,7 @@
 <!DOCTYPE html>
 <html>
 <?php get_header(); ?>
-<body <?php body_class();  ?>>
+<body <?php body_class(); ?>>
 <main>
 
 </main>

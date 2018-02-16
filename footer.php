@@ -12,9 +12,9 @@
 ?>
 
 <body <?php body_class(); ?>>
-    <footer class="footer">
-        <nav class="footer__nav"><?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'fallback_cb' => false))?></nav>
-        <p class="footer__p footer__p--copyright">&copy; 2017 - shuffle - all rights reserved.</p>
-    </footer>
+<footer class="footer">
+    <nav class="footer__nav"><?php wp_nav_menu(array('theme_location' => 'footer-menu', 'fallback_cb' => false)) ?></nav>
+    <p class="footer__p footer__p--copyright">&copy; 2017 - shuffle - all rights reserved.</p>
+</footer>
 </body>
 

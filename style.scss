@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+// Andy Mixins
+@import 'assets/css/andy-master/andy';
+
+$font_stack: 'MuseoSans', SansSerif;
+
+$orange:    rgb(245, 155, 0);
+$purple:    rgb(146, 58, 128);
+$blue:      rgb(0, 138, 210);
+$red:       rgb(226, 38, 27);
+$green:     rgb(100, 179, 43);
+
+// Start older CSS
+
+@font-face {
+  font-family: 'MuseoSans';
+  src: url('assets/font/MuseoSans-300.otf') format('opentype');
+}
+
+body {
+  font-family: $font_stack;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+
+}
+
+// TEXT-TAGS
+
+.h1{
+  font-size: 200%;
+  font-weight: 700;
+}
+
+// HEADER
+
+.header {
+  padding-top: 10px;
+}
+
+.header__div{
+  display: flex;
+  flex-direction:row;
+}
+
+.header__div-bottom{
+  height: 150px;
+  @include border-radius-separate(0,0,25px,0);
+}
+
+.header__div-top{
+  height: 35px;
+}
+
+.header__a-logo{
+  flex-grow: 1;
+  background-image: url('assets/img/Shuffle_Clip_CorporateTop.png');
+  display: block;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  height: 150px;
+  margin-top: -10px;
+  z-index: 2;
+}
+
+.a-logo__h1 {
+  text-indent: -9000px;
+}
+
+.header__nav {
+  flex-grow: 1;
+  margin-left: 15%;
+}
+
+// FIGURE SWIRL
+
+.header__figure-swirl-banner{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.figure-swirl-banner__div{
+  flex-grow: 1;
+  height: 100%;
+}
+
+.figure-swirl-banner__div-orange{ background: $orange; }
+.figure-swirl-banner__div-purple{ background: $purple; }
+.figure-swirl-banner__div-blue{ background: $blue; }
+.figure-swirl-banner__div-red{ background: $red; }
+.figure-swirl-banner__div-green{ background: $green;  }
+
+.figure-swirl-banner__div-swirl{
+  background: url(assets/img/Shuffle_Pattern_White.png);
+  @include opacity(0.8);
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  -webkit-background-size: 450px;
+  background-size: 450px;
+}
+
+/* NAV STYLING */
+
+.menu-main-menu-container ul,
+.menu-footer-menu-container ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+
+  li {
+    margin: 0 25px;
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: 120%;
+  }
+}
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-footer-menu-container ul li {
+  margin: 0;
+  padding: 0 15px;
+  border-right: 1px solid black;
+}
+
+.menu-footer-menu-container ul li:last-of-type {
+  border: none;
+}
+
+.footer__p--copyright {
+  display: block;
+}
