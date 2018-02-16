@@ -58,6 +58,14 @@
                 <div class="figure-swirl-banner__div figure-swirl-banner__div-green"></div>
                 <div class="figure-swirl-banner__div figure-swirl-banner__div-swirl"></div>
             </figure>
+            <figure class="figure header__figure-rounded-corner">
+                <div class="figure-rounded-corner__div figure-rounded-corner__div-left"></div>
+                <div class="figure-rounded-corner__div figure-rounded-corner__div-middle"></div>
+                <div class="figure-rounded-corner__div figure-rounded-corner__div-right"></div>
+            </figure>
+        </div>
+        <div class="div-carousel">
+            <img class="div-carousel__img" src="<?php echo THEME_DIR; ?>/assets/img/carousel/Cartamundi_FotoshootCP_-69.jpg" alt="">
         </div>
     </header>
 </body>

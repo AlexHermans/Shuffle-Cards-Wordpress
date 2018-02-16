@@ -48,7 +48,7 @@ a {
 
 .header__div-bottom{
   height: 150px;
-  @include border-radius-separate(0,0,25px,0);
+  flex-wrap: wrap;
 }
 
 .header__div-top{
@@ -82,6 +82,7 @@ a {
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 100%;
 }
 
 .figure-swirl-banner__div{
@@ -89,7 +90,7 @@ a {
   height: 100%;
 }
 
-.figure-swirl-banner__div-orange{ background: $orange; }
+.figure-swirl-banner__div-orange{ background: $orange; height: 200%; z-index: -2 }
 .figure-swirl-banner__div-purple{ background: $purple; }
 .figure-swirl-banner__div-blue{ background: $blue; }
 .figure-swirl-banner__div-red{ background: $red; }
@@ -99,10 +100,63 @@ a {
   background: url(assets/img/Shuffle_Pattern_White.png);
   @include opacity(0.8);
   width: 100%;
+  height: 150px;
   position: absolute;
   z-index: 1;
   -webkit-background-size: 450px;
   background-size: 450px;
+}
+
+// FIGURE ROUNDED CORNER
+
+.header__figure-rounded-corner{
+  height: 24px;
+  width: 100%;
+  margin-top: -25px;
+  z-index: 3;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.figure-rounded-corner__div{
+  height: 100%;
+}
+
+.figure-rounded-corner__div-middle{
+  margin-top: 3px;
+  background-color: #fff;
+  width: 100%;
+  height: 22px;
+}
+
+.figure-rounded-corner__div-right{
+  background: url(assets/img/Header_top_Shufflecolor_Swirlup.png) no-repeat top right;
+  flex-grow: 1;
+  width: 69px;
+  height: 89px;
+  top: -60px;
+  position: relative;
+}
+
+.figure-rounded-corner__div-left{
+  background: url(assets/img/Header_top_Shufflecolor_Swirldown.png) no-repeat top left;
+  flex-grow: 1;
+  width: 56px;
+  height: 76px;
+  position: relative;
+  top: 2px;
+}
+
+// CAROUSEL
+
+.div-carousel__img{
+  width: 100vw;
+  height: 120%;
+  position: relative;
+  top: -60px;
+  z-index: -1;
+  @include border-radius-separate(15%, 0, 0, 0);
 }
 
 /* NAV STYLING */
