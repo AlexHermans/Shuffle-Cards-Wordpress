@@ -156,7 +156,6 @@ a {
   position: relative;
   top: -60px;
   z-index: -1;
-  max-height: 500px;
   @include border-radius-separate(15%, 0, 0, 0);
 }
 
