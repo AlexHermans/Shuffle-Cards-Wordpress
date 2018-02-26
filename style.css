@@ -116,9 +116,12 @@ a {
   position: relative;
   top: 2px; }
 
-.div-carousel__img {
+.div-carousel {
+  height: 500px; }
+
+.div-carousel__div {
   width: 100vw;
-  height: 120%;
+  height: 100%;
   position: relative;
   top: -60px;
   z-index: -1;
@@ -135,6 +138,11 @@ a {
   -moz-border-bottom-left-radius: 0;
   border-bottom-left-radius: 0; }
 
+.carousel__div-img-1 {
+  background: url(assets/img/carousel/1.jpg) center;
+  -webkit-background-size: cover;
+  background-size: cover; }
+
 /* NAV STYLING */
 .menu-main-menu-container ul,
 .menu-footer-menu-container ul {
@@ -148,12 +156,9 @@ a {
     font-weight: 700;
     font-size: 120%; }
 
-/* FOOTER */
 .footer {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  bottom: 0;
   align-items: center;
   justify-content: center; }
 
@@ -166,6 +171,6 @@ a {
   border: none; }
 
 .footer__p--copyright {
-  display: block; }
+  margin-top: 15px; }
 
 /*# sourceMappingURL=style.css.map */

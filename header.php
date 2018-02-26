@@ -65,7 +65,11 @@
             </figure>
         </div>
         <div class="div-carousel">
-            <img class="div-carousel__img" src="<?php echo THEME_DIR; ?>/assets/img/carousel/Cartamundi_FotoshootCP_-69.jpg" alt="">
+            <div class="div-carousel__div carousel__div-img-1"></div>
+            <div class="div-carousel__div carousel__div-img-2"></div>
+            <div class="div-carousel__div carousel__div-img-3"></div>
+            <div class="div-carousel__div carousel__div-img-4"></div>
+            <div class="div-carousel__div carousel__div-img-5"></div>
         </div>
     </header>
 </body>

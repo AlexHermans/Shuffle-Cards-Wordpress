@@ -13,6 +13,11 @@
 define('THEME_DIR', get_template_directory_uri());
 remove_action('wp_head', 'wp_generator');
 
+// SITE SPECIFIC SETTINGS
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );
+
 // ENQUEUE STYLES
 function enqueue_styles()
 {
@@ -36,17 +41,16 @@ add_action('wp_enqueue_scripts', 'enqueue_scripts');
 
 
 // REGISTER MENU'S
-function register_my_menus()
+function register_menus()
 {
     register_nav_menus(
         array(
             'header-menu' => __('Header Menu'),
-            'extra-menu' => __('Extra Menu'),
             'footer-menu' => __('Footer Menu'),
         )
     );
 }
 
-add_action('init', 'register_my_menus');
+add_action('init', 'register_menus');
 
 ?>
