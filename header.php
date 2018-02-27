@@ -64,13 +64,6 @@
                 <div class="figure-rounded-corner__div figure-rounded-corner__div-right"></div>
             </figure>
         </div>
-        <div class="div-carousel">
-            <div class="div-carousel__div carousel__div-img-1"></div>
-            <div class="div-carousel__div carousel__div-img-2"></div>
-            <div class="div-carousel__div carousel__div-img-3"></div>
-            <div class="div-carousel__div carousel__div-img-4"></div>
-            <div class="div-carousel__div carousel__div-img-5"></div>
-        </div>
     </header>
 </body>
 </html>

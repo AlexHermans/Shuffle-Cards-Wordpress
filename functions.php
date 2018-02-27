@@ -31,10 +31,16 @@ function enqueue_styles()
 add_action('wp_enqueue_scripts', 'enqueue_styles');
 
 // ENQUEUE SCRIPTS
+
+wp_enqueue_scripts('jquery');
+
 function enqueue_scripts()
 {
     wp_register_script('html5-shim', 'http://html5shim.googlecode.com/svn/trunk/html5.js', array('jquery'), '1', false);
     wp_enqueue_script('html5-shim');
+
+    wp_register_script('shuffle-carousel', THEME_DIR . '/assets/js/shuffle-carousel.js', array('jquery'), '1', false);
+    wp_enqueue_script('shuffle-carousel');
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts');

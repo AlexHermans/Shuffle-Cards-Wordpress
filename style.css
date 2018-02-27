@@ -8,6 +8,9 @@ a {
   text-decoration: none;
   color: #000; }
 
+.hidden {
+  display: none; }
+
 .h1 {
   font-size: 200%;
   font-weight: 700; }
@@ -55,9 +58,7 @@ a {
   height: 100%; }
 
 .figure-swirl-banner__div-orange {
-  background: #f59b00;
-  height: 200%;
-  z-index: -2; }
+  background: #f59b00; }
 
 .figure-swirl-banner__div-purple {
   background: #923a80; }
@@ -69,7 +70,19 @@ a {
   background: #e2261b; }
 
 .figure-swirl-banner__div-green {
-  background: #64b32b; }
+  background: #64b32b;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -moz-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 40%;
+  -moz-border-bottom-right-radius: 40%;
+  border-bottom-right-radius: 40%;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0; }
 
 .figure-swirl-banner__div-swirl {
   background: url(assets/img/Shuffle_Pattern_White.png);
@@ -80,44 +93,60 @@ a {
   position: absolute;
   z-index: 1;
   -webkit-background-size: 450px;
-  background-size: 450px; }
+  background-size: 450px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -moz-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 25%;
+  -moz-border-bottom-right-radius: 25%;
+  border-bottom-right-radius: 25%;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0; }
 
 .header__figure-rounded-corner {
   height: 24px;
   width: 100%;
-  margin-top: -25px;
+  margin-top: -20px;
   z-index: 3;
   position: relative;
   display: flex;
   flex-direction: row; }
 
 .figure-rounded-corner__div {
-  height: 100%; }
+  height: 100%;
+  width: 63px;
+  height: 85px; }
 
 .figure-rounded-corner__div-middle {
-  margin-top: 3px;
   background-color: #fff;
   width: 100%;
-  height: 22px; }
+  height: 22px;
+  position: relative;
+  left: -1px; }
 
 .figure-rounded-corner__div-right {
-  background: url(assets/img/Header_top_Shufflecolor_Swirlup.png) no-repeat top right;
+  background: url(assets/img/shuffle-swirl-up.png) no-repeat bottom left;
+  -webkit-background-size: contain;
+  background-size: contain;
   flex-grow: 1;
-  width: 69px;
-  height: 89px;
-  top: -60px;
+  top: -63px;
   position: relative; }
 
 .figure-rounded-corner__div-left {
-  background: url(assets/img/Header_top_Shufflecolor_Swirldown.png) no-repeat top left;
+  background: url(assets/img/shuffle-swirl-down.png) no-repeat top right;
   flex-grow: 1;
-  width: 56px;
-  height: 76px;
   position: relative;
-  top: 2px; }
+  -webkit-background-size: contain;
+  background-size: contain; }
 
 .div-carousel {
-  height: 500px; }
+  height: 500px;
+  display: flex;
+  flex-direction: row; }
 
 .div-carousel__div {
   width: 100vw;
@@ -125,21 +154,47 @@ a {
   position: relative;
   top: -60px;
   z-index: -1;
-  -webkit-border-top-left-radius: 15%;
-  -moz-border-top-left-radius: 15%;
-  border-top-left-radius: 15%;
+  flex: 1 0 100%;
+  -webkit-transition: all 400ms;
+  -moz-transition: all 400ms;
+  -ms-transition: all 400ms;
+  -o-transition: all 400ms;
+  transition: all 400ms;
+  -webkit-border-top-left-radius: 50px;
+  -moz-border-top-left-radius: 50px;
+  border-top-left-radius: 50px;
   -webkit-border-top-right-radius: 0;
   -moz-border-top-right-radius: 0;
   border-top-right-radius: 0;
-  -webkit-border-bottom-right-radius: 0;
-  -moz-border-bottom-right-radius: 0;
-  border-bottom-right-radius: 0;
+  -webkit-border-bottom-right-radius: 50px;
+  -moz-border-bottom-right-radius: 50px;
+  border-bottom-right-radius: 50px;
   -webkit-border-bottom-left-radius: 0;
   -moz-border-bottom-left-radius: 0;
   border-bottom-left-radius: 0; }
 
 .carousel__div-img-1 {
   background: url(assets/img/carousel/1.jpg) center;
+  -webkit-background-size: cover;
+  background-size: cover; }
+
+.carousel__div-img-2 {
+  background: url(assets/img/carousel/2.jpg) center;
+  -webkit-background-size: cover;
+  background-size: cover; }
+
+.carousel__div-img-3 {
+  background: url(assets/img/carousel/3.jpg) center;
+  -webkit-background-size: cover;
+  background-size: cover; }
+
+.carousel__div-img-4 {
+  background: url(assets/img/carousel/4.jpg) center;
+  -webkit-background-size: cover;
+  background-size: cover; }
+
+.carousel__div-img-5 {
+  background: url(assets/img/carousel/5.jpg) center;
   -webkit-background-size: cover;
   background-size: cover; }
 

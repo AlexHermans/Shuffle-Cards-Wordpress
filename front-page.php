@@ -18,6 +18,9 @@
 <?php get_header(); ?>
 <body <?php body_class(); ?>>
 <main>
+    <div class="div-carousel carousel__front-page">
+        <?php get_template_part('template-parts/content', 'carousel') ?>
+    </div>
     <?php
     $loop = new WP_Query(array('post_type' => 'licence', 'ignore_sticky_posts' => 1));
 
