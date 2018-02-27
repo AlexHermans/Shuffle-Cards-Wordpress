@@ -3,23 +3,77 @@
 // Andy Mixins
 @import 'assets/css/andy-master/andy';
 
+// PRIVATE MIXINS
+
+@mixin box-shadow{
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+}
+
+@mixin background-size($size){
+  -webkit-background-size:$size;
+  background-size:$size;
+}
+
+@mixin border-semi-rounded{
+  @include border-radius-separate(50px, 50px, 50px, 50px);
+}
+
+@mixin border-full-rounded{
+  @include border-radius-separate(100%, 100%, 100%, 100%);
+}
+
+//START SCSS
+
 $font_stack: 'MuseoSans', SansSerif;
 
-$orange:    rgb(245, 155, 0);
-$purple:    rgb(146, 58, 128);
-$blue:      rgb(0, 138, 210);
-$red:       rgb(226, 38, 27);
-$green:     rgb(100, 179, 43);
+$orange: rgb(245, 155, 0);
+$purple: rgb(146, 58, 128);
+$blue: rgb(0, 138, 210);
+$red: rgb(226, 38, 27);
+$green: rgb(100, 179, 43);
+$bg: #eee;
+$dgray: #7f8184;
 
 // main css
 
+
 @font-face {
   font-family: 'MuseoSans';
-  src: url('assets/font/MuseoSans-300.otf') format('opentype');
+  src: url('assets/font/MuseoSans-300/MuseoSans-300.eot?') format('eot'),
+  url('assets/font/MuseoSans-300/MuseoSans-300.otf')  format('opentype'),
+  url('assets/font/MuseoSans-300/MuseoSans-300.woff') format('woff'),
+  url('assets/font/MuseoSans-300/MuseoSans-300.ttf')  format('truetype'),
+  url('assets/font/MuseoSans-300/MuseoSans-300.svg#MuseoSans-300') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'MuseoSans';
+  src: url('assets/font/MuseoSans-500/museosans_500-webfont.eot');
+  src: url('assets/font/MuseoSans-500/museosans_500-webfont.eot?#iefix') format('embedded-opentype'),
+  url('assets/font/MuseoSans-500/museosans_500-webfont.woff2') format('woff2'),
+  url('assets/font/MuseoSans-500/museosans_500-webfont.woff') format('woff'),
+  url('assets/font/MuseoSans-500/museosans_500-webfont.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MuseoSans';
+  src: url('assets/font/MuseoSans-700/museosans_700-webfont.eot');
+  src: url('assets/font/MuseoSans-700/museosans_700-webfont.eot?#iefix') format('embedded-opentype'),
+  url('assets/font/MuseoSans-700/museosans_700-webfont.woff2') format('woff2'),
+  url('assets/font/MuseoSans-700/museosans_700-webfont.woff') format('woff'),
+  url('assets/font/MuseoSans-700/museosans_700-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
 body {
-  font-family: $font_stack;
+  font-family: $font_stack !important;
 }
 
 a {
@@ -27,15 +81,19 @@ a {
   color: #000;
 }
 
-.hidden{
+.hidden {
   display: none;
+}
+
+.main-front-page {
+  background-color: $bg;
 }
 
 // TEXT-TAGS
 
-.h1{
+.h1 {
   font-size: 200%;
-  font-weight: 700;
+  font-weight: 300;
 }
 
 // HEADER
@@ -44,27 +102,26 @@ a {
   padding-top: 10px;
 }
 
-.header__div{
+.header__div {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
 }
 
-.header__div-bottom{
+.header__div-bottom {
   height: 150px;
   flex-wrap: wrap;
 }
 
-.header__div-top{
+.header__div-top {
   height: 35px;
 }
 
-.header__a-logo{
+.header__a-logo {
   flex-grow: 1;
   background-image: url('assets/img/Shuffle_Clip_CorporateTop.png');
   display: block;
   background-repeat: no-repeat;
-  -webkit-background-size: contain;
-  background-size: contain;
+  @include background-size(contain);
   height: 150px;
   margin-top: -10px;
   z-index: 2;
@@ -81,39 +138,54 @@ a {
 
 // FIGURE SWIRL
 
-.header__figure-swirl-banner{
+.header__figure-swirl-banner {
   display: flex;
   flex-direction: row;
   width: 100%;
   height: 100%;
 }
 
-.figure-swirl-banner__div{
+.figure-swirl-banner__div {
   flex-grow: 1;
   height: 100%;
+  z-index: 1;
 }
 
-.figure-swirl-banner__div-orange{ background: $orange;}
-.figure-swirl-banner__div-purple{ background: $purple; }
-.figure-swirl-banner__div-blue{ background: $blue; }
-.figure-swirl-banner__div-red{ background: $red; }
-.figure-swirl-banner__div-green{ background: $green;  @include border-radius-separate(0, 0, 40%, 0)}
+.figure-swirl-banner__div-orange {
+  background: $orange;
+}
 
-.figure-swirl-banner__div-swirl{
+.figure-swirl-banner__div-purple {
+  background: $purple;
+}
+
+.figure-swirl-banner__div-blue {
+  background: $blue;
+}
+
+.figure-swirl-banner__div-red {
+  background: $red;
+}
+
+.figure-swirl-banner__div-green {
+  background: $green;
+  @include border-radius-separate(0, 0, 40%, 0)
+}
+
+.figure-swirl-banner__div-swirl {
   background: url(assets/img/Shuffle_Pattern_White.png);
   @include opacity(0.8);
   width: 100%;
   height: 150px;
   position: absolute;
   z-index: 1;
-  -webkit-background-size: 450px;
-  background-size: 450px;
+  @include background-size(450px);
   @include border-radius-separate(0, 0, 25%, 0)
 }
 
 // FIGURE ROUNDED CORNER
 
-.header__figure-rounded-corner{
+.header__figure-rounded-corner {
   height: 24px;
   width: 100%;
   margin-top: -20px;
@@ -123,64 +195,91 @@ a {
   flex-direction: row;
 }
 
-.figure-rounded-corner__div{
+.figure-rounded-corner__div {
   height: 100%;
   @include size(63px, 85px)
 }
 
-.figure-rounded-corner__div-middle{
+.figure-rounded-corner__div-middle {
   background-color: #fff;
   width: 100%;
-  height: 22px;
+  height: 21px;
   position: relative;
-  left:-1px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 20px;
 }
 
-.figure-rounded-corner__div-right{
+.figure-rounded-corner__div-right {
   background: url(assets/img/shuffle-swirl-up.png) no-repeat bottom left;
-  -webkit-background-size: contain;
-  background-size: contain;
+  @include background-size(contain);
   flex-grow: 1;
-  top: -63px;
+  width: 60px;
+  top: -53px;
   position: relative;
 }
 
-.figure-rounded-corner__div-left{
+.figure-rounded-corner__div-left {
   background: url(assets/img/shuffle-swirl-down.png) no-repeat top right;
   flex-grow: 1;
   position: relative;
-  -webkit-background-size: contain;
-  background-size: contain;
+  @include background-size(contain);
+  top: -11px;
+  width: 60px;
+  z-index: 2;
 }
 
 // CAROUSEL
 
-.div-carousel{
+.section-carousel {
   height: 500px;
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 
-.div-carousel__div{
+.section-carousel__div {
   width: 100vw;
-  height: 100%;
+  height: 560px;
   position: relative;
   top: -60px;
-  z-index: -1;
+  z-index: 0;
   flex: 1 0 100%;
+  @include opacity(0);
   -webkit-transition: all 400ms;
   -moz-transition: all 400ms;
   -ms-transition: all 400ms;
   -o-transition: all 400ms;
   transition: all 400ms;
-  @include border-radius-separate(50px, 0, 50px, 0);
+  @include border-radius-separate(50px, 0, 0, 0);
 }
 
-.carousel__div-img-1{ background: url(assets/img/carousel/1.jpg) center; -webkit-background-size: cover; background-size: cover;}
-.carousel__div-img-2{ background: url(assets/img/carousel/2.jpg) center; -webkit-background-size: cover; background-size: cover;}
-.carousel__div-img-3{ background: url(assets/img/carousel/3.jpg) center; -webkit-background-size: cover; background-size: cover;}
-.carousel__div-img-4{ background: url(assets/img/carousel/4.jpg) center; -webkit-background-size: cover; background-size: cover;}
-.carousel__div-img-5{ background: url(assets/img/carousel/5.jpg) center; -webkit-background-size: cover; background-size: cover;}
+.current{
+  @include opacity(1);
+}
+
+.carousel__div-img-1 {
+  background: url(assets/img/carousel/1.jpg) center;
+  @include background-size(cover)
+}
+
+.carousel__div-img-2 {
+  background: url(assets/img/carousel/2.jpg) center;
+  @include background-size(cover)
+}
+
+.carousel__div-img-3 {
+  background: url(assets/img/carousel/3.jpg) center;
+  @include background-size(cover)
+}
+
+.carousel__div-img-4 {
+  background: url(assets/img/carousel/4.jpg) center;
+  @include background-size(cover)
+}
+
+.carousel__div-img-5 {
+  background: url(assets/img/carousel/5.jpg) center;
+  @include background-size(cover)
+}
 
 /* NAV STYLING */
 
@@ -193,10 +292,114 @@ a {
   li {
     margin: 0 25px;
     white-space: nowrap;
-    font-weight: 700;
-    font-size: 120%;
+    font-size: 130%;
+    font-weight: 500;
   }
 }
+
+// CONTROLS SECTION
+
+.section-controls {
+  padding: 0 5px;
+  position: relative;
+  top: -60px;
+  background-color: $bg;
+  display: flex;
+  flex-direction: column;
+  @include border-radius-separate(65px, 0, 0, 0);
+
+  &:before {
+    content: ' ';
+    display: block;
+    background: url(assets/img/swoop-down.png);
+    @include background-size(contain);
+    @include size(100px, 100px);
+    align-self: flex-end;
+    position: absolute;
+    top: -100px;
+    right: -5px
+  }
+}
+
+.controls-categories{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 200px;
+}
+
+.categories__li{
+  display: block;
+  width: 80px;
+  background-color: $dgray;
+  background-image: url(assets/img/Shuffle_Pattern_White.png);
+  @include background-size(500%);
+  background-position: 0, 0;
+  text-align: center;
+  padding: 30px 0;
+  cursor: pointer;
+  border: 17px solid white;
+  @include box-shadow;
+  @include border-radius-separate(100px, 100px, 100px, 100px);
+  position: relative;
+  top:-75px;
+  font-weight: 700;
+  font-size: 120%;
+  margin: 0 10%;
+  color: white;
+}
+
+.form-controls{
+  display: flex;
+  justify-content: center;
+  padding: 0 200px;
+
+  label{
+    display: none;
+  }
+
+  *{
+    @include border-semi-rounded;
+    margin: 0 3.5%;
+    width: 250px;
+  }
+}
+
+.controls-shuffle{
+  @include box-shadow;
+  border:none;
+  background-color: white;
+  background-image: url(assets/img/logo_black.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  @include background-size(45%);
+  padding: 15px 75px;
+  text-indent: -9000px;
+  cursor: pointer;
+  transition: all 100ms;
+}
+
+.form-controls__search{
+  border:none;
+  padding: 12px 0 12px 24px;
+  @include background-size(10%);
+  background-repeat: no-repeat;
+  background-position: 85% center;
+  background-image: url(assets/img/icon_search.png);
+  font-size: 150%;
+  font-weight: 500;
+
+  &::placeholder{;
+    font-family: $font_stack;
+  }
+
+  &:focus{
+    outline: none;
+    border: none;
+  }
+}
+
+
 
 // FOOTER
 

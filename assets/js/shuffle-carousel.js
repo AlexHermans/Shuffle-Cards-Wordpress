@@ -4,18 +4,33 @@
 
 (function($) {
     $(document).ready(function(){
-        var items = $('.div-carousel__div');
-        var current = ''
-        var next = ''
-
-        console.log(items)
-
-        items.each(function () {
-
-        })
+        var items = $('.section-carousel__div');
+        var container = $('.carousel-front-page');
+        var current = $(items[0]);
+        var next = $(items[1]);
+        var counter = 0;
 
         setInterval(function () {
-            $('.div-carousel')
-        }, 2000)
+            if (counter < 400){
+                console.log(counter);
+                counter += 100;
+
+                container.animate({
+                    left: '-' + counter + '%',
+                })
+
+                current.removeClass('current');
+                current = next.addClass('current');
+                next = next.next();
+
+            } else {
+                current.removeClass('current')
+                counter = 0;
+                container.css('left', '0');
+                current = $(items[0]);
+                current.addClass('current')
+                next = current.next();
+            }
+        }, 3000)
     });
 }(jQuery));
