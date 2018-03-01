@@ -399,8 +399,6 @@ a {
   }
 }
 
-
-
 // FOOTER
 
 .footer {
@@ -408,12 +406,19 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 15px;
+  margin-bottom: 30px;
+}
+
+.footer__nav{
+  font-size: 80%;
 }
 
 .menu-footer-menu-container ul li {
   margin: 0;
-  padding: 0 15px;
+  padding: 0 8px;
   border-right: 1px solid black;
+  font-weight: 700;
 }
 
 .menu-footer-menu-container ul li:last-of-type {
@@ -422,4 +427,5 @@ a {
 
 .footer__p--copyright {
   margin-top: 15px;
+  font-weight: 500;
 }
