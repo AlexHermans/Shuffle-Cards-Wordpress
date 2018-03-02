@@ -227,7 +227,6 @@ a {
   -webkit-background-size: cover;
   background-size: cover; }
 
-/* NAV STYLING */
 .menu-main-menu-container ul,
 .menu-footer-menu-container ul {
   list-style-type: none;
@@ -307,7 +306,7 @@ a {
   top: -75px;
   font-weight: 700;
   font-size: 120%;
-  margin: 0 10%;
+  margin: 0 8%;
   color: white; }
 
 .form-controls {
@@ -361,6 +360,48 @@ a {
   .form-controls__search:focus {
     outline: none;
     border: none; }
+
+.licence {
+  padding: 0 5px 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+.licence__div {
+  margin-bottom: 0.5vw;
+  background-color: #4d4d4d;
+  width: 24vw;
+  height: 24vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 200ms; }
+
+.licence__h1 {
+  font-size: 30px;
+  color: #FFF;
+  font-weight: 700; }
+
+.tax-blue:hover, .tax-red:hover, .tax-green:hover, .tax-orange:hover, .tax-purple:hover {
+  background-image: url(assets/img/Shuffle_Pattern_White.png);
+  -webkit-background-size: 150%;
+  background-size: 150%; }
+
+.tax-red:hover {
+  background-color: #e2261b; }
+
+.tax-orange:hover {
+  background-color: #f59b00; }
+
+.tax-purple:hover {
+  background-color: #923a80; }
+
+.tax-blue:hover {
+  background-color: #008ad2; }
+
+.tax-green:hover {
+  background-color: #64b32b; }
 
 .footer {
   display: flex;

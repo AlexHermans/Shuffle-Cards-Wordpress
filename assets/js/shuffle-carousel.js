@@ -12,7 +12,6 @@
 
         setInterval(function () {
             if (counter < 400){
-                console.log(counter);
                 counter += 100;
 
                 container.animate({

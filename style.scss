@@ -281,7 +281,7 @@ a {
   @include background-size(cover)
 }
 
-/* NAV STYLING */
+// NAV STYLING
 
 .menu-main-menu-container ul,
 .menu-footer-menu-container ul {
@@ -345,7 +345,7 @@ a {
   top:-75px;
   font-weight: 700;
   font-size: 120%;
-  margin: 0 10%;
+  margin: 0 8%;
   color: white;
 }
 
@@ -398,6 +398,46 @@ a {
     border: none;
   }
 }
+
+// LICENCE
+
+.licence {
+  padding: 0 5px 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+
+.licence__div{
+  margin-bottom: 0.5vw;
+  background-color: #4d4d4d;
+  @include size(24vw, 24vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 200ms;
+}
+
+.licence__h1{
+  font-size: 30px;
+  color: #FFF;
+  font-weight: 700;
+}
+
+.tax-blue, .tax-red, .tax-green, .tax-orange, .tax-purple{
+  &:hover{
+    background-image: url(assets/img/Shuffle_Pattern_White.png);
+    @include background-size(150%)
+  };
+}
+
+
+.tax-red:hover { background-color: $red };
+.tax-orange:hover { background-color: $orange };
+.tax-purple:hover { background-color: $purple };
+.tax-blue:hover{ background-color: $blue};
+.tax-green:hover { background-color: $green};
 
 // FOOTER
 

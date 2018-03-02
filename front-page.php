@@ -37,16 +37,20 @@
             <input id="form-controls__search" class="form-controls__search" type="search" placeholder="search">
         </form>
     </section>
+    <section class="licence">
     <?php
-    $loop = new WP_Query(array('post_type' => 'licence', 'ignore_sticky_posts' => 1));
+    $loop = new WP_Query(array('post_type' => 'shuffle_licence', 'ignore_sticky_posts' => 1));
 
     if ($loop->have_posts()) :
         while ($loop->have_posts()) : $loop->the_post(); ?>
-            <section class="licence">
-                <h1 class="licence__h1"><?php echo get_the_title(); ?></h1>
-            </section>
+            <a href="<?php echo get_permalink()?>" class="licence__a a-<?php echo get_the_title(); ?>">
+                <div class="licence__div tax-<?php echo get_the_terms($post->ID, 'colours')[0]->slug; ?>">
+                    <h1 class="licence__h1"><?php echo get_the_title(); ?></h1>
+                </div>
+            </a>
         <?php endwhile; ?>
     <?php endif; ?>
+    </section>
 </main>
 <?php get_footer(); ?>
 </body>
