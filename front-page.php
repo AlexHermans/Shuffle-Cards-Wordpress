@@ -32,10 +32,9 @@
                 <option value="asc">A-Z</option>
                 <option value="desc">Z-A</option>
             </select>
+        </form>>
             <button type="button" class="controls-shuffle">Shuffle</button>
-            <label for="form-controls__search">Search</label>
-            <input id="form-controls__search" class="form-controls__search" type="search" placeholder="search">
-        </form>
+            <?php get_search_form(); ?>
     </section>
     <section class="licence">
     <?php
@@ -44,7 +43,7 @@
     if ($loop->have_posts()) :
         while ($loop->have_posts()) : $loop->the_post(); ?>
             <a href="<?php echo get_permalink()?>" class="licence__a a-<?php echo get_the_title(); ?>">
-                <div class="licence__div tax-<?php echo get_the_terms($post->ID, 'colours')[0]->slug; ?>">
+                <div class="licence__div <?php echo get_the_terms($post->ID, 'target_audience')[0]->slug; ?>">
                     <h1 class="licence__h1"><?php echo get_the_title(); ?></h1>
                 </div>
             </a>

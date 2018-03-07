@@ -15,28 +15,29 @@
 <html>
 <?php get_header(); ?>
 <body>
-<section class="product">
+<section class="section-products">
+    <h1 class="section-title"><?php echo $post->post_title; ?></h1>
     <?php
-    $loop = new WP_Query(array('post_type' => 'shuffle_product', 'ignore_sticky_posts' => 1));
+        // We gaan zoeken of er producten zijn die gekoppeld zijn aan deze licentie
 
-    if ($loop->have_posts()) :
-        while ($loop->have_posts()) : $loop->the_post(); ?>
-            <a href="<?php echo get_permalink()?>" class="product__a a-<?php echo get_the_title(); ?>">
-                <div class="product__div">
-                    <h1 class="licence__h1"><?php echo get_the_title(); ?></h1>
-                </div>
-            </a>
-        <?php endwhile; ?>
-    <?php endif; ?>
+        $loop = get_field('related_licences');
+    ?>
+    <?php
+        // We gaan zoeken naar de gerelateerde producten
+
+        $loop = get_field('related_products');
+
+        var_dump($loop);
+
+        foreach ($loop as $key => $product): ?>
+
+            <div class="product">
+                <h1 class="product__h1 h1-product-title"><?php echo $product->post_title; ?></h1>
+                <p class="product__p p-product-description"><?php echo $product->post_content; ?></p>
+            </div>
+
+        <?php endforeach; ?>
 </section>
-
-<!--<section class="test">-->
-<!--    --><?php
-//        global $wpdb;
-//        $result = $wpdb->get_results('SELECT * FROM '.$wpdb->prefix.'posts', 'ARRAY_N');
-//        var_dump($result)
-//    ?>
-<!--</section>-->
 <?php get_footer(); ?>
 </body>
 </html>

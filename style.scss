@@ -74,6 +74,11 @@ $dgray: #7f8184;
 
 body {
   font-family: $font_stack !important;
+  padding-top: 160px;
+}
+
+.wp-admin{
+  padding: 0;
 }
 
 a {
@@ -99,7 +104,10 @@ a {
 // HEADER
 
 .header {
-  padding-top: 10px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
 }
 
 .header__div {
@@ -113,7 +121,9 @@ a {
 }
 
 .header__div-top {
+  padding-top: 10px;
   height: 35px;
+  background-color: #fff;
 }
 
 .header__a-logo {
@@ -406,11 +416,10 @@ a {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content:space-between;
 }
 
 .licence__div{
-  margin-bottom: 0.5vw;
+  margin:0 0.5vw 0.5vw 0;
   background-color: #4d4d4d;
   @include size(24vw, 24vw);
   display: flex;
@@ -425,19 +434,24 @@ a {
   font-weight: 700;
 }
 
-.tax-blue, .tax-red, .tax-green, .tax-orange, .tax-purple{
+.boys, .family, .adult, .kids, .girls{
   &:hover{
     background-image: url(assets/img/Shuffle_Pattern_White.png);
     @include background-size(150%)
   };
 }
 
+.family:hover { background-color: $red };
+.kids:hover { background-color: $orange };
+.girls:hover { background-color: $purple };
+.boys:hover{ background-color: $blue};
+.adult:hover { background-color: $green};
 
-.tax-red:hover { background-color: $red };
-.tax-orange:hover { background-color: $orange };
-.tax-purple:hover { background-color: $purple };
-.tax-blue:hover{ background-color: $blue};
-.tax-green:hover { background-color: $green};
+// SECTION-PRODUCTS
+.section-products{
+  margin-top: 50px;
+  padding: 0 5px 50px;
+}
 
 // FOOTER
 

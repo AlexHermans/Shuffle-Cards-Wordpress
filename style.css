@@ -16,7 +16,11 @@
   font-weight: normal;
   font-style: normal; }
 body {
-  font-family: "MuseoSans", SansSerif !important; }
+  font-family: "MuseoSans", SansSerif !important;
+  padding-top: 160px; }
+
+.wp-admin {
+  padding: 0; }
 
 a {
   text-decoration: none;
@@ -33,7 +37,10 @@ a {
   font-weight: 300; }
 
 .header {
-  padding-top: 10px; }
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%; }
 
 .header__div {
   display: flex;
@@ -44,7 +51,9 @@ a {
   flex-wrap: wrap; }
 
 .header__div-top {
-  height: 35px; }
+  padding-top: 10px;
+  height: 35px;
+  background-color: #fff; }
 
 .header__a-logo {
   flex-grow: 1;
@@ -365,11 +374,10 @@ a {
   padding: 0 5px 50px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between; }
+  flex-wrap: wrap; }
 
 .licence__div {
-  margin-bottom: 0.5vw;
+  margin: 0 0.5vw 0.5vw 0;
   background-color: #4d4d4d;
   width: 24vw;
   height: 24vw;
@@ -383,25 +391,29 @@ a {
   color: #FFF;
   font-weight: 700; }
 
-.tax-blue:hover, .tax-red:hover, .tax-green:hover, .tax-orange:hover, .tax-purple:hover {
+.boys:hover, .family:hover, .adult:hover, .kids:hover, .girls:hover {
   background-image: url(assets/img/Shuffle_Pattern_White.png);
   -webkit-background-size: 150%;
   background-size: 150%; }
 
-.tax-red:hover {
+.family:hover {
   background-color: #e2261b; }
 
-.tax-orange:hover {
+.kids:hover {
   background-color: #f59b00; }
 
-.tax-purple:hover {
+.girls:hover {
   background-color: #923a80; }
 
-.tax-blue:hover {
+.boys:hover {
   background-color: #008ad2; }
 
-.tax-green:hover {
+.adult:hover {
   background-color: #64b32b; }
+
+.section-products {
+  margin-top: 50px;
+  padding: 0 5px 50px; }
 
 .footer {
   display: flex;
