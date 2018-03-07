@@ -367,6 +367,8 @@ a {
   justify-content: center;
   width: 66%;
   align-self: center;
+  position: relative;
+  top:-30px;
 
   > *{
     margin: 0 2.5%;
@@ -394,7 +396,8 @@ a {
   flex-grow: 1;
 
   select{
-    @include size(100%, 100%)
+    @include size(100%, 100%);
+    @include border-semi-rounded;
   }
 }
 
@@ -431,8 +434,8 @@ a {
   background-position: center center;
   background-repeat: no-repeat;
   text-indent: -9000px;
-  @include size(2%, 30%);
-  right:20%;
+  @include size(3%, 100%);
+  right:5%;
 }
 
 // LICENCE
@@ -442,6 +445,7 @@ a {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: -60px;
 }
 
 .licence__div{

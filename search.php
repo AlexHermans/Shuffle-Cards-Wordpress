@@ -32,5 +32,6 @@
             echo 'Geen results';
         endif; ?>
     </section>
+<?php get_footer(); ?>
 </body>
 </html>
