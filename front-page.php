@@ -28,14 +28,14 @@
             <li class="categories__li categories-aqua">aqua</li>
         </ul>
         <div class="form-controls">
-            <form action="#" class="form form-controls controls__sort">
+            <form action="#" class="form controls-sort">
                 <select name="alfabetical" id="alfabetical">
                     <option value="asc">A-Z</option>
                     <option value="desc">Z-A</option>
                 </select>
             </form>
-            <form action="#" class="form form-controls controls__shuffle">
-                <button type="button" class="controls-shuffle">Shuffle</button>
+            <form action="#" class="form controls-shuffle">
+                <button type="button" class="form__button button-shuffle">Shuffle</button>
             </form>
             <?php get_search_form(); ?>
         </div>
