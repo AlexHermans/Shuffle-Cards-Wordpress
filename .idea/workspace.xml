@@ -27,8 +27,8 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="417" column="18" lean-forward="false" selection-start-line="417" selection-start-column="18" selection-end-line="417" selection-end-column="18" />
+            <state relative-caret-position="613">
+              <caret line="340" column="26" lean-forward="false" selection-start-line="340" selection-start-column="26" selection-end-line="340" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -37,7 +37,7 @@
       <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="793">
+            <state relative-caret-position="880">
               <caret line="53" column="92" lean-forward="false" selection-start-line="53" selection-start-column="92" selection-end-line="53" selection-end-column="92" />
               <folding>
                 <element signature="e#6#174#0#PHP" expanded="true" />
@@ -46,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="front-page.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="front-page.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front-page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="36" column="39" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+            <state relative-caret-position="473">
+              <caret line="40" column="14" lean-forward="false" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
               <folding>
                 <element signature="e#6#227#0#PHP" expanded="true" />
               </folding>
@@ -58,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="searchform.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="searchform.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/searchform.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="12" column="101" lean-forward="false" selection-start-line="12" selection-start-column="101" selection-end-line="12" selection-end-column="101" />
+            <state relative-caret-position="300">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="e#6#85#0#PHP" expanded="true" />
               </folding>
@@ -73,7 +73,7 @@
       <file leaf-file-name="single-shuffle_licence.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/single-shuffle_licence.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
+            <state relative-caret-position="260">
               <caret line="22" column="46" lean-forward="false" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
               <folding>
                 <element signature="e#6#216#0#PHP" expanded="true" />
@@ -95,8 +95,8 @@
       <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1680">
-              <caret line="84" column="22" lean-forward="true" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
+            <state relative-caret-position="1500">
+              <caret line="84" column="22" lean-forward="false" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
               <folding>
                 <element signature="e#6#177#0#PHP" expanded="true" />
               </folding>
@@ -160,8 +160,8 @@
         <option value="$PROJECT_DIR$/../../plugins/shuffle-custom_taxonomies/shuffle-custom_taxonomies.php" />
         <option value="$PROJECT_DIR$/single-shuffle_licence.php" />
         <option value="$PROJECT_DIR$/../../../wp-config.php" />
-        <option value="$PROJECT_DIR$/style.scss" />
         <option value="$PROJECT_DIR$/searchform.php" />
+        <option value="$PROJECT_DIR$/style.scss" />
         <option value="$PROJECT_DIR$/front-page.php" />
       </list>
     </option>
@@ -194,7 +194,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -223,7 +223,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -342,11 +342,12 @@
       <workItem from="1519891534841" duration="22322000" />
       <workItem from="1519975077672" duration="15740000" />
       <workItem from="1520005561776" duration="1665000" />
+      <workItem from="1520408147658" duration="1999000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160431000" />
+    <option name="totallyTimeSpent" value="162430000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -359,6 +360,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -629,13 +631,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style.min.css" />
     <entry file="file://$PROJECT_DIR$/style.css.map">
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/img/Shuffle_Pattern_White.png">
@@ -735,8 +737,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="84" column="22" lean-forward="true" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
+        <state relative-caret-position="1500">
+          <caret line="84" column="22" lean-forward="false" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
           <folding>
             <element signature="e#6#177#0#PHP" expanded="true" />
           </folding>
@@ -745,7 +747,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/single-shuffle_licence.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
+        <state relative-caret-position="260">
           <caret line="22" column="46" lean-forward="false" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
           <folding>
             <element signature="e#6#216#0#PHP" expanded="true" />
@@ -755,7 +757,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="793">
+        <state relative-caret-position="880">
           <caret line="53" column="92" lean-forward="false" selection-start-line="53" selection-start-column="92" selection-end-line="53" selection-end-column="92" />
           <folding>
             <element signature="e#6#174#0#PHP" expanded="true" />
@@ -765,28 +767,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="417" column="18" lean-forward="false" selection-start-line="417" selection-start-column="18" selection-end-line="417" selection-end-column="18" />
+        <state relative-caret-position="613">
+          <caret line="340" column="26" lean-forward="false" selection-start-line="340" selection-start-column="26" selection-end-line="340" selection-end-column="26" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/searchform.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="101" lean-forward="false" selection-start-line="12" selection-start-column="101" selection-end-line="12" selection-end-column="101" />
-          <folding>
-            <element signature="e#6#85#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front-page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="36" column="39" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        <state relative-caret-position="473">
+          <caret line="40" column="14" lean-forward="false" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
           <folding>
             <element signature="e#6#227#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/searchform.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#85#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

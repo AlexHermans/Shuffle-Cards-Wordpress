@@ -329,13 +329,16 @@ a {
     top: -100px;
     right: -5px
   }
+
+  label{
+    display: none;
+  }
 }
 
 .controls-categories{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 0 200px;
 }
 
 .categories__li{
@@ -362,16 +365,11 @@ a {
 .form-controls{
   display: flex;
   justify-content: center;
-  padding: 0 200px;
-
-  label{
-    display: none;
-  }
 
   *{
     @include border-semi-rounded;
-    margin: 0 3.5%;
     width: 250px;
+    margin: 0 3.5%;
   }
 }
 
@@ -389,6 +387,11 @@ a {
   transition: all 100ms;
 }
 
+.section-controls__div{
+  display: flex;
+  justify-content:center;
+}
+
 .form-controls__search{
   border:none;
   padding: 12px 0 12px 24px;
@@ -398,6 +401,7 @@ a {
   background-image: url(assets/img/icon_search.png);
   font-size: 150%;
   font-weight: 500;
+  @include border-semi-rounded();
 
   &::placeholder{;
     font-family: $font_stack;

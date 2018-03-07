@@ -27,14 +27,18 @@
             <li class="categories__li categories-fun">fun</li>
             <li class="categories__li categories-aqua">aqua</li>
         </ul>
-        <form action="#" class="form form-controls">
-            <select name="alfabetical" id="alfabetical">
-                <option value="asc">A-Z</option>
-                <option value="desc">Z-A</option>
-            </select>
-        </form>>
-            <button type="button" class="controls-shuffle">Shuffle</button>
+        <div class="form-controls">
+            <form action="#" class="form form-controls controls__sort">
+                <select name="alfabetical" id="alfabetical">
+                    <option value="asc">A-Z</option>
+                    <option value="desc">Z-A</option>
+                </select>
+            </form>
+            <form action="#" class="form form-controls controls__shuffle">
+                <button type="button" class="controls-shuffle">Shuffle</button>
+            </form>
             <?php get_search_form(); ?>
+        </div>
     </section>
     <section class="licence">
     <?php
