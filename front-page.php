@@ -41,18 +41,10 @@
         </div>
     </section>
     <section class="licence">
-    <?php
-    $loop = new WP_Query(array('post_type' => 'shuffle_licence', 'ignore_sticky_posts' => 1));
-
-    if ($loop->have_posts()) :
-        while ($loop->have_posts()) : $loop->the_post(); ?>
-            <a href="<?php echo get_permalink()?>" class="licence__a a-<?php echo get_the_title(); ?>">
-                <div class="licence__div <?php echo get_the_terms($post->ID, 'target_audience')[0]->slug; ?>">
-                    <h1 class="licence__h1"><?php echo get_the_title(); ?></h1>
-                </div>
-            </a>
-        <?php endwhile; ?>
-    <?php endif; ?>
+        <?php
+            set_query_var('args', array('post_type' => 'shuffle_licence', 'ignore_sticky_posts' => 1));
+            get_template_part('template-parts/content', 'licence-list')
+        ?>
     </section>
 </main>
 <?php get_footer(); ?>

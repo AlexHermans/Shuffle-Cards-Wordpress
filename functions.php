@@ -28,24 +28,10 @@ function load_search_results(){
         's' => $q,
     );
 
-    $search = new WP_Query($args);
+    set_query_var('args', $args);
+    get_template_part('template-parts/content', 'licence-list');
 
-    ob_start();
-
-    if ($search->have_posts()) : ?>
-        <?php while ($search->have_posts()) : $search->the_post();?>
-            <a href="<?php echo get_permalink()?>" class="licence__a a-<?php echo get_the_title(); ?>">
-                <div class="licence__div <?php echo get_the_terms($post->ID, 'target_audience')[0]->slug; ?>">
-                    <h1 class="licence__h1"><?php echo get_the_title(); ?></h1>
-                </div>
-            </a>
-        <?php endwhile; ?>
-    <?php else : ?>
-        <div class="error">
-            <h1 class="error-no-posts">No licences were found.</h1>
-        </div>
-    <?php endif;
-    wp_die();
+    die();
 }
 
 add_action('wp_ajax_load_search_results', 'load_search_results');
