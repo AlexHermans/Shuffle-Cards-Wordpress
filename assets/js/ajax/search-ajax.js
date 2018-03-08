@@ -2,33 +2,43 @@
  * Created by Alex on 7/03/2018.
  */
 (function($) {
-
-    $(document).on('submit', '.controls-search', function(){
-        var $form = $(this);
-        var $input = $form.find('input[name="s"]');
-        var query = $input.val();
+    $(document).ready(function () {
+        var $input = $('#form-controls__search')
         var $content = $('.licence');
+        var $submit = $('#form-search__input-submit');
+        var timer = 0;
 
-        $.ajax({
-            type: 'POST',
-            url: myAjax.ajaxurl,
-            data: {
-                action: 'load_search_results',
-                query: query
-            },
-            beforeSend: function(){
-                $input.prop('disabled', true);
-                $content.addClass('loading')
-            },
-            success: function(response){
-                $input.prop('disabled', false);
-                $content.removeClass('loading');
-                $content.html(response);
-            },
+        function search() {
+            var query = $input.val();
+
+            $.ajax({
+                type: 'POST',
+                url: myAjax.ajaxurl,
+                data: {
+                    action: 'load_search_results',
+                    query: query
+                },
+                beforeSend: function(){
+                    $input.prop('disabled', true);
+                    $content.addClass('loading')
+                    $submit.addClass('loading-gif');
+                },
+                success: function(response){
+                    $input.prop('disabled', false).focus();
+                    $content.removeClass('loading');
+                    $content.html(response);
+                    $submit.removeClass('loading-gif');
+                },
+            });
+        }
+
+        // we wait a couple of seconds to let the user finish a thought before sending the request.
+        // research will have to show whether to make this time longer or shorter.
+        $input.on('keyup', function(){
+            if (timer){
+                clearTimeout(timer);
+            }
+            timer = setTimeout(search, 500)
         });
-
-        return false;
-
     });
-
 }(jQuery))

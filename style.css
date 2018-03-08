@@ -416,7 +416,8 @@ a {
   text-indent: -9000px;
   width: 3%;
   height: 100%;
-  right: 5%; }
+  right: 5%;
+  cursor: pointer; }
 
 .licence {
   padding: 0 5px 50px;
@@ -490,5 +491,8 @@ a {
 
 .section-search-results {
   margin-top: 160px; }
+
+.loading-gif {
+  background-image: url(assets/img/loading.gif); }
 
 /*# sourceMappingURL=style.css.map */

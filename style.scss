@@ -436,6 +436,7 @@ a {
   text-indent: -9000px;
   @include size(3%, 100%);
   right:5%;
+  cursor: pointer;
 }
 
 // LICENCE
@@ -517,4 +518,10 @@ a {
 // SEARCH.PHP
 .section-search-results{
   margin-top: 160px;
+}
+
+// OVERRIDES
+
+.loading-gif{
+  background-image: url(assets/img/loading.gif);
 }
