@@ -19,7 +19,8 @@ remove_action('wp_head', 'wp_generator');
 @ini_set('max_execution_time', '300');
 
 // AJAX-LOAD SEARCH RESULTS
-function load_search_results(){
+function load_search_results()
+{
     $q = $_REQUEST['query'];
 
     $args = array(
@@ -61,7 +62,10 @@ function enqueue_scripts()
     wp_register_script('shuffle-carousel', THEME_DIR . '/assets/js/shuffle-carousel.js', array('jquery'), '1.0', false);
     wp_enqueue_script('shuffle-carousel');
 
-    wp_register_script('ajax-search', THEME_DIR . '/assets/js/ajax/search-ajax.js', array('jquery'), '1.0', false);
+    wp_register_script('shuffle-carousel', THEME_DIR . '/assets/js/shuffle-shuffle.js', array('jquery'), '1.0', false);
+    wp_enqueue_script('shuffle-carousel');
+
+    wp_register_script('ajax-search', THEME_DIR . '/assets/js/ajax/search.ajax.js', array('jquery'), '1.0', false);
     wp_enqueue_script('ajax-search');
     wp_localize_script('ajax-search', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
 }
@@ -85,44 +89,21 @@ add_action('init', 'register_menus');
 
 // CONNECT PRODUCTS TO LICENCES UPON CREATION
 
-function shuffle_connect_product_to_licence($post_ID, $post, $update)
+function shuffle_connect_product_to_licence($post_id, $post, $update)
 {
-//    error_log($post_ID);
-//    error_log($post->post_type);
-//    error_log($post->post_status);
-//    error_log($update);
-//
-//    global $wpdb;
-//
-//    if ($post->post_type === 'shuffle_licence' && $post->post_status === 'publish' ) {
-//        $wpdb->insert(
-//            $wpdb->prefix . '_licence_product',
-//            array(
-//                'id' => '',
-//                'id_licence' => $post_ID,
-//                'id_product' => 1
-//            ),
-//            array(
-//                '%d',
-//                '%d',
-//                '%d'
-//            )
-//        );
-//    } else {
-////        $wpdb->insert(
-////            $wpdb->prefix . '_licence_product',
-////            array(
-////                'id' => '',
-////                'id_licence' => 2,
-////                'id_product' => 2
-////            ),
-////            array(
-////                '%d',
-////                '%d',
-////                '%d'
-////            )
-////        );
-//    }
+    error_log($post_id);
+    error_log($post->post_type);
+    error_log($update);
+
+    $licence_meta = get_post_meta($post_id, 'related_products');
+
+    foreach ($licence_meta[0] as $key => $value){
+        error_log($value);
+    }
+
+    global $wpdb;
+
+
 }
 
 add_action('wp_insert_post', 'shuffle_connect_product_to_licence', 10, 3);
