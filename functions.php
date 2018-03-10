@@ -89,30 +89,46 @@ add_action('init', 'register_menus');
 
 // CONNECT PRODUCTS TO LICENCES UPON CREATION
 
-function shuffle_insert_licence($post_id, $post, $update)
+function shuffle_insert_licence($post_id)
 {
-    error_log($post_id);
-    error_log($post->post_type);
-    error_log($update);
+    $post = get_post($post_id);
+
+    if ($post->post_status === 'trash'){
+        error_log('deleting '.$post_id. ' from DB');
+    } elseif ($post->post_status === 'publish'){
+        error_log('inserting '.$post_id. ' into DB');
+    }
 
     $licence_meta = get_post_meta($post_id, 'related_products');
 
-
     global $wpdb;
 
-    if ($post->post_type === 'shuffle_licence' ){
-        foreach ($licence_meta[0] as $key => $val){
-            $res = $wpdb->insert('shuffle_licence_product', array(
+    foreach ($licence_meta as $key => $val){
+            $succes = $wpdb->insert('shuffle_licence_product', array(
                 'id' => '',
                 'id_licence' => $post_id,
                 'id_product' => $val
             ));
+            if($succes){error_log('Licence created: '.$post->post_title.' was created in DB');}
         }
-
-        error_log('inserted into db');
-    }
 }
 
-add_action('wp_insert_post', 'shuffle_insert_licence', 10, 3);
+add_action('save_post_shuffle_licence', 'shuffle_insert_licence', 10, 3);
 
-?>
+// DELETE REFERENCES WHEN DELETING LICENCES
+
+function shuffle_delete_licence($post_id){
+    error_log('Deleting post');
+
+    //check to see if type = licence
+    $post = get_post($post_id, OBJECT);
+    if ($post->post_type === 'shuffle_licence'){
+        error_log('post was licence');
+    } else {
+        error_log('post was not licence');
+    }
+
+    error_log('post deleted');
+}
+
+add_action('wp_delete_post', 'shuffle_delete_licence', 10, 1);
