@@ -89,7 +89,7 @@ add_action('init', 'register_menus');
 
 // CONNECT PRODUCTS TO LICENCES UPON CREATION
 
-function shuffle_connect_product_to_licence($post_id, $post, $update)
+function shuffle_insert_licence($post_id, $post, $update)
 {
     error_log($post_id);
     error_log($post->post_type);
@@ -97,15 +97,22 @@ function shuffle_connect_product_to_licence($post_id, $post, $update)
 
     $licence_meta = get_post_meta($post_id, 'related_products');
 
-    foreach ($licence_meta[0] as $key => $value){
-        error_log($value);
-    }
 
     global $wpdb;
 
+    if ($post->post_type === 'shuffle_licence' ){
+        foreach ($licence_meta[0] as $key => $val){
+            $res = $wpdb->insert('shuffle_licence_product', array(
+                'id' => '',
+                'id_licence' => $post_id,
+                'id_product' => $val
+            ));
+        }
 
+        error_log('inserted into db');
+    }
 }
 
-add_action('wp_insert_post', 'shuffle_connect_product_to_licence', 10, 3);
+add_action('wp_insert_post', 'shuffle_insert_licence', 10, 3);
 
 ?>
