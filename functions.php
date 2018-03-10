@@ -5,7 +5,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage Shuffle
+ * @subpackage Layout.js
  * @since 1.0
  * @version 1.0
  */
@@ -62,8 +62,8 @@ function enqueue_scripts()
     wp_register_script('shuffle-carousel', THEME_DIR . '/assets/js/shuffle-carousel.js', array('jquery'), '1.0', false);
     wp_enqueue_script('shuffle-carousel');
 
-    wp_register_script('shuffle-carousel', THEME_DIR . '/assets/js/shuffle-shuffle.js', array('jquery'), '1.0', false);
-    wp_enqueue_script('shuffle-carousel');
+    wp_register_script('shuffle-shuffle', THEME_DIR . '/assets/js/shuffle-shuffle.js', array('jquery'), '1.0', false);
+    wp_enqueue_script('shuffle-shuffle');
 
     wp_register_script('ajax-search', THEME_DIR . '/assets/js/ajax/search.ajax.js', array('jquery'), '1.0', false);
     wp_enqueue_script('ajax-search');

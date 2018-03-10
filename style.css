@@ -26,8 +26,11 @@ a {
   text-decoration: none;
   color: #000; }
 
-.hidden {
-  display: none; }
+.display-none {
+  display: none !important; }
+
+.visibility-hidden {
+  visibility: hidden !important; }
 
 .main-front-page {
   background-color: #eee; }
@@ -374,6 +377,8 @@ a {
     -webkit-border-bottom-left-radius: 50px;
     -moz-border-bottom-left-radius: 50px;
     border-bottom-left-radius: 50px; }
+    .controls-sort select:focus {
+      outline: none; }
 
 .controls-search {
   display: flex;
@@ -420,26 +425,31 @@ a {
   cursor: pointer; }
 
 .licence {
-  padding: 0 5px 50px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: -60px; }
+  margin-top: -60px;
+  position: relative; }
 
 .licence__div {
-  margin: 0 0.5vw 0.5vw 0;
-  background-color: #4d4d4d;
-  width: 24vw;
-  height: 24vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 200ms; }
+  transition: all 200ms;
+  width: 96%;
+  height: 96%;
+  position: absolute;
+  background-color: #4d4d4d; }
 
 .licence__h1 {
   font-size: 30px;
   color: #FFF;
   font-weight: 700; }
+
+.licence__a {
+  position: absolute;
+  width: 25%;
+  padding-bottom: 25%; }
 
 .boys:hover, .family:hover, .adult:hover, .kids:hover, .girls:hover {
   background-image: url(assets/img/Shuffle_Pattern_White.png);

@@ -5,7 +5,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage Shuffle
+ * @subpackage Layout.js
  * @since 1.0
  * @version 1.0
  */
@@ -20,6 +20,7 @@ if ($loop->have_posts()) : ?>
         <a href="<?php echo get_permalink()?>" class="licence__a a-<?php echo get_the_title(); ?>">
             <div class="licence__div <?php echo get_the_terms($post->ID, 'target_audience')[0]->slug; ?>">
                 <h1 class="licence__h1"><?php echo get_the_title(); ?></h1>
+                <button href="#" class="hide">Hide</button>
             </div>
         </a>
     <?php endwhile; ?>

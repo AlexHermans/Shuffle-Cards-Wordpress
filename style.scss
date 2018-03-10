@@ -86,8 +86,12 @@ a {
   color: #000;
 }
 
-.hidden {
-  display: none;
+.display-none {
+  display: none !important;
+}
+
+.visibility-hidden {
+  visibility: hidden !important;
 }
 
 .main-front-page {
@@ -398,6 +402,10 @@ a {
   select{
     @include size(100%, 100%);
     @include border-semi-rounded;
+
+    &:focus{
+      outline: none;
+    }
   }
 }
 
@@ -442,27 +450,34 @@ a {
 // LICENCE
 
 .licence {
-  padding: 0 5px 50px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: -60px;
+  position: relative;
 }
 
 .licence__div{
-  margin:0 0.5vw 0.5vw 0;
-  background-color: #4d4d4d;
-  @include size(24vw, 24vw);
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 200ms;
+  @include size(96%, 96%);
+  position: absolute;
+  background-color: #4d4d4d;
 }
 
 .licence__h1{
   font-size: 30px;
   color: #FFF;
   font-weight: 700;
+}
+
+.licence__a{
+  position: absolute;
+  width: 25%;
+  padding-bottom: 25%;
+  // TODO: Hier moeten nog breakpoints ingesteld worden
 }
 
 .boys, .family, .adult, .kids, .girls{

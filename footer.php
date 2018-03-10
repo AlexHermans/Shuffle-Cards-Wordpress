@@ -5,7 +5,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage Shuffle
+ * @subpackage Layout.js
  * @since 1.0
  * @version 1.0
  */
