@@ -86,34 +86,64 @@ function register_menus()
 
 add_action('init', 'register_menus');
 
+function actions($post_id, $post, $update){
+    error_log('action occured.');
+    error_log('id: '.$post_id);
+    error_log('post_type: '.$post->post_type);
+    error_log('post_status: '.$post->post_status);
+    error_log('update: '.$update);
+    error_log('====== end of action ======');
+}
+
+add_action('wp_insert_post', 'actions', 10, 3);
 
 // CONNECT PRODUCTS TO LICENCES UPON CREATION
 
-function shuffle_insert_licence($post_id)
+function shuffle_insert_licence($post_id, $post, $update)
 {
-    $post = get_post($post_id);
-
-    if ($post->post_status === 'trash'){
-        error_log('deleting '.$post_id. ' from DB');
-    } elseif ($post->post_status === 'publish'){
-        error_log('inserting '.$post_id. ' into DB');
-    }
-
-    $licence_meta = get_post_meta($post_id, 'related_products');
+    error_log('insert event fired');
 
     global $wpdb;
+    var_dump($post);
 
-    foreach ($licence_meta as $key => $val){
-            $succes = $wpdb->insert('shuffle_licence_product', array(
-                'id' => '',
-                'id_licence' => $post_id,
-                'id_product' => $val
-            ));
-            if($succes){error_log('Licence created: '.$post->post_title.' was created in DB');}
+    if ($post->post_type === 'shuffle_licence' && $post->post_status === 'publish'){
+        error_log('post type was licence');
+
+        $exists = $wpdb->get_results($wpdb->prepare('SELECT * FROM shuffle_licence_product WHERE id_licence = %d', $post_id));
+
+        if (!$exists){
+            error_log('inserting '.$post_id. ' into DB');
+
+            $licence_meta = get_post_meta($post_id, 'related_products')[0];
+            foreach ($licence_meta as $key => $val){
+                $succes = $wpdb->insert('shuffle_licence_product', array(
+                    'id' => '',
+                    'id_licence' => $post_id,
+                    'id_product' => $val
+                ));
+                if($succes){error_log('Licence created: '.$post->post_title.' was created in DB');}
+            }
+        } elseif ($exists) {
+            error_log('this licence exists');
+        } else {
+            error_log('there was a problem');
         }
+
+//        if(!empty($licence_meta)){
+//            error_log('got licence meta');
+//            foreach ($licence_meta as $key => $val){
+//                error_log('key: '.$key);
+//                error_log('value: '.$val);
+//            }
+//        } else {
+//            error_log('licence meta is not defined');
+//        }
+
+
+    };
 }
 
-add_action('save_post_shuffle_licence', 'shuffle_insert_licence', 10, 3);
+add_action('wp_insert_post', 'shuffle_insert_licence', 10, 3);
 
 // DELETE REFERENCES WHEN DELETING LICENCES
 
