@@ -71,13 +71,22 @@
       <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
-              <caret line="151" column="43" lean-forward="false" selection-start-line="151" selection-start-column="43" selection-end-line="151" selection-end-column="43" />
+            <state relative-caret-position="673">
+              <caret line="188" column="47" lean-forward="false" selection-start-line="188" selection-start-column="47" selection-end-line="188" selection-end-column="47" />
               <folding>
                 <element signature="e#6#179#0#PHP" expanded="true" />
-                <marker date="1520859745519" expanded="true" signature="3052:3108" ph="SELECT * FRO... shuffle_licence_product" />
-                <marker date="1520859745519" expanded="true" signature="3052:3111" ph="SELECT * FRO... shuffle_licence_product" />
+                <marker date="1520864383737" expanded="true" signature="3534:3593" ph="SELECT * FRO... shuffle_licence_product" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shuffle-custom_taxonomies.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../plugins/shuffle-custom_taxonomies/shuffle-custom_taxonomies.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="660">
+              <caret line="36" column="45" lean-forward="true" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,7 +94,7 @@
       <file leaf-file-name="debug.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../debug.log">
           <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="-1636">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
             </state>
           </provider>
@@ -141,7 +150,6 @@
         <option value="$PROJECT_DIR$/single.php" />
         <option value="$PROJECT_DIR$/../../plugins/shuffle-custom-taxonomies/shuffle-ctp_plugin.php" />
         <option value="$PROJECT_DIR$/../../plugins/shuffle-custom-taxonomies/shuffle-custom_taxonomies.php" />
-        <option value="$PROJECT_DIR$/../../plugins/shuffle-custom_taxonomies/shuffle-custom_taxonomies.php" />
         <option value="$PROJECT_DIR$/single-shuffle_licence.php" />
         <option value="$PROJECT_DIR$/../../../wp-config.php" />
         <option value="$PROJECT_DIR$/search.php" />
@@ -159,6 +167,7 @@
         <option value="$PROJECT_DIR$/style.scss" />
         <option value="$PROJECT_DIR$/../../plugins/shuffle-ctp_plugin/shuffle-ctp_plugin.php" />
         <option value="$PROJECT_DIR$/../../debug.log" />
+        <option value="$PROJECT_DIR$/../../plugins/shuffle-custom_taxonomies/shuffle-custom_taxonomies.php" />
         <option value="$PROJECT_DIR$/functions.php" />
       </list>
     </option>
@@ -293,7 +302,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../plugins/shuffle-ctp_plugin/shuffle-ctp_plugin.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../plugins/shuffle-custom_taxonomies/shuffle-custom_taxonomies.php" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="full.screen.before.presentation.mode" value="false" />
@@ -411,12 +420,12 @@
       <workItem from="1520494638760" duration="14841000" />
       <workItem from="1520580316227" duration="27535000" />
       <workItem from="1520677586648" duration="5173000" />
-      <workItem from="1520840390198" duration="17596000" />
+      <workItem from="1520840390198" duration="22187000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="250468000" />
+    <option name="totallyTimeSpent" value="255059000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -482,16 +491,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#468#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-page.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -518,8 +517,7 @@
           <caret line="21" column="39" lean-forward="false" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
           <folding>
             <element signature="e#6#179#0#PHP" expanded="true" />
-            <marker date="1520859745519" expanded="true" signature="3052:3108" ph="SELECT * FRO... shuffle_licence_product" />
-            <marker date="1520859745519" expanded="true" signature="3052:3111" ph="SELECT * FRO... shuffle_licence_product" />
+            <marker date="1520864383737" expanded="true" signature="3534:3593" ph="SELECT * FRO... shuffle_licence_product" />
           </folding>
         </state>
       </provider>
@@ -694,13 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../plugins/shuffle-custom_taxonomies/shuffle-custom_taxonomies.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="22" column="44" lean-forward="false" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../wp-admin/admin-ajax.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1380">
@@ -802,13 +793,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-page.php">
+    <entry file="file://$PROJECT_DIR$/../../plugins/advanced-custom-fields/core/views/meta_box_fields.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="42" column="27" lean-forward="false" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-          <folding>
-            <element signature="e#6#229#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1080">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -820,19 +809,36 @@
         </state>
       </provider>
       <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="-1636">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="42" column="27" lean-forward="false" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+          <folding>
+            <element signature="e#6#229#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../plugins/shuffle-custom_taxonomies/shuffle-custom_taxonomies.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="36" column="45" lean-forward="true" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="151" column="43" lean-forward="false" selection-start-line="151" selection-start-column="43" selection-end-line="151" selection-end-column="43" />
+        <state relative-caret-position="673">
+          <caret line="188" column="47" lean-forward="false" selection-start-line="188" selection-start-column="47" selection-end-line="188" selection-end-column="47" />
           <folding>
             <element signature="e#6#179#0#PHP" expanded="true" />
-            <marker date="1520859745519" expanded="true" signature="3052:3108" ph="SELECT * FRO... shuffle_licence_product" />
-            <marker date="1520859745519" expanded="true" signature="3052:3111" ph="SELECT * FRO... shuffle_licence_product" />
+            <marker date="1520864383737" expanded="true" signature="3534:3593" ph="SELECT * FRO... shuffle_licence_product" />
           </folding>
         </state>
       </provider>

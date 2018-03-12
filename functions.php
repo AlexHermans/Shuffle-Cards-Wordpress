@@ -86,6 +86,8 @@ function register_menus()
 
 add_action('init', 'register_menus');
 
+// PURE DEBUG FUNCTION
+// TODO: Delete this function before going live.
 function actions($post_id, $post, $update){
     error_log('action occured.');
     error_log('id: '.$post_id);
@@ -99,101 +101,128 @@ add_action('wp_insert_post', 'actions', 10, 3);
 
 // CONNECT PRODUCTS TO LICENCES UPON CREATION
 
-function shuffle_actions_licence($post_id, $post, $update)
+function shuffle_actions_licence($post_id, $post)
 {
     error_log('actions event fired');
 
+    if ($post->post_type === 'shuffle_licence' && $post->post_status === 'publish'){
+
+        error_log('Licence is being created or updated');
+        shuffle_insert_licence($post_id, $post);
+
+    } elseif ($post->post_type === 'shuffle_licence' && $post->post_status === 'trash'){
+
+        error_log('Licence is being deleted');
+        shuffle_delete_licence($post_id, $post);
+
+    }
+}
+
+add_action('wp_insert_post', 'shuffle_actions_licence', 10, 2);
+
+// DELETE REFERENCES WHEN DELETING LICENCES
+function shuffle_insert_licence($post_id, $post_obj){
     global $wpdb;
 
-    if ($post->post_type === 'shuffle_licence' && $post->post_status === 'publish'){
-        error_log('post type was licence');
+    $existing_meta = $wpdb->get_results($wpdb->prepare('SELECT * FROM shuffle_licence_product WHERE id_licence = %d', $post_id));
+    $new_meta = get_post_meta($post_id, 'related_products')[0];
 
-        $existing_meta = $wpdb->get_results($wpdb->prepare('SELECT * FROM shuffle_licence_product WHERE id_licence = %d', $post_id));
-        $new_meta = get_post_meta($post_id, 'related_products')[0];
+    if (!$existing_meta){
+        error_log('inserting '.$post_id. ' into DB');
 
-        if (!$existing_meta){
-            error_log('inserting '.$post_id. ' into DB');
+        foreach ($new_meta as $val){
+            $succes = $wpdb->insert('shuffle_licence_product', array(
+                'id' => '',
+                'id_licence' => $post_id,
+                'id_product' => $val
+            ));
+            if($succes){error_log('Licence created: '.$post_obj->post_title.' was created in DB');}
+        }
+    } elseif ($existing_meta) {
+        error_log('this licence exists');
 
-            foreach ($new_meta as $val){
-                $succes = $wpdb->insert('shuffle_licence_product', array(
-                    'id' => '',
-                    'id_licence' => $post_id,
-                    'id_product' => $val
-                ));
-                if($succes){error_log('Licence created: '.$post->post_title.' was created in DB');}
-            }
-        } elseif ($existing_meta) {
-            error_log('this licence exists');
-
-            foreach ($existing_meta as $row_key => $row_value){
-                error_log('product_id_existing = '.$row_value->id_product);
-                foreach ($new_meta as $meta_key => $meta_value){
-                    error_log('product_id_new = '.$meta_value);
-                    if ($row_value->id_product === $meta_value){
-                        error_log('match');
-                        error_log('deleting key: '.$meta_key.' and value '.$meta_value);
-                        unset($new_meta[$meta_key]);
-                        unset($existing_meta[$row_key]);
-                        foreach ($existing_meta as $row_test){
-                            error_log('exists');
-                        }
+        foreach ($existing_meta as $row_key => $row_value) {
+            error_log('product_id_existing = ' . $row_value->id_product);
+            foreach ($new_meta as $meta_key => $meta_value) {
+                error_log('product_id_new = ' . $meta_value);
+                if ($row_value->id_product === $meta_value) {
+                    error_log('match');
+                    error_log('deleting key: ' . $meta_key . ' and value ' . $meta_value);
+                    unset($new_meta[$meta_key]);
+                    unset($existing_meta[$row_key]);
+                    foreach ($existing_meta as $row_test) {
+                        error_log('exists');
                     }
                 }
             }
-
-            foreach ($existing_meta as $row){
-                $succes = $wpdb->delete('shuffle_licence_product', array(
-                    'id_product' => $row->id_product
-                ));
-                if($succes){error_log('Product was de-coupled from licence');}
-            }
-
-            foreach ($new_meta as $row){
-                $succes = $wpdb->insert('shuffle_licence_product', array(
-                    'id' => '',
-                    'id_licence' => $post_id,
-                    'id_product' => $row
-                ));
-                if($succes){error_log('Licence created: '.$post->post_title.' was created in DB');}
-            }
-
-//            $diff = array_diff($exists, $licence_meta);
-
-//            foreach ($diff as $key => $val){error_log($key.' = '.$val);};
-        } else {
-            error_log('there was a problem');
         }
 
-//        if(!empty($licence_meta)){
-//            error_log('got licence meta');
-//            foreach ($licence_meta as $key => $val){
-//                error_log('key: '.$key);
-//                error_log('value: '.$val);
-//            }
-//        } else {
-//            error_log('licence meta is not defined');
-//        }
+        // delete old references from db
+        foreach ($existing_meta as $row) {
+            $succes = $wpdb->delete('shuffle_licence_product', array(
+                'id_product' => $row->id_product
+            ));
+            if ($succes) {
+                error_log('Product was de-coupled from licence');
+            }
+        }
 
-
-    };
+        //insert new references into db
+        foreach ($new_meta as $row) {
+            $succes = $wpdb->insert('shuffle_licence_product', array(
+                'id' => '',
+                'id_licence' => $post_id,
+                'id_product' => $row
+            ));
+            if ($succes) {
+                error_log('Licence created: ' . $post_obj->post_title . ' was created in DB');
+            }
+        }
+    }
 }
 
-add_action('wp_insert_post', 'shuffle_actions_licence', 10, 3);
+function shuffle_delete_licence($post_id, $post_obj){
+    //TODO: figure out this functionality
+}
 
-// DELETE REFERENCES WHEN DELETING LICENCES
+function shuffle_add_ta_box(){
+    add_meta_box('ta_box_ID', 'Target Audiences', 'shuffle_ta_styling_function', 'shuffle_licence', 'side', 'core');
+}
 
-function shuffle_delete_licence($post_id){
-    error_log('Deleting post');
-
-    //check to see if type = licence
-    $post = get_post($post_id, OBJECT);
-    if ($post->post_type === 'shuffle_licence'){
-        error_log('post was licence');
-    } else {
-        error_log('post was not licence');
+function shuffle_add_ta_menus(){
+    if (!is_admin()){
+        return;
     }
 
-    error_log('post deleted');
+    add_action('admin_menu', shuffle_add_ta_box());
 }
 
-add_action('wp_delete_post', 'shuffle_delete_licence', 10, 1);
+shuffle_add_ta_menus();
+
+function shuffle_ta_styling_function($post){
+    echo '<input type="hidden" name="taxonomy_noncename" id="taxonomy_noncename" value="' .
+        wp_create_nonce( 'taxonomy_theme' ) . '" />';
+
+
+    // Get all theme taxonomy terms
+    $target_audiences = get_terms('target_audience', 'hide_empty=0');
+
+    ?>
+    <select name='post_target_audience' id='post_target_audience'>
+        <!-- Display themes as options -->
+        <?php
+        $names = wp_get_object_terms($post->ID, 'target_audience');
+        ?>
+        <option class='target_audience-option' value=''
+            <?php if (!count($names)) echo "selected";?>>None</option>
+        <?php
+        foreach ($target_audiences as $ta) {
+            if (!is_wp_error($names) && !empty($names) && !strcmp($ta->slug, $names[0]->slug))
+                echo "<option class='theme-option' value='" . $ta->slug . "' selected>" . $ta->name . "</option>\n";
+            else
+                echo "<option class='theme-option' value='" . $ta->slug . "'>" . $ta->name . "</option>\n";
+        }
+        ?>
+    </select>
+    <?php
+}
