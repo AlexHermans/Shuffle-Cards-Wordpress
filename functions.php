@@ -99,23 +99,22 @@ add_action('wp_insert_post', 'actions', 10, 3);
 
 // CONNECT PRODUCTS TO LICENCES UPON CREATION
 
-function shuffle_insert_licence($post_id, $post, $update)
+function shuffle_actions_licence($post_id, $post, $update)
 {
-    error_log('insert event fired');
+    error_log('actions event fired');
 
     global $wpdb;
-    var_dump($post);
 
     if ($post->post_type === 'shuffle_licence' && $post->post_status === 'publish'){
         error_log('post type was licence');
 
-        $exists = $wpdb->get_results($wpdb->prepare('SELECT * FROM shuffle_licence_product WHERE id_licence = %d', $post_id));
+        $existing_meta = $wpdb->get_results($wpdb->prepare('SELECT * FROM shuffle_licence_product WHERE id_licence = %d', $post_id));
+        $new_meta = get_post_meta($post_id, 'related_products')[0];
 
-        if (!$exists){
+        if (!$existing_meta){
             error_log('inserting '.$post_id. ' into DB');
 
-            $licence_meta = get_post_meta($post_id, 'related_products')[0];
-            foreach ($licence_meta as $key => $val){
+            foreach ($new_meta as $val){
                 $succes = $wpdb->insert('shuffle_licence_product', array(
                     'id' => '',
                     'id_licence' => $post_id,
@@ -123,8 +122,44 @@ function shuffle_insert_licence($post_id, $post, $update)
                 ));
                 if($succes){error_log('Licence created: '.$post->post_title.' was created in DB');}
             }
-        } elseif ($exists) {
+        } elseif ($existing_meta) {
             error_log('this licence exists');
+
+            foreach ($existing_meta as $row_key => $row_value){
+                error_log('product_id_existing = '.$row_value->id_product);
+                foreach ($new_meta as $meta_key => $meta_value){
+                    error_log('product_id_new = '.$meta_value);
+                    if ($row_value->id_product === $meta_value){
+                        error_log('match');
+                        error_log('deleting key: '.$meta_key.' and value '.$meta_value);
+                        unset($new_meta[$meta_key]);
+                        unset($existing_meta[$row_key]);
+                        foreach ($existing_meta as $row_test){
+                            error_log('exists');
+                        }
+                    }
+                }
+            }
+
+            foreach ($existing_meta as $row){
+                $succes = $wpdb->delete('shuffle_licence_product', array(
+                    'id_product' => $row->id_product
+                ));
+                if($succes){error_log('Product was de-coupled from licence');}
+            }
+
+            foreach ($new_meta as $row){
+                $succes = $wpdb->insert('shuffle_licence_product', array(
+                    'id' => '',
+                    'id_licence' => $post_id,
+                    'id_product' => $row
+                ));
+                if($succes){error_log('Licence created: '.$post->post_title.' was created in DB');}
+            }
+
+//            $diff = array_diff($exists, $licence_meta);
+
+//            foreach ($diff as $key => $val){error_log($key.' = '.$val);};
         } else {
             error_log('there was a problem');
         }
@@ -143,7 +178,7 @@ function shuffle_insert_licence($post_id, $post, $update)
     };
 }
 
-add_action('wp_insert_post', 'shuffle_insert_licence', 10, 3);
+add_action('wp_insert_post', 'shuffle_actions_licence', 10, 3);
 
 // DELETE REFERENCES WHEN DELETING LICENCES
 
