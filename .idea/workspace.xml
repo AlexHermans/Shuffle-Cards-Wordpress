@@ -71,10 +71,10 @@
       <file leaf-file-name="shuffle-shuffle.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/shuffle-shuffle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
-              <caret line="44" column="8" lean-forward="false" selection-start-line="44" selection-start-column="11" selection-end-line="45" selection-end-column="62" />
+            <state relative-caret-position="80">
+              <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
               <folding>
-                <marker date="1520926783181" expanded="true" signature="218:267" ph="..." />
+                <marker date="1520930993540" expanded="true" signature="218:267" ph="..." />
               </folding>
             </state>
           </provider>
@@ -401,12 +401,12 @@
       <workItem from="1520580316227" duration="27535000" />
       <workItem from="1520677586648" duration="5173000" />
       <workItem from="1520840390198" duration="25994000" />
-      <workItem from="1520926754393" duration="288000" />
+      <workItem from="1520926754393" duration="4242000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="259154000" />
+    <option name="totallyTimeSpent" value="263108000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -425,6 +425,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497309" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -436,7 +437,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -467,7 +467,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -497,7 +497,7 @@
         <state relative-caret-position="240">
           <caret line="21" column="39" lean-forward="false" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
           <folding>
-            <element signature="e#6#179#0#PHP" expanded="true" />
+            <element signature="e#6#179#0#PHP" expanded="false" />
             <marker date="1520864383737" expanded="true" signature="3534:3593" ph="SELECT * FRO... shuffle_licence_product" />
           </folding>
         </state>
@@ -796,7 +796,7 @@
         <state relative-caret-position="673">
           <caret line="188" column="47" lean-forward="false" selection-start-line="188" selection-start-column="47" selection-end-line="188" selection-end-column="47" />
           <folding>
-            <element signature="e#6#179#0#PHP" expanded="true" />
+            <element signature="e#6#179#0#PHP" expanded="false" />
             <marker date="1520864383737" expanded="true" signature="3534:3593" ph="SELECT * FRO... shuffle_licence_product" />
           </folding>
         </state>
@@ -814,10 +814,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/shuffle-shuffle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="44" column="8" lean-forward="false" selection-start-line="44" selection-start-column="11" selection-end-line="45" selection-end-column="62" />
+        <state relative-caret-position="80">
+          <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
           <folding>
-            <marker date="1520926783181" expanded="true" signature="218:267" ph="..." />
+            <marker date="1520930993540" expanded="true" signature="218:267" ph="..." />
           </folding>
         </state>
       </provider>

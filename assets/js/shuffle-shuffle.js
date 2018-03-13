@@ -36,14 +36,34 @@ function layout_random() {
     // randomize the array
     $new_positions = $new_positions.sort(function (a,b) {return 0.5 - Math.random()})
 
+    console.log($new_positions);
+
     // each element gets assigned a new position and calculates it's transformation vectors
     for (let i = 0; i<$el.length; i++){
+        let el = $el[i];
 
-        let vector_x = $new_positions[i][0] - jQuery($el[i]).data('pos-x');
-        let vector_y = $new_positions[i][1] - jQuery($el[i]).data('pos-y');
+        set_position_attr(jQuery($el[i]), $new_positions[i][0], $new_positions[i][1])
 
-        // jQuery($el[i]).css('left', (25*vector_x)+'%');
-        // jQuery($el[i]).css('top', (fraction*vector_y)+'%');
+        let vector_x = $new_positions[i][0]-1;
+        let vector_y = $new_positions[i][1]-1;
+
+        // let rand = false;
+        //
+        // if (Math.random() > 0.5){rand = true;}
+        //
+        // console.log(rand)
+        //
+        // if (!vector_x || !vector_y){
+        //     vector_x = rand ? vector_x+1 : vector_x-1
+        //     vector_y = rand ? vector_y+1 : vector_y-1
+        // }
+
+        jQuery(el).animate({
+            left : (25*vector_x)+'%'
+        });
+        jQuery(el).animate({
+            top: (fraction * vector_y) + '%'
+        });
 
         console.log(vector_x);
         console.log(vector_y);
