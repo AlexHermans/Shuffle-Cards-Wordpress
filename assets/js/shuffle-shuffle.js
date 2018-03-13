@@ -13,6 +13,44 @@ function set_parent_height(parent_el, example_el){
     parent_el.css('height', Math.ceil(example_el.length/4)*height_el);
 };
 
+function layout_random() {
+    let $new_positions = [];
+    let $el = jQuery('.licence__a');
+    let c = 0;
+    let x = 1;
+    let y = 1;
+
+
+    // populate multi dimensional array
+    for (let i = 0; i<$el.length; i++) {
+        c = c + 1;
+        x = c;
+
+        if (x > 4) {y += 1;c = 1;x = 1;}
+
+        $new_positions.push([x,y])
+    }
+
+    let fraction = (100/y);
+
+    // randomize the array
+    $new_positions = $new_positions.sort(function (a,b) {return 0.5 - Math.random()})
+
+    // each element gets assigned a new position and calculates it's transformation vectors
+    for (let i = 0; i<$el.length; i++){
+
+        let vector_x = $new_positions[i][0] - jQuery($el[i]).data('pos-x');
+        let vector_y = $new_positions[i][1] - jQuery($el[i]).data('pos-y');
+
+        // jQuery($el[i]).css('left', (25*vector_x)+'%');
+        // jQuery($el[i]).css('top', (fraction*vector_y)+'%');
+
+        console.log(vector_x);
+        console.log(vector_y);
+    }
+
+}
+
 function layout() {
     let $el_list = jQuery('.licence__a');
     let $max = $el_list.length;
@@ -49,6 +87,12 @@ function layout() {
         layout();
 
         $(window).resize(layout);
+
+        $('.controls-shuffle').click(function (e) {
+            e.preventDefault();
+
+            layout_random();
+        })
 
         // var $max = $el_list.length
         // var arr = [];
