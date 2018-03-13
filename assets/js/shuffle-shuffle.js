@@ -36,8 +36,6 @@ function layout_random() {
     // randomize the array
     $new_positions = $new_positions.sort(function (a,b) {return 0.5 - Math.random()})
 
-    console.log($new_positions);
-
     // each element gets assigned a new position and calculates it's transformation vectors
     for (let i = 0; i<$el.length; i++){
         let el = $el[i];
@@ -47,26 +45,12 @@ function layout_random() {
         let vector_x = $new_positions[i][0]-1;
         let vector_y = $new_positions[i][1]-1;
 
-        // let rand = false;
-        //
-        // if (Math.random() > 0.5){rand = true;}
-        //
-        // console.log(rand)
-        //
-        // if (!vector_x || !vector_y){
-        //     vector_x = rand ? vector_x+1 : vector_x-1
-        //     vector_y = rand ? vector_y+1 : vector_y-1
-        // }
-
         jQuery(el).animate({
             left : (25*vector_x)+'%'
         });
         jQuery(el).animate({
             top: (fraction * vector_y) + '%'
         });
-
-        console.log(vector_x);
-        console.log(vector_y);
     }
 
 }
@@ -113,34 +97,5 @@ function layout() {
 
             layout_random();
         })
-
-        // var $max = $el_list.length
-        // var arr = [];
-        //
-        // // we'll manually give each licence box an 'order' css prop.
-        // // at the same time, we'll populate an array with numbers we'll later randomly sort
-        //
-        // function populate(i, val) {
-        //     $($el_list[i]).css('order', val+1);
-        // }
-        //
-        // for (var i = 0; i<$max; i++){
-        //     populate(i,i)
-        //     arr.push(i+1)
-        // }
-        //
-        // $('.controls-shuffle').click(function (e) {
-        //     e.preventDefault();
-        //     console.log('clicked')
-        //
-        //     //the random sort
-        //     arr = arr.sort(function (a,b) {return 0.5 - Math.random()})
-        //
-        //     //repopulate
-        //     arr.forEach(function (val,index){
-        //         console.log(index, val)
-        //         populate(index, val);
-        //     });
-        // })
     })
 })(jQuery)

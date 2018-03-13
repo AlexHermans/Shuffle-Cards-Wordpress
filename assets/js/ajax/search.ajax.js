@@ -8,6 +8,8 @@
         var $submit = $('#form-search__input-submit');
         var timer = 0;
 
+        $('#form-search__input-submit').click(function (e) {e.preventDefault();})
+
         function search() {
             var query = $input.val();
 
@@ -28,8 +30,11 @@
                     $content.removeClass('loading');
                     $content.html(response);
                     $submit.removeClass('loading-gif');
+                    layout();
                 },
             });
+
+
         }
 
         // we wait a couple of seconds to let the user finish a thought before sending the request.
