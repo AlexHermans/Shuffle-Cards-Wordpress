@@ -30,8 +30,8 @@
         <div class="form-controls">
             <form action="#" class="form controls-sort">
                 <select name="alfabetical" id="alfabetical">
-                    <option value="asc">A-Z</option>
-                    <option value="desc">Z-A</option>
+                    <option value="asc">Sort by A-Z</option>
+                    <option value="desc">Sort by Z-A</option>
                 </select>
             </form>
             <form action="#" class="form controls-shuffle">
@@ -42,7 +42,7 @@
     </section>
     <section class="licence">
         <?php
-            set_query_var('args', array('post_type' => 'shuffle_licence', 'ignore_sticky_posts' => 1));
+            set_query_var('args', array('post_type' => 'shuffle_licence', 'ignore_sticky_posts' => 1, 'orderby' => 'post_title', 'order' => 'ASC'));
             get_template_part('template-parts/content', 'licence-list')
         ?>
     </section>

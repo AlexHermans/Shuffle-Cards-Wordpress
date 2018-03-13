@@ -19,7 +19,7 @@ remove_action('wp_head', 'wp_generator');
 @ini_set('max_execution_time', '300');
 
 // AJAX-LOAD SEARCH RESULTS
-function load_search_results()
+function shuffle_load_search_results()
 {
     $q = $_REQUEST['query'];
 
@@ -35,8 +35,27 @@ function load_search_results()
     die();
 }
 
-add_action('wp_ajax_load_search_results', 'load_search_results');
-add_action('wp_ajax_nopriv_load_search_results', 'load_search_results');
+add_action('wp_ajax_shuffle_load_search_results', 'shuffle_load_search_results');
+add_action('wp_ajax_nopriv_shuffle_load_search_results', 'shuffle_load_search_results');
+
+function shuffle_load_all_results(){
+    $order = $_REQUEST['order'];
+
+    $args = array(
+        'post_type' => 'shuffle_licence',
+        'post_status' => 'publish',
+        'orderby' => 'post_title',
+        'order' => $order
+    );
+
+    set_query_var('args', $args);
+    get_template_part('template-parts/content', 'licence-list');
+
+    die();
+}
+
+add_action('wp_ajax_shuffle_load_all_results', 'shuffle_load_all_results');
+add_action('wp_ajax_nopriv_shuffle_load_all_results', 'shuffle_load_all_results');
 
 // ENQUEUE STYLES
 function enqueue_styles()
@@ -68,6 +87,10 @@ function enqueue_scripts()
     wp_register_script('ajax-search', THEME_DIR . '/assets/js/ajax/search.ajax.js', array('jquery'), '1.0', false);
     wp_enqueue_script('ajax-search');
     wp_localize_script('ajax-search', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
+
+    wp_register_script('ajax-results', THEME_DIR . '/assets/js/ajax/results.ajax.js', array('jquery'), '1.0', false);
+    wp_enqueue_script('ajax-results');
+    wp_localize_script('ajax-results', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts');

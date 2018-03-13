@@ -376,10 +376,51 @@ a {
     border-bottom-right-radius: 50px;
     -webkit-border-bottom-left-radius: 50px;
     -moz-border-bottom-left-radius: 50px;
-    border-bottom-left-radius: 50px; }
+    border-bottom-left-radius: 50px;
+    font-size: 130%;
+    font-weight: 700;
+    font-family: "MuseoSans", SansSerif;
+    padding: 0 0 0 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* remove default arrow */
+    background-image: url(assets/img/arrow_down.png);
+    /* add custom arrow */
+    background-repeat: no-repeat;
+    background-position: 90% center; }
+    .controls-sort select.sort-desc {
+      animation: sort-desc 1.5s cubic-bezier(0.955, 0.165, 0.215, 0.995) forwards; }
+    .controls-sort select.sort-asc {
+      animation: sort-asc 1.5s cubic-bezier(0.955, 0.165, 0.215, 0.995) forwards; }
     .controls-sort select:focus {
       outline: none; }
 
+@keyframes sort-desc {
+  0% {
+    background-position: 90% center; }
+  24% {
+    opacity: 1; }
+  25% {
+    background-position: 90% 150%;
+    opacity: 0; }
+  50% {
+    background-image: url(assets/img/arrow_down.png); }
+  75% {
+    background-position: 90% 150%; }
+  100% {
+    background-position: 90% center; } }
+@keyframes sort-asc {
+  0% {
+    background-position: 90% -50%; }
+  25% {
+    background-position: 90% center; }
+  50% {
+    background-image: url(assets/img/arrow_up.png); }
+  75% {
+    background-position: 90% center; }
+  100% {
+    background-position: 90% 150%; } }
 .controls-search {
   display: flex;
   flex-direction: row;

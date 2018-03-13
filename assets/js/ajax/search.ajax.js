@@ -3,26 +3,26 @@
  */
 (function($) {
     $(document).ready(function () {
-        var $input = $('#form-controls__search')
-        var $content = $('.licence');
-        var $submit = $('#form-search__input-submit');
-        var timer = 0;
+        let $input = $('#form-controls__search');
+        let $content = $('.licence');
+        let $submit = $('#form-search__input-submit');
+        let timer = 0;
 
-        $('#form-search__input-submit').click(function (e) {e.preventDefault();})
+        $submit.click(function (e) {e.preventDefault();});
 
         function search() {
-            var query = $input.val();
+            let query = $input.val();
 
             $.ajax({
                 type: 'POST',
                 url: myAjax.ajaxurl,
                 data: {
-                    action: 'load_search_results',
+                    action: 'shuffle_load_search_results',
                     query: query
                 },
                 beforeSend: function(){
                     $input.prop('disabled', true);
-                    $content.addClass('loading')
+                    $content.addClass('loading');
                     $submit.addClass('loading-gif');
                 },
                 success: function(response){
@@ -33,8 +33,6 @@
                     layout();
                 },
             });
-
-
         }
 
         // we wait a couple of seconds to let the user finish a thought before sending the request.
@@ -46,4 +44,4 @@
             timer = setTimeout(search, 500)
         });
     });
-}(jQuery))
+}(jQuery));
