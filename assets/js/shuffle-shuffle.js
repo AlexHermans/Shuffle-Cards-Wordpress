@@ -13,14 +13,11 @@ function set_parent_height(parent_el, example_el){
     parent_el.css('height', Math.ceil(example_el.length/4)*height_el);
 };
 
-function layout_random() {
-    let $new_positions = [];
-    let $el = jQuery('.licence__a');
+function arrange_items($el, $rand){
     let c = 0;
     let x = 1;
     let y = 1;
-
-
+    let $arr = []
     // populate multi dimensional array
     for (let i = 0; i<$el.length; i++) {
         c = c + 1;
@@ -28,31 +25,31 @@ function layout_random() {
 
         if (x > 4) {y += 1;c = 1;x = 1;}
 
-        $new_positions.push([x,y])
+        $arr.push([x,y])
     }
 
-    let fraction = (100/y);
+    if ($rand){
+        // if needed, randomize the array
+        $arr = $arr.sort(function (a,b) {return 0.5 - Math.random()})
+    }
 
-    // randomize the array
-    $new_positions = $new_positions.sort(function (a,b) {return 0.5 - Math.random()})
+    let $fraction = (100/y);
 
-    // each element gets assigned a new position and calculates it's transformation vectors
     for (let i = 0; i<$el.length; i++){
         let el = $el[i];
 
-        set_position_attr(jQuery($el[i]), $new_positions[i][0], $new_positions[i][1])
+        set_position_attr(jQuery($el[i]), $arr[i][0], $arr[i][1])
 
-        let vector_x = $new_positions[i][0]-1;
-        let vector_y = $new_positions[i][1]-1;
+        let vector_x = $arr[i][0]-1;
+        let vector_y = $arr[i][1]-1;
 
         jQuery(el).animate({
-            left : (25*vector_x)+'%'
+            left : (25*vector_x) + '%'
         });
         jQuery(el).animate({
-            top: (fraction * vector_y) + '%'
+            top: ($fraction*vector_y) + '%'
         });
     }
-
 }
 
 function layout() {
@@ -71,19 +68,11 @@ function layout() {
         set_position_attr($el_list[i], x, y);
     }
 
-    let fraction = (100/y);
-
     // this pre-defines the height of the parent element
-    set_parent_height(jQuery('.licence'), jQuery('.licence__a'))
+    set_parent_height(jQuery('.licence'), $el_list)
 
     // We'll hard-code the position of items based on their data-attr
-    for (let i = 0; i<$max; i++){
-        let x = (jQuery($el_list[i]).data('pos-x'))-1;
-        let y = (jQuery($el_list[i]).data('pos-y'))-1;
-
-        jQuery($el_list[i]).css('left', (25*x)+'%');
-        jQuery($el_list[i]).css('top', (fraction*y)+'%');
-    }
+    arrange_items($el_list, false);
 }
 
 (function ($) {
@@ -92,10 +81,22 @@ function layout() {
 
         $(window).resize(layout);
 
+        let logo_colours = [
+            '/assets/img/logo/logo_blue.png)',
+            '/assets/img/logo/logo_green.png)',
+            '/assets/img/logo/logo_orange.png)',
+            '/assets/img/logo/logo_purple.png)',
+            '/assets/img/logo/logo_red.png)',
+        ];
+        let counter = 0
+
         $('.controls-shuffle').click(function (e) {
             e.preventDefault();
-
-            layout_random();
+            arrange_items($('.licence__a'), true);
+            if(counter < logo_colours.length-1){
+                counter += 1;
+            } else { counter = 0 }
+            $(this).css('background-image' , 'url('+js_obj.theme_dir+logo_colours[counter])
         })
     })
 })(jQuery)

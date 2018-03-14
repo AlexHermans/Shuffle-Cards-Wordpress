@@ -385,7 +385,7 @@ a {
   @include box-shadow;
   border:none;
   background-color: white;
-  background-image: url(assets/img/logo_black.png);
+  background-image: url(assets/img/logo/logo_black.png);
   background-repeat: no-repeat;
   background-position: center center;
   @include background-size(45%);
@@ -412,13 +412,16 @@ a {
     background-image: url(assets/img/arrow_down.png);   /* add custom arrow */
     background-repeat:no-repeat;
     background-position: 90% center;
-
-    &.sort-desc{
-      animation: sort-desc 1.5s cubic-bezier(0.955, 0.165, 0.215, 0.995) forwards;
-    }
+    animation: select 0.4s forwards  cubic-bezier(0.955, 0.165, 0.215, 0.995);
 
     &.sort-asc{
-      animation: sort-asc 1.5s cubic-bezier(0.955, 0.165, 0.215, 0.995) forwards;
+      animation: sort-desc 0.4s cubic-bezier(0.955, 0.165, 0.215, 0.995) forwards;
+      background-image: url(assets/img/arrow_down.png);
+    }
+
+    &.sort-desc{
+      animation: sort-asc 0.4s cubic-bezier(0.955, 0.165, 0.215, 0.995) forwards;
+      background-image: url(assets/img/arrow_up.png);
     }
 
     &:focus{
@@ -428,20 +431,11 @@ a {
 }
 
 @keyframes sort-desc {
-  0%    {background-position: 90% center;}
-  24%   {opacity: 1}
-  25%   {background-position: 90% 150%; opacity: 0}
-  50%   {background-image: url(assets/img/arrow_down.png)}
-  75%   {background-position: 90% 150%;}
-  100%  {background-position: 90% center;}
+  50%   {background-position: 90% 60%; color: rgba(0, 0, 0, 0.8)}
 }
 
 @keyframes sort-asc {
-  0%    {background-position: 90% -50%;}
-  25%   {background-position: 90% center;}
-  50%   {background-image: url(assets/img/arrow_up.png);}
-  75%   {background-position: 90% center;}
-  100%  {background-position: 90% 150%;}
+  50%   {background-position: 90% 40%; color: rgba(0, 0, 0, 0.8)}
 }
 
 .controls-search{

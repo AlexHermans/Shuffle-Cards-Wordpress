@@ -83,6 +83,7 @@ function enqueue_scripts()
 
     wp_register_script('shuffle-shuffle', THEME_DIR . '/assets/js/shuffle-shuffle.js', array('jquery'), '1.0', false);
     wp_enqueue_script('shuffle-shuffle');
+    wp_localize_script('shuffle-shuffle', 'js_obj', array('theme_dir' => get_template_directory_uri()));
 
     wp_register_script('ajax-search', THEME_DIR . '/assets/js/ajax/search.ajax.js', array('jquery'), '1.0', false);
     wp_enqueue_script('ajax-search');

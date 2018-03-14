@@ -30,7 +30,17 @@ function ajax_call($container,$sort){
             e.preventDefault();
             this.blur();
             window.focus()
-            $sort = $sort === 'ASC' ? 'DESC' : 'ASC';
+            $sort = $sort === 'asc' ? 'desc' : 'asc';
+
+            ajax_call($container, $sort);
+            
+            $(el).children('option').each(function (index) {
+                $(this).removeAttr('selected');
+                if($(this).val() === $sort){
+                    $(this).attr('selected', 'selected')
+                }
+            })
+
             if (!el.hasClass('sort-desc') && !el.hasClass('sort-asc')){
                 el.toggleClass('sort-desc');
             } else {
