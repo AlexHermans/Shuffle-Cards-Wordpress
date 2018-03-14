@@ -183,7 +183,7 @@ a {
 
 .figure-swirl-banner__div-green {
   background: $green;
-  @include border-radius-separate(0, 0, 40%, 0)
+  @include border-radius-separate(0, 0, 75px, 0)
 }
 
 .figure-swirl-banner__div-swirl {
@@ -224,7 +224,7 @@ a {
 
 .figure-rounded-corner__div-right {
   background: url(assets/img/shuffle-swirl-up.png) no-repeat bottom left;
-  @include background-size(contain);
+  @include background-size(100%);
   flex-grow: 1;
   width: 60px;
   top: -53px;
@@ -235,7 +235,7 @@ a {
   background: url(assets/img/shuffle-swirl-down.png) no-repeat top right;
   flex-grow: 1;
   position: relative;
-  @include background-size(contain);
+  @include background-size(100%);
   top: -11px;
   width: 60px;
   z-index: 2;
@@ -254,7 +254,7 @@ a {
   width: 100vw;
   height: 560px;
   position: relative;
-  top: -60px;
+  top: -90px;
   z-index: 0;
   flex: 1 0 100%;
   @include opacity(0);
@@ -315,7 +315,7 @@ a {
 .section-controls {
   padding: 0 5px;
   position: relative;
-  top: -60px;
+  top: -90px;
   background-color: $bg;
   display: flex;
   flex-direction: column;
@@ -521,7 +521,7 @@ a {
     .licence__h1{
       opacity:1;
     }
-  };
+  }
 }
 
 .family:hover { background-color: $red };
@@ -530,10 +530,45 @@ a {
 .boys:hover{ background-color: $blue};
 .adult:hover { background-color: $green};
 
+// LICENCE SINGLE
+
+.licence-single__header{
+  height: 500px;
+  position: relative;
+  top:-80px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.licence-logo{
+  height:100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  @include background-size(50%);
+}
+
+.licence-single__h1{
+  font-weight: 700;
+}
+
 // SECTION-PRODUCTS
 .section-products{
-  margin-top: 50px;
+  margin-top: -80px;
   padding: 0 5px 50px;
+
+  &:before {
+    content: ' ';
+    display: block;
+    background: url(assets/img/swoop-down.png);
+    @include background-size(contain);
+    @include size(100px, 100px);
+    align-self: flex-end;
+    position: relative;
+    top: -100px;
+    right: 0;
+  }
 }
 
 // FOOTER

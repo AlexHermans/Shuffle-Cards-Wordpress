@@ -15,28 +15,11 @@
 <html>
 <?php get_header(); ?>
 <body>
+<?php global $post?>
+<header class="licence-single__header" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/img/licences/<?php echo $post->post_title?>/header_background.jpg);">
+    <h1 class="licence-single__logo licence-logo" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/img/licences/<?php echo $post->post_title?>/header_logo.png);"><?php echo $post->post_title; ?></h1>
+</header>
 <section class="section-products">
-    <h1 class="section-title"><?php echo $post->post_title; ?></h1>
-    <?php
-        // We gaan zoeken of er producten zijn die gekoppeld zijn aan deze licentie
-
-        $loop = get_field('related_licences');
-    ?>
-    <?php
-        // We gaan zoeken naar de gerelateerde producten
-
-        $loop = get_field('related_products');
-
-        var_dump($loop);
-
-        foreach ($loop as $key => $product): ?>
-
-            <div class="product">
-                <h1 class="product__h1 h1-product-title"><?php echo $product->post_title; ?></h1>
-                <p class="product__p p-product-description"><?php echo $product->post_content; ?></p>
-            </div>
-
-        <?php endforeach; ?>
 </section>
 <?php get_footer(); ?>
 </body>

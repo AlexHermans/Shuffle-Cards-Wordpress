@@ -107,9 +107,9 @@ a {
   -webkit-border-top-right-radius: 0;
   -moz-border-top-right-radius: 0;
   border-top-right-radius: 0;
-  -webkit-border-bottom-right-radius: 40%;
-  -moz-border-bottom-right-radius: 40%;
-  border-bottom-right-radius: 40%;
+  -webkit-border-bottom-right-radius: 75px;
+  -moz-border-bottom-right-radius: 75px;
+  border-bottom-right-radius: 75px;
   -webkit-border-bottom-left-radius: 0;
   -moz-border-bottom-left-radius: 0;
   border-bottom-left-radius: 0; }
@@ -160,8 +160,8 @@ a {
 
 .figure-rounded-corner__div-right {
   background: url(assets/img/shuffle-swirl-up.png) no-repeat bottom left;
-  -webkit-background-size: contain;
-  background-size: contain;
+  -webkit-background-size: 100%;
+  background-size: 100%;
   flex-grow: 1;
   width: 60px;
   top: -53px;
@@ -171,8 +171,8 @@ a {
   background: url(assets/img/shuffle-swirl-down.png) no-repeat top right;
   flex-grow: 1;
   position: relative;
-  -webkit-background-size: contain;
-  background-size: contain;
+  -webkit-background-size: 100%;
+  background-size: 100%;
   top: -11px;
   width: 60px;
   z-index: 2; }
@@ -187,7 +187,7 @@ a {
   width: 100vw;
   height: 560px;
   position: relative;
-  top: -60px;
+  top: -90px;
   z-index: 0;
   flex: 1 0 100%;
   opacity: 0;
@@ -242,7 +242,7 @@ a {
 .section-controls {
   padding: 0 5px;
   position: relative;
-  top: -60px;
+  top: -90px;
   background-color: #eee;
   display: flex;
   flex-direction: column;
@@ -492,9 +492,40 @@ a {
 .adult:hover {
   background-color: #64b32b; }
 
+.licence-single__header {
+  height: 500px;
+  position: relative;
+  top: -80px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.licence-logo {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: 50%;
+  background-size: 50%; }
+
+.licence-single__h1 {
+  font-weight: 700; }
+
 .section-products {
-  margin-top: 50px;
+  margin-top: -80px;
   padding: 0 5px 50px; }
+  .section-products:before {
+    content: ' ';
+    display: block;
+    background: url(assets/img/swoop-down.png);
+    -webkit-background-size: contain;
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    align-self: flex-end;
+    position: relative;
+    top: -100px;
+    right: 0; }
 
 .footer {
   display: flex;
