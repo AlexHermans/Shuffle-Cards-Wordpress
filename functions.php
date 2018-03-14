@@ -205,28 +205,30 @@ function shuffle_insert_licence($post_id, $post_obj){
     }
 }
 
-shuffle_add_ta_menus();
-
 function shuffle_delete_licence($post_id, $post_obj){
-    //TODO: figure out this functionality
+    global $wpdb;
+
+    $succes = $wpdb->delete('shuffle_licence_product', array(
+        'id_licence' => $post_id,
+    ));
+    if ($succes) {
+        error_log('Licence deleted: ' . $post_obj->post_title . ' was deleted from DB');
+    }
 }
 
 function shuffle_add_ta_menus(){
     if (!is_admin()){
         return;
     }
-    
+
     add_action('admin_menu', 'shuffle_add_ta_box');
 }
 
-
+shuffle_add_ta_menus();
 
 function shuffle_add_ta_box(){
     add_meta_box('ta_box_ID', 'Target Audiences', 'shuffle_ta_styling_function', 'shuffle_licence', 'side', 'core');
 }
-
-
-
 
 function shuffle_ta_styling_function($post){
     echo '<input type="hidden" name="taxonomy_noncename" id="taxonomy_noncename" value="' .

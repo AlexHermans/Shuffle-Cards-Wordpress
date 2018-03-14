@@ -68,25 +68,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="217" column="4" lean-forward="false" selection-start-line="217" selection-start-column="4" selection-end-line="217" selection-end-column="4" />
+            <state relative-caret-position="713">
+              <caret line="214" column="82" lean-forward="false" selection-start-line="214" selection-start-column="82" selection-end-line="214" selection-end-column="82" />
               <folding>
                 <element signature="e#6#179#0#PHP" expanded="true" />
-                <marker date="1521021613901" expanded="true" signature="4447:4506" ph="SELECT * FRO... shuffle_licence_product" />
+                <marker date="1521022782814" expanded="true" signature="4447:4506" ph="SELECT * FRO... shuffle_licence_product" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="random shit" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template-parts/random shit">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="23" column="8" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-              <folding />
+      <file leaf-file-name="debug.log" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../debug.log">
+          <provider selected="true" editor-type-id="LogFileEditorProvider">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
             </state>
           </provider>
         </entry>
@@ -154,7 +153,6 @@
         <option value="$PROJECT_DIR$/assets/js/class/Layout.js" />
         <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/../../plugins/shuffle-ctp_plugin/shuffle-ctp_plugin.php" />
-        <option value="$PROJECT_DIR$/../../debug.log" />
         <option value="$PROJECT_DIR$/../../plugins/shuffle-custom_taxonomies/shuffle-custom_taxonomies.php" />
         <option value="$PROJECT_DIR$/template-parts/random shit" />
         <option value="$PROJECT_DIR$/template-parts/content-licence-list.php" />
@@ -165,6 +163,7 @@
         <option value="$PROJECT_DIR$/assets/js/shuffle-shuffle.js" />
         <option value="$PROJECT_DIR$/style.scss" />
         <option value="$PROJECT_DIR$/functions.php" />
+        <option value="$PROJECT_DIR$/../../debug.log" />
       </list>
     </option>
   </component>
@@ -298,7 +297,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../plugins/shuffle-custom_taxonomies/shuffle-custom_taxonomies.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../debug.log" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="full.screen.before.presentation.mode" value="false" />
@@ -423,12 +422,12 @@
       <workItem from="1520926754393" duration="4242000" />
       <workItem from="1520937171829" duration="227000" />
       <workItem from="1520946425137" duration="8262000" />
-      <workItem from="1521012530047" duration="9071000" />
+      <workItem from="1521012530047" duration="10336000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="286657000" />
+    <option name="totallyTimeSpent" value="287922000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -725,18 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../debug.log">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../plugins/shuffle-custom_taxonomies/shuffle-custom_taxonomies.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -817,12 +804,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="217" column="4" lean-forward="false" selection-start-line="217" selection-start-column="4" selection-end-line="217" selection-end-column="4" />
+        <state relative-caret-position="713">
+          <caret line="214" column="82" lean-forward="false" selection-start-line="214" selection-start-column="82" selection-end-line="214" selection-end-column="82" />
           <folding>
             <element signature="e#6#179#0#PHP" expanded="true" />
-            <marker date="1521021613901" expanded="true" signature="4447:4506" ph="SELECT * FRO... shuffle_licence_product" />
+            <marker date="1521022782814" expanded="true" signature="4447:4506" ph="SELECT * FRO... shuffle_licence_product" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../debug.log">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
