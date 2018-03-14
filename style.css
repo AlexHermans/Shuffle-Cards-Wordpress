@@ -50,7 +50,7 @@ a {
   flex-direction: row; }
 
 .header__div-bottom {
-  height: 150px;
+  height: 125px;
   flex-wrap: wrap; }
 
 .header__div-top {
@@ -119,7 +119,7 @@ a {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   width: 100%;
-  height: 150px;
+  height: 125px;
   position: absolute;
   z-index: 1;
   -webkit-background-size: 450px;
