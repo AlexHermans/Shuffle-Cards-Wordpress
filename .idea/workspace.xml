@@ -24,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="89" column="15" lean-forward="false" selection-start-line="89" selection-start-column="2" selection-end-line="89" selection-end-column="15" />
+            <state relative-caret-position="442">
+              <caret line="333" column="13" lean-forward="false" selection-start-line="333" selection-start-column="13" selection-end-line="333" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -100,7 +100,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shuffle-carousel.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="shuffle-carousel.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/shuffle-carousel.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="700">
@@ -183,8 +183,8 @@
         <option value="$PROJECT_DIR$/../../plugins/shuffle-custom_taxonomies/shuffle-custom_taxonomies.php" />
         <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/../../debug.log" />
-        <option value="$PROJECT_DIR$/style.scss" />
         <option value="$PROJECT_DIR$/assets/js/shuffle-carousel.js" />
+        <option value="$PROJECT_DIR$/style.scss" />
       </list>
     </option>
   </component>
@@ -443,12 +443,12 @@
       <workItem from="1520926754393" duration="4242000" />
       <workItem from="1520937171829" duration="227000" />
       <workItem from="1520946425137" duration="8262000" />
-      <workItem from="1521012530047" duration="13915000" />
+      <workItem from="1521012530047" duration="14277000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="291501000" />
+    <option name="totallyTimeSpent" value="291863000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -832,18 +832,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="89" column="15" lean-forward="false" selection-start-line="89" selection-start-column="2" selection-end-line="89" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/shuffle-carousel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="700">
           <caret line="35" column="60" lean-forward="false" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="333" column="13" lean-forward="false" selection-start-line="333" selection-start-column="13" selection-end-line="333" selection-end-column="13" />
           <folding />
         </state>
       </provider>
