@@ -27,8 +27,8 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="256" column="10" lean-forward="false" selection-start-line="256" selection-start-column="10" selection-end-line="256" selection-end-column="10" />
+            <state relative-caret-position="262">
+              <caret line="89" column="15" lean-forward="false" selection-start-line="89" selection-start-column="2" selection-end-line="89" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -91,11 +91,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="debug.log" pinned="false" current-in-tab="true">
+      <file leaf-file-name="debug.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../debug.log">
           <provider selected="true" editor-type-id="LogFileEditorProvider">
             <state relative-caret-position="-3476">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shuffle-carousel.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/js/shuffle-carousel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="700">
+              <caret line="35" column="60" lean-forward="false" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -127,6 +137,7 @@
       <find>js</find>
       <find>controls-so</find>
       <find>shuffle</find>
+      <find>display: none</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -145,7 +156,6 @@
         <option value="$PROJECT_DIR$/shuffle-carousel.php" />
         <option value="$PROJECT_DIR$/template-parts/carousel.php" />
         <option value="$PROJECT_DIR$/template-parts/content-carousel.php" />
-        <option value="$PROJECT_DIR$/assets/js/shuffle-carousel.js" />
         <option value="$USER_HOME$/Desktop/shuffle-ctp_plugin/shuffle-ctp_plugin.php" />
         <option value="$USER_HOME$/Desktop/shuffle-custom-taxonomies/shuffle-ctp_plugin.php" />
         <option value="$PROJECT_DIR$/licence.php" />
@@ -170,10 +180,11 @@
         <option value="$PROJECT_DIR$/assets/js/ajax/results.ajax.js" />
         <option value="$PROJECT_DIR$/assets/js/ajax/search.ajax.js" />
         <option value="$PROJECT_DIR$/assets/js/shuffle-shuffle.js" />
-        <option value="$PROJECT_DIR$/style.scss" />
         <option value="$PROJECT_DIR$/../../plugins/shuffle-custom_taxonomies/shuffle-custom_taxonomies.php" />
         <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/../../debug.log" />
+        <option value="$PROJECT_DIR$/style.scss" />
+        <option value="$PROJECT_DIR$/assets/js/shuffle-carousel.js" />
       </list>
     </option>
   </component>
@@ -432,12 +443,12 @@
       <workItem from="1520926754393" duration="4242000" />
       <workItem from="1520937171829" duration="227000" />
       <workItem from="1520946425137" duration="8262000" />
-      <workItem from="1521012530047" duration="12913000" />
+      <workItem from="1521012530047" duration="13915000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="290499000" />
+    <option name="totallyTimeSpent" value="291501000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -662,13 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/shuffle-carousel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../wp-admin/admin-ajax.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1380">
@@ -769,14 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="256" column="10" lean-forward="false" selection-start-line="256" selection-start-column="10" selection-end-line="256" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template-parts/content-licence-list.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -833,6 +829,22 @@
       <provider selected="true" editor-type-id="LogFileEditorProvider">
         <state relative-caret-position="-3476">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="89" column="15" lean-forward="false" selection-start-line="89" selection-start-column="2" selection-end-line="89" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/shuffle-carousel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="35" column="60" lean-forward="false" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -10,13 +10,17 @@
         var next = $(items[1]);
         var counter = 0;
 
+        items.not(current).addClass('display-none');
+
         setInterval(function () {
             if (counter < 400){
                 counter += 100;
 
+                next.removeClass('display-none')
+
                 container.animate({
                     left: '-' + counter + '%',
-                })
+                });
 
                 current.removeClass('current');
                 current = next.addClass('current');
@@ -29,6 +33,7 @@
                 current = $(items[0]);
                 current.addClass('current')
                 next = current.next();
+                items.not(current).addClass('display-none');
             }
         }, 3000)
     });
