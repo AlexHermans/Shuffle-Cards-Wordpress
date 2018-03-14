@@ -263,7 +263,6 @@ a {
   -ms-transition: all 400ms;
   -o-transition: all 400ms;
   transition: all 400ms;
-  @include border-radius-separate(50px, 0, 0, 0);
 }
 
 .current{
@@ -490,16 +489,21 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 200ms;
   @include size(96%, 96%);
   position: absolute;
   background-color: #4d4d4d;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include background-size(contain)
+  // TODO: Om de achtergronden correct te laten werken moeten de bg images ook vierkant zijn
+  // anders komt dat gewoon niet goed door het feit dat die verhoudingen niet kloppen.
 }
 
 .licence__h1{
   font-size: 30px;
   color: #FFF;
   font-weight: 700;
+  opacity: 0;
 }
 
 .licence__a{
@@ -511,8 +515,12 @@ a {
 
 .boys, .family, .adult, .kids, .girls{
   &:hover{
-    background-image: url(assets/img/Shuffle_Pattern_White.png);
-    @include background-size(150%)
+    background-image: url(assets/img/Shuffle_Pattern_White.png) !important;
+    @include background-size(150%);
+
+    .licence__h1{
+      opacity:1;
+    }
   };
 }
 

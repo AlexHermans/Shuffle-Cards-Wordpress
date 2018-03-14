@@ -45,10 +45,10 @@ function arrange_items($el, $rand){
 
         jQuery(el).animate({
             left : (25*vector_x) + '%'
-        });
+        }, 'fast');
         jQuery(el).animate({
             top: ($fraction*vector_y) + '%'
-        });
+        }, 'fast');
     }
 }
 
@@ -77,8 +77,6 @@ function layout() {
 
 (function ($) {
     $(document).ready(function () {
-        layout();
-
         $(window).resize(layout);
 
         let logo_colours = [

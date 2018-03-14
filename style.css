@@ -196,19 +196,7 @@ a {
   -moz-transition: all 400ms;
   -ms-transition: all 400ms;
   -o-transition: all 400ms;
-  transition: all 400ms;
-  -webkit-border-top-left-radius: 50px;
-  -moz-border-top-left-radius: 50px;
-  border-top-left-radius: 50px;
-  -webkit-border-top-right-radius: 0;
-  -moz-border-top-right-radius: 0;
-  border-top-right-radius: 0;
-  -webkit-border-bottom-right-radius: 0;
-  -moz-border-bottom-right-radius: 0;
-  border-bottom-right-radius: 0;
-  -webkit-border-bottom-left-radius: 0;
-  -moz-border-bottom-left-radius: 0;
-  border-bottom-left-radius: 0; }
+  transition: all 400ms; }
 
 .current {
   opacity: 1;
@@ -462,16 +450,20 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 200ms;
   width: 96%;
   height: 96%;
   position: absolute;
-  background-color: #4d4d4d; }
+  background-color: #4d4d4d;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain; }
 
 .licence__h1 {
   font-size: 30px;
   color: #FFF;
-  font-weight: 700; }
+  font-weight: 700;
+  opacity: 0; }
 
 .licence__a {
   position: absolute;
@@ -479,9 +471,11 @@ a {
   padding-bottom: 25%; }
 
 .boys:hover, .family:hover, .adult:hover, .kids:hover, .girls:hover {
-  background-image: url(assets/img/Shuffle_Pattern_White.png);
+  background-image: url(assets/img/Shuffle_Pattern_White.png) !important;
   -webkit-background-size: 150%;
   background-size: 150%; }
+  .boys:hover .licence__h1, .family:hover .licence__h1, .adult:hover .licence__h1, .kids:hover .licence__h1, .girls:hover .licence__h1 {
+    opacity: 1; }
 
 .family:hover {
   background-color: #e2261b; }
