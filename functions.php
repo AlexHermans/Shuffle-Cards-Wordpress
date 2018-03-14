@@ -151,6 +151,10 @@ function shuffle_insert_licence($post_id, $post_obj){
     $existing_meta = $wpdb->get_results($wpdb->prepare('SELECT * FROM shuffle_licence_product WHERE id_licence = %d', $post_id));
     $new_meta = get_post_meta($post_id, 'related_products')[0];
 
+    $term = $_POST['licence_target_audience'];
+
+    wp_set_object_terms($post_id, $term, 'target_audience');
+
     if (!$existing_meta){
         error_log('inserting '.$post_id. ' into DB');
 
@@ -234,16 +238,11 @@ function shuffle_ta_styling_function($post){
     echo '<input type="hidden" name="taxonomy_noncename" id="taxonomy_noncename" value="' .
         wp_create_nonce( 'taxonomy_theme' ) . '" />';
 
-
-    // Get all theme taxonomy terms
     $target_audiences = get_terms('target_audience', 'hide_empty=0');
 
     ?>
-        <select name='post_target_audience' id='post_target_audience'>
-            <!-- Display themes as options -->
-            <?php
-        $names = wp_get_object_terms($post->ID, 'target_audience');
-        ?>
+        <select name="licence_target_audience" id="licence_target_audience">
+            <?php $names = wp_get_object_terms($post->ID, 'target_audience'); ?>
             <option class='target_audience-option' value=''
                 <?php if (!count($names)) echo "selected";?>>None</option>
             <?php
