@@ -239,6 +239,13 @@ a {
   top: -11px;
   width: 60px;
   z-index: 2;
+
+
+  &.transparent{
+    background: url(assets/img/shuffle_swirl_down_transparent.png) no-repeat top right;
+    @include background-size(100%);
+    top: -10.1px
+  }
 }
 
 // CAROUSEL
@@ -535,10 +542,12 @@ a {
 .licence-single__header{
   height: 500px;
   position: relative;
-  top:-80px;
+  top:-60px;
   display: flex;
   justify-content:center;
   align-items: center;
+  @include border-radius-separate(0, 0, 70px, 0);
+  @include background-size(cover)
 }
 
 .licence-logo{
@@ -546,29 +555,45 @@ a {
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  @include background-size(50%);
+  @include background-size(45%);
 }
 
 .licence-single__h1{
   font-weight: 700;
 }
 
+.licence__figure-rounded-corner {
+  height: 24px;
+  width: 100%;
+  margin-top: -125px;
+  z-index: 3;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.section-licence-title{
+  margin-top: -80px;
+  padding: 0 0 50px;
+  position: relative;
+
+  &.family  { background-color: $red };
+  &.kids    { background-color: $orange };
+  &.girls   { background-color: $purple };
+  &.boys    { background-color: $blue};
+  &.adult   { background-color: $green};
+}
+
+.licence-single__h2{
+  &.h2-secondary-title{
+
+  }
+}
+
 // SECTION-PRODUCTS
 .section-products{
-  margin-top: -80px;
-  padding: 0 5px 50px;
-
-  &:before {
-    content: ' ';
-    display: block;
-    background: url(assets/img/swoop-down.png);
-    @include background-size(contain);
-    @include size(100px, 100px);
-    align-self: flex-end;
-    position: relative;
-    top: -100px;
-    right: 0;
-  }
+  padding: 0 0 50px;
+  background-color: $bg;
 }
 
 // FOOTER

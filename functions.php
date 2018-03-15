@@ -257,3 +257,10 @@ function shuffle_ta_styling_function($post){
         <?php
 }
 
+// REMOVING DUPLICATE OR UNNECESSARY META BOXES
+    function shuffle_remove_dup_meta_boxes(){
+        remove_meta_box('tagsdiv-target_audience', 'shuffle_licence', 'side');
+    }
+
+    add_action('add_meta_boxes', 'shuffle_remove_dup_meta_boxes');
+

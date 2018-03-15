@@ -176,6 +176,11 @@ a {
   top: -11px;
   width: 60px;
   z-index: 2; }
+  .figure-rounded-corner__div-left.transparent {
+    background: url(assets/img/shuffle_swirl_down_transparent.png) no-repeat top right;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    top: -10.1px; }
 
 .section-carousel {
   height: 500px;
@@ -495,37 +500,63 @@ a {
 .licence-single__header {
   height: 500px;
   position: relative;
-  top: -80px;
+  top: -60px;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -moz-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 70px;
+  -moz-border-bottom-right-radius: 70px;
+  border-bottom-right-radius: 70px;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -webkit-background-size: cover;
+  background-size: cover; }
 
 .licence-logo {
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  -webkit-background-size: 50%;
-  background-size: 50%; }
+  -webkit-background-size: 45%;
+  background-size: 45%; }
 
 .licence-single__h1 {
   font-weight: 700; }
 
-.section-products {
+.licence__figure-rounded-corner {
+  height: 24px;
+  width: 100%;
+  margin-top: -125px;
+  z-index: 3;
+  position: relative;
+  display: flex;
+  flex-direction: row; }
+
+.section-licence-title {
   margin-top: -80px;
-  padding: 0 5px 50px; }
-  .section-products:before {
-    content: ' ';
-    display: block;
-    background: url(assets/img/swoop-down.png);
-    -webkit-background-size: contain;
-    background-size: contain;
-    width: 100px;
-    height: 100px;
-    align-self: flex-end;
-    position: relative;
-    top: -100px;
-    right: 0; }
+  padding: 0 0 50px;
+  position: relative; }
+  .section-licence-title.family {
+    background-color: #e2261b; }
+  .section-licence-title.kids {
+    background-color: #f59b00; }
+  .section-licence-title.girls {
+    background-color: #923a80; }
+  .section-licence-title.boys {
+    background-color: #008ad2; }
+  .section-licence-title.adult {
+    background-color: #64b32b; }
+
+.section-products {
+  padding: 0 0 50px;
+  background-color: #eee; }
 
 .footer {
   display: flex;
