@@ -146,14 +146,22 @@ add_action('wp_insert_post', 'shuffle_actions_licence', 10, 2);
 
 // DELETE REFERENCES WHEN DELETING LICENCES
 function shuffle_insert_licence($post_id, $post_obj){
+
+    // first checking all nonces
+    if (
+                !check_admin_referer('target_audience_nonce_action', 'target_audience_nonce_field')
+            ||  !check_admin_referer('connected_product_nonce_action', 'connected_product_nonce_field')
+    ) {return false;}
+
+
     global $wpdb;
 
-    $existing_meta = $wpdb->get_results($wpdb->prepare('SELECT * FROM shuffle_licence_product WHERE id_licence = %d', $post_id));
-    $new_meta = get_post_meta($post_id, 'related_products')[0];
-
+    // getting the target audience
     $term = $_POST['licence_target_audience'];
-
     wp_set_object_terms($post_id, $term, 'target_audience');
+
+    $existing_meta = $wpdb->get_results($wpdb->prepare('SELECT * FROM shuffle_licence_product WHERE id_licence = %d', $post_id));
+    $new_meta = $_POST['connected_products'];
 
     if (!$existing_meta){
         error_log('inserting '.$post_id. ' into DB');
@@ -220,23 +228,23 @@ function shuffle_delete_licence($post_id, $post_obj){
     }
 }
 
-function shuffle_add_ta_menus(){
+function shuffle_add_admin_menus(){
     if (!is_admin()){
         return;
     }
 
-    add_action('admin_menu', 'shuffle_add_ta_box');
+    add_action('admin_menu', 'shuffle_add_meta_box');
 }
 
-shuffle_add_ta_menus();
+shuffle_add_admin_menus();
 
-function shuffle_add_ta_box(){
-    add_meta_box('ta_box_ID', 'Target Audiences', 'shuffle_ta_styling_function', 'shuffle_licence', 'side', 'core');
+function shuffle_add_meta_box(){
+    add_meta_box('shuffle_ta_box', 'Target Audiences', 'shuffle_ta_styling_function', 'shuffle_licence', 'side', 'core');
+    add_meta_box('shuffle_con_prod', 'Connect products to this licence', 'shuffle_cp_styling_function', 'shuffle_licence', 'side', 'core');
 }
 
 function shuffle_ta_styling_function($post){
-    echo '<input type="hidden" name="taxonomy_noncename" id="taxonomy_noncename" value="' .
-        wp_create_nonce( 'taxonomy_theme' ) . '" />';
+    wp_nonce_field('target_audience_nonce_action', 'target_audience_nonce_field');
 
     $target_audiences = get_terms('target_audience', 'hide_empty=0');
 
@@ -256,6 +264,42 @@ function shuffle_ta_styling_function($post){
         </select>
         <?php
 }
+
+
+function shuffle_cp_styling_function($post){
+    wp_nonce_field('connected_product_nonce_action', 'connected_product_nonce_field');
+
+    global $wpdb;
+
+    $query = 'SELECT * FROM shuffleposts AS p LEFT JOIN shuffle_licence_product AS slp ON slp.id_product = p.id WHERE p.post_type = "shuffle_product"';
+    $products = $wpdb->get_results($query);
+    $has_results = false;
+    ?>
+
+        <label class="connected_products label-container">
+            <?php // first show the already coupled products
+            foreach ($products as $product): ?>
+                <?php if ($product->id_licence === $post->ID): ?>
+                    <input id="product-<?php echo $product->ID; ?>" type="checkbox" name="connected_products[]" value="<?php echo $product->ID; ?>" checked>
+                    <label for="product-<?php echo $product->ID; ?>"><?php echo $product->post_title; ?></label><br>
+                <?php $has_results = true;
+
+                // show the available products
+                elseif(empty($product->id_licence)): ?>
+               <input id="product-<?php echo $product->ID; ?>" type="checkbox" name="connected_products[]" value="<?php echo $product->ID; ?>">
+               <label for="product-<?php echo $product->ID; ?>"><?php echo $product->post_title; ?></label><br>
+               <?php $has_results = true;
+
+               endif;
+               endforeach;
+
+               if (!$has_results){echo 'No available products were found.';} ?>
+        </label>
+
+    <?php
+}
+
+
 
 // REMOVING DUPLICATE OR UNNECESSARY META BOXES
     function shuffle_remove_dup_meta_boxes(){
