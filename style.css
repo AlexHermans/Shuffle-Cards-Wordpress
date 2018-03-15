@@ -75,7 +75,19 @@ a {
 .header__nav {
   flex-grow: 1;
   margin-left: 15%; }
+  .header__nav a:hover::after {
+    display: block;
+    content: '';
+    height: 4px;
+    margin-top: 4px;
+    background-color: #f59b00;
+    animation: a-after 0.2s forwards ease-out; }
 
+@keyframes a-after {
+  0% {
+    transform: scaleX(0); }
+  100% {
+    transform: scaleX(1); } }
 .header__figure-swirl-banner {
   display: flex;
   flex-direction: row;

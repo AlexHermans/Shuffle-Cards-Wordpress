@@ -27,8 +27,8 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="596">
-              <caret line="600" column="15" lean-forward="false" selection-start-line="600" selection-start-column="15" selection-end-line="600" selection-end-column="15" />
+            <state relative-caret-position="482">
+              <caret line="155" column="17" lean-forward="false" selection-start-line="155" selection-start-column="17" selection-end-line="155" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -99,6 +99,7 @@
       <find>header__fi</find>
       <find>girls</find>
       <find>boys</find>
+      <find>nav</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -405,12 +406,12 @@
       <workItem from="1520937171829" duration="227000" />
       <workItem from="1520946425137" duration="8262000" />
       <workItem from="1521012530047" duration="23997000" />
-      <workItem from="1521098685832" duration="8617000" />
+      <workItem from="1521098685832" duration="10914000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="310200000" />
+    <option name="totallyTimeSpent" value="312497000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -789,8 +790,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="600" column="15" lean-forward="false" selection-start-line="600" selection-start-column="15" selection-end-line="600" selection-end-column="15" />
+        <state relative-caret-position="482">
+          <caret line="155" column="17" lean-forward="false" selection-start-line="155" selection-start-column="17" selection-end-line="155" selection-end-column="17" />
           <folding />
         </state>
       </provider>

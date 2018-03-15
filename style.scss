@@ -148,6 +148,20 @@ a {
 .header__nav {
   flex-grow: 1;
   margin-left: 15%;
+  
+  & a:hover::after{
+    display: block;
+    content: '';
+    height: 4px;
+    margin-top: 4px;
+    background-color: $orange;
+    animation:a-after 0.2s forwards ease-out;
+  }
+}
+
+@keyframes a-after {
+  0%    {transform: scaleX(0)}
+  100%  {transform: scaleX(1)}
 }
 
 // FIGURE SWIRL
