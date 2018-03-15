@@ -130,9 +130,9 @@ a {
   -webkit-border-top-right-radius: 0;
   -moz-border-top-right-radius: 0;
   border-top-right-radius: 0;
-  -webkit-border-bottom-right-radius: 25%;
-  -moz-border-bottom-right-radius: 25%;
-  border-bottom-right-radius: 25%;
+  -webkit-border-bottom-right-radius: 60px;
+  -moz-border-bottom-right-radius: 60px;
+  border-bottom-right-radius: 60px;
   -webkit-border-bottom-left-radius: 0;
   -moz-border-bottom-left-radius: 0;
   border-bottom-left-radius: 0; }
@@ -166,6 +166,16 @@ a {
   width: 60px;
   top: -53px;
   position: relative; }
+  .figure-rounded-corner__div-right.family {
+    background-image: url(assets/img/shuffle-swirl-up-family.png); }
+  .figure-rounded-corner__div-right.kids {
+    background-image: url(assets/img/shuffle-swirl-up-kids.png); }
+  .figure-rounded-corner__div-right.girls {
+    background-image: url(assets/img/shuffle-swirl-up-girls.png); }
+  .figure-rounded-corner__div-right.boys {
+    background-image: url(assets/img/shuffle-swirl-up-boys.png); }
+  .figure-rounded-corner__div-right.adult {
+    background-image: url(assets/img/shuffle-swirl-up-adult.png); }
 
 .figure-rounded-corner__div-left {
   background: url(assets/img/shuffle-swirl-down.png) no-repeat top right;
@@ -474,13 +484,12 @@ a {
   position: absolute;
   width: 25%;
   padding-bottom: 25%; }
-
-.boys:hover, .family:hover, .adult:hover, .kids:hover, .girls:hover {
-  background-image: url(assets/img/Shuffle_Pattern_White.png) !important;
-  -webkit-background-size: 150%;
-  background-size: 150%; }
-  .boys:hover .licence__h1, .family:hover .licence__h1, .adult:hover .licence__h1, .kids:hover .licence__h1, .girls:hover .licence__h1 {
-    opacity: 1; }
+  .licence__a .boys:hover, .licence__a .family:hover, .licence__a .adult:hover, .licence__a .kids:hover, .licence__a .girls:hover {
+    background-image: url(assets/img/Shuffle_Pattern_White.png) !important;
+    -webkit-background-size: 150%;
+    background-size: 150%; }
+    .licence__a .boys:hover .licence__h1, .licence__a .family:hover .licence__h1, .licence__a .adult:hover .licence__h1, .licence__a .kids:hover .licence__h1, .licence__a .girls:hover .licence__h1 {
+      opacity: 1; }
 
 .family:hover {
   background-color: #e2261b; }
@@ -500,7 +509,7 @@ a {
 .licence-single__header {
   height: 500px;
   position: relative;
-  top: -60px;
+  top: -90px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -523,7 +532,7 @@ a {
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center 55%;
   -webkit-background-size: 45%;
   background-size: 45%; }
 
@@ -540,9 +549,23 @@ a {
   flex-direction: row; }
 
 .section-licence-title {
-  margin-top: -80px;
-  padding: 0 0 50px;
-  position: relative; }
+  top: -20px;
+  position: relative;
+  background-image: url(assets/img/Shuffle_Pattern_White.png);
+  -webkit-background-size: 35%;
+  background-size: 35%;
+  -webkit-border-top-left-radius: 60px;
+  -moz-border-top-left-radius: 60px;
+  border-top-left-radius: 60px;
+  -webkit-border-top-right-radius: 0;
+  -moz-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0; }
   .section-licence-title.family {
     background-color: #e2261b; }
   .section-licence-title.kids {
@@ -553,6 +576,13 @@ a {
     background-color: #008ad2; }
   .section-licence-title.adult {
     background-color: #64b32b; }
+
+.licence-single__h2.h2-secondary-title {
+  text-align: center;
+  padding: 50px 0;
+  font-size: 450%;
+  font-weight: 700;
+  color: #FFF; }
 
 .section-products {
   padding: 0 0 50px;

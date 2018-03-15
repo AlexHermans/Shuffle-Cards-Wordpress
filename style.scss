@@ -194,7 +194,7 @@ a {
   position: absolute;
   z-index: 1;
   @include background-size(450px);
-  @include border-radius-separate(0, 0, 25%, 0)
+  @include border-radius-separate(0, 0, 60px, 0)
 }
 
 // FIGURE ROUNDED CORNER
@@ -229,6 +229,12 @@ a {
   width: 60px;
   top: -53px;
   position: relative;
+
+  &.family  { background-image: url(assets/img/shuffle-swirl-up-family.png)};
+  &.kids    { background-image: url(assets/img/shuffle-swirl-up-kids.png)};
+  &.girls   { background-image: url(assets/img/shuffle-swirl-up-girls.png)};
+  &.boys    { background-image: url(assets/img/shuffle-swirl-up-boys.png)};
+  &.adult   { background-image: url(assets/img/shuffle-swirl-up-adult.png)};
 }
 
 .figure-rounded-corner__div-left {
@@ -518,15 +524,15 @@ a {
   width: 25%;
   padding-bottom: 25%;
   // TODO: Hier moeten nog breakpoints ingesteld worden
-}
 
-.boys, .family, .adult, .kids, .girls{
-  &:hover{
-    background-image: url(assets/img/Shuffle_Pattern_White.png) !important;
-    @include background-size(150%);
+  .boys, .family, .adult, .kids, .girls{
+    &:hover{
+      background-image: url(assets/img/Shuffle_Pattern_White.png) !important;
+      @include background-size(150%);
 
-    .licence__h1{
-      opacity:1;
+      .licence__h1{
+        opacity:1;
+      }
     }
   }
 }
@@ -542,7 +548,7 @@ a {
 .licence-single__header{
   height: 500px;
   position: relative;
-  top:-60px;
+  top:-90px;
   display: flex;
   justify-content:center;
   align-items: center;
@@ -554,7 +560,7 @@ a {
   height:100%;
   width: 100%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center 55%;
   @include background-size(45%);
 }
 
@@ -573,11 +579,13 @@ a {
 }
 
 .section-licence-title{
-  margin-top: -80px;
-  padding: 0 0 50px;
+  top:-20px;
   position: relative;
+  background-image: url(assets/img/Shuffle_Pattern_White.png);
+  @include background-size(35%);
+  @include border-radius-separate(60px, 0, 0, 0);
 
-  &.family  { background-color: $red };
+  &.family  { background-color: $red;};
   &.kids    { background-color: $orange };
   &.girls   { background-color: $purple };
   &.boys    { background-color: $blue};
@@ -586,7 +594,11 @@ a {
 
 .licence-single__h2{
   &.h2-secondary-title{
-
+    text-align: center;
+    padding: 50px 0;
+    font-size: 450%;
+    font-weight: 700;
+    color: #FFF;
   }
 }
 
