@@ -69,6 +69,13 @@ function enqueue_styles()
 
 add_action('wp_enqueue_scripts', 'enqueue_styles');
 
+function enqueue_admin_scripts(){
+    wp_register_script('admin-js', THEME_DIR . '/assets/js/admin.js', array('jquery'), '1.0', false);
+    wp_enqueue_script('admin-js');
+}
+
+add_action('admin_enqueue_scripts', 'enqueue_admin_scripts');
+
 // ENQUEUE SCRIPTS
 
 wp_enqueue_scripts('jquery');
@@ -271,7 +278,7 @@ function shuffle_cp_styling_function($post){
 
     global $wpdb;
 
-    $query = 'SELECT * FROM shuffleposts AS p LEFT JOIN shuffle_licence_product AS slp ON slp.id_product = p.id WHERE p.post_type = "shuffle_product"';
+    $query = 'SELECT * FROM shuffleposts AS p LEFT JOIN shuffle_licence_product AS slp ON slp.id_product = p.id WHERE p.post_type = "shuffle_product" AND NOT p.post_title = "Auto Draft" ';
     $products = $wpdb->get_results($query);
     $has_results = false;
     ?>
