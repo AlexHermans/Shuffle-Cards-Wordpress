@@ -37,8 +37,8 @@
       <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="359" column="112" lean-forward="false" selection-start-line="359" selection-start-column="112" selection-end-line="359" selection-end-column="112" />
+            <state relative-caret-position="653">
+              <caret line="387" column="20" lean-forward="false" selection-start-line="387" selection-start-column="20" selection-end-line="387" selection-end-column="20" />
               <folding>
                 <element signature="e#6#179#0#PHP" expanded="true" />
                 <element signature="n#shuffle_load_search_results#0;n#!!top" expanded="false" />
@@ -58,11 +58,11 @@
                 <element signature="n#shuffle_add_meta_box#0;n#!!top" expanded="false" />
                 <element signature="n#shuffle_ta_styling_function#0;n#!!top" expanded="false" />
                 <element signature="n#shuffle_remove_dup_meta_boxes#0;n#!!top" expanded="false" />
-                <marker date="1521195874594" expanded="true" signature="5716:5775" ph="SELECT * FRO... shuffle_licence_product" />
-                <marker date="1521195874594" expanded="true" signature="8489:8548" ph="SELECT * FRO... shuffle_licence_product" />
-                <marker date="1521195874594" expanded="true" signature="11808:11867" ph="SELECT * FRO... shuffle_licence_product" />
-                <marker date="1521195874594" expanded="true" signature="11923:12062" ph="SELECT ID, p... shuffleposts" />
-                <marker date="1521195874594" expanded="true" signature="13620:13823" ph="SELECT * FRO... shuffleposts" />
+                <marker date="1521196178880" expanded="true" signature="5716:5775" ph="SELECT * FRO... shuffle_licence_product" />
+                <marker date="1521196178880" expanded="true" signature="8489:8548" ph="SELECT * FRO... shuffle_licence_product" />
+                <marker date="1521196178880" expanded="true" signature="11808:11867" ph="SELECT * FRO... shuffle_licence_product" />
+                <marker date="1521196178880" expanded="true" signature="11923:12062" ph="SELECT ID, p... shuffleposts" />
+                <marker date="1521196178880" expanded="true" signature="14409:14612" ph="SELECT * FRO... shuffleposts" />
               </folding>
             </state>
           </provider>
@@ -417,12 +417,12 @@
       <workItem from="1520946425137" duration="8262000" />
       <workItem from="1521012530047" duration="23997000" />
       <workItem from="1521098685832" duration="25668000" />
-      <workItem from="1521184474289" duration="11397000" />
+      <workItem from="1521184474289" duration="11753000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="338648000" />
+    <option name="totallyTimeSpent" value="339004000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -793,8 +793,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="359" column="112" lean-forward="false" selection-start-line="359" selection-start-column="112" selection-end-line="359" selection-end-column="112" />
+        <state relative-caret-position="653">
+          <caret line="387" column="20" lean-forward="false" selection-start-line="387" selection-start-column="20" selection-end-line="387" selection-end-column="20" />
           <folding>
             <element signature="e#6#179#0#PHP" expanded="true" />
             <element signature="n#shuffle_load_search_results#0;n#!!top" expanded="false" />
@@ -814,11 +814,11 @@
             <element signature="n#shuffle_add_meta_box#0;n#!!top" expanded="false" />
             <element signature="n#shuffle_ta_styling_function#0;n#!!top" expanded="false" />
             <element signature="n#shuffle_remove_dup_meta_boxes#0;n#!!top" expanded="false" />
-            <marker date="1521195874594" expanded="true" signature="5716:5775" ph="SELECT * FRO... shuffle_licence_product" />
-            <marker date="1521195874594" expanded="true" signature="8489:8548" ph="SELECT * FRO... shuffle_licence_product" />
-            <marker date="1521195874594" expanded="true" signature="11808:11867" ph="SELECT * FRO... shuffle_licence_product" />
-            <marker date="1521195874594" expanded="true" signature="11923:12062" ph="SELECT ID, p... shuffleposts" />
-            <marker date="1521195874594" expanded="true" signature="13620:13823" ph="SELECT * FRO... shuffleposts" />
+            <marker date="1521196178880" expanded="true" signature="5716:5775" ph="SELECT * FRO... shuffle_licence_product" />
+            <marker date="1521196178880" expanded="true" signature="8489:8548" ph="SELECT * FRO... shuffle_licence_product" />
+            <marker date="1521196178880" expanded="true" signature="11808:11867" ph="SELECT * FRO... shuffle_licence_product" />
+            <marker date="1521196178880" expanded="true" signature="11923:12062" ph="SELECT ID, p... shuffleposts" />
+            <marker date="1521196178880" expanded="true" signature="14409:14612" ph="SELECT * FRO... shuffleposts" />
           </folding>
         </state>
       </provider>

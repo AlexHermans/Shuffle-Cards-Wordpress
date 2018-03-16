@@ -351,6 +351,7 @@ function shuffle_cl_styling_function($post){
     $has_results = false;
 
     ?>
+        <?php if(!empty($current_licence)):?>
 
         <label class="connected_licence label-container">
             <?php foreach ($current_licence as $c_licence):?>
@@ -371,7 +372,22 @@ function shuffle_cl_styling_function($post){
             <button type="button" class="clear-choice button">Clear choice</button>
         </label>
 
-    <?php
+        <?php else: ?>
+
+        <label class="connected_licence label-container">
+            <?php foreach ($all_licences as $a_licence):?>
+                    <input id="product-<?php echo $a_licence->ID; ?>" type="radio" name="connected_licence" value="<?php echo $a_licence->ID; ?>">
+                    <label for="product-<?php echo $a_licence->ID; ?>"><?php echo $a_licence->post_title; ?></label><br>
+                    <?php $has_results = true; ?>
+            <?php endforeach; ?>
+            <?php if (!$has_results){echo 'No available licences were found.';} ?>
+            <hr class="clear-choice">
+            <button type="button" class="clear-choice button">Clear choice</button>
+        </label>
+
+        <?php endif;?>
+
+        <?php
 }
 
 // STYLING FUNCTION FOR CONNECTED PRODUCTS METABOX
