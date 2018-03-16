@@ -5,9 +5,15 @@
 
 (function ($) {
     $(document).ready(function () {
+        let $cat_list = $('#categorychecklist');
 
-        $('#category-add-toggle').addClass('display-none');
+        $cat_list.find('input').attr('type', 'radio');
+        $cat_list.find('input:checked').parent().addClass('selected');
 
-        $('#categorychecklist').find('input').attr('type', 'radio')
+        $cat_list.find('input').click(function () {
+            $cat_list.find('input').parent().removeClass('selected')
+            $(this).parent().addClass('selected');
+        })
+
     })
 })(jQuery)

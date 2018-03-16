@@ -3,3 +3,8 @@
 #category-add-toggle{
     display: none;
 }
+
+.selected{
+    font-weight: 700;
+    color: black;
+}

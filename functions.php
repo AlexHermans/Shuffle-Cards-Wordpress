@@ -69,12 +69,12 @@ function enqueue_styles()
 
 add_action('wp_enqueue_scripts', 'enqueue_styles');
 
-function enqueue_admin_scripts(){
-    wp_register_script('admin-js', THEME_DIR . '/assets/js/admin.js', array('jquery'), '1.0', false);
-    wp_enqueue_script('admin-js');
+function enqueue_admin_styles(){
+    wp_register_style('admin-css', THEME_DIR . '/assets/css/admin.css', array(), '1.0', 'all');
+    wp_enqueue_style('admin-css');
 }
 
-add_action('admin_enqueue_scripts', 'enqueue_admin_scripts');
+add_action('admin_enqueue_scripts', 'enqueue_admin_styles');
 
 // ENQUEUE SCRIPTS
 
@@ -102,6 +102,14 @@ function enqueue_scripts()
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
+
+function enqueue_admin_scripts(){
+    wp_register_script('admin-js', THEME_DIR . '/assets/js/admin.js', array('jquery'), '1.0', false);
+    wp_enqueue_script('admin-js');
+}
+
+add_action('admin_enqueue_scripts', 'enqueue_admin_scripts');
+
 
 
 // REGISTER MENU'S
