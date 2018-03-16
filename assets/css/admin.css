@@ -8,3 +8,11 @@
     font-weight: 700;
     color: black;
 }
+
+.clear-choice{
+    margin-top: 5px !important;
+}
+
+hr.clear-choice{
+    margin-top: 18px !important;
+}

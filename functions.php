@@ -154,6 +154,16 @@ function shuffle_actions_licence($post_id, $post)
         error_log('Licence is being deleted');
         shuffle_delete_licence($post_id, $post);
 
+    } elseif ($post->post_type === 'shuffle_product' && $post->post_status === 'publish'){
+
+        error_log('Product is being created or updated');
+        shuffle_insert_product($post_id, $post);
+
+    } elseif ($post->post_type === 'shuffle_product' && $post->post_status === 'trash'){
+
+        error_log('Product is being deleted');
+        shuffle_delete_product($post_id, $post);
+
     }
 }
 
@@ -182,12 +192,12 @@ function shuffle_insert_licence($post_id, $post_obj){
         error_log('inserting '.$post_id. ' into DB');
 
         foreach ($new_meta as $val){
-            $succes = $wpdb->insert('shuffle_licence_product', array(
+            $success = $wpdb->insert('shuffle_licence_product', array(
                 'id' => '',
                 'id_licence' => $post_id,
                 'id_product' => $val
             ));
-            if($succes){error_log('Licence created: '.$post_obj->post_title.' was created in DB');}
+            if($success){error_log('Licence created: '.$post_obj->post_title.' was created in DB');}
         }
     } elseif ($existing_meta) {
         error_log('this licence exists');
@@ -210,22 +220,22 @@ function shuffle_insert_licence($post_id, $post_obj){
 
         // delete old references from db
         foreach ($existing_meta as $row) {
-            $succes = $wpdb->delete('shuffle_licence_product', array(
+            $success = $wpdb->delete('shuffle_licence_product', array(
                 'id_product' => $row->id_product
             ));
-            if ($succes) {
+            if ($success) {
                 error_log('Product was de-coupled from licence');
             }
         }
 
         //insert new references into db
         foreach ($new_meta as $row) {
-            $succes = $wpdb->insert('shuffle_licence_product', array(
+            $success = $wpdb->insert('shuffle_licence_product', array(
                 'id' => '',
                 'id_licence' => $post_id,
                 'id_product' => $row
             ));
-            if ($succes) {
+            if ($success) {
                 error_log('Licence created: ' . $post_obj->post_title . ' was created in DB');
             }
         }
@@ -235,11 +245,60 @@ function shuffle_insert_licence($post_id, $post_obj){
 function shuffle_delete_licence($post_id, $post_obj){
     global $wpdb;
 
-    $succes = $wpdb->delete('shuffle_licence_product', array(
+    $success = $wpdb->delete('shuffle_licence_product', array(
         'id_licence' => $post_id,
     ));
-    if ($succes) {
+    if ($success) {
         error_log('Licence deleted: ' . $post_obj->post_title . ' was deleted from DB');
+    }
+}
+
+function shuffle_insert_product($post_id, $post_obj){
+    global $wpdb;
+
+    // checking nonces
+//    if(check_admin_referer('connected_licence_nonce_action', 'connected_licence_nonce_field')){return false;}
+
+    // checking to see whether the product already exists in DB and getting the connected licence if so
+    $old_licence = $wpdb->get_results($wpdb->prepare('SELECT * FROM shuffle_licence_product WHERE id_product = %d', $post_id));
+
+    if(isset($_POST['connected_licence'])){
+        $new_licence = $_POST['connected_licence'];
+    }
+
+    if (!empty($new_licence)){
+        error_log('There are new licences to add');
+        if(!empty($old_licence)){
+            error_log('There are old licences');
+            // updating the licence instead of inserting
+            $success = $wpdb->update('shuffle_licence_product', array('id_licence' => $new_licence), array('id_product' => $post_id), array('%d'), array('%d'));
+
+            if($success){error_log('Product updated: '.$post_obj->post_title.' was updated in DB');}
+        } else {
+            // inserting the licence
+            error_log('There are no old licences');
+            $success = $wpdb->insert('shuffle_licence_product', array(
+                'id' => '',
+                'id_licence' => $new_licence,
+                'id_product' => $post_id
+            ));
+
+            if($success){error_log('Product created: '.$post_obj->post_title.' was created in DB');}
+        }
+    } else {
+        // the licence should be deleted
+        shuffle_delete_product($post_id, $post_obj);
+    }
+}
+
+function shuffle_delete_product($post_id, $post_obj){
+    global $wpdb;
+
+    $success = $wpdb->delete('shuffle_licence_product', array(
+        'id_product' => $post_id,
+    ));
+    if ($success) {
+        error_log('Product deleted: ' . $post_obj->post_title . ' was deleted from DB');
     }
 }
 
@@ -247,7 +306,6 @@ function shuffle_add_admin_menus(){
     if (!is_admin()){
         return;
     }
-
     add_action('admin_menu', 'shuffle_add_meta_box');
 }
 
@@ -256,6 +314,7 @@ shuffle_add_admin_menus();
 function shuffle_add_meta_box(){
     add_meta_box('shuffle_ta_box', 'Target Audiences', 'shuffle_ta_styling_function', 'shuffle_licence', 'side', 'core');
     add_meta_box('shuffle_con_prod', 'Connect products to this licence', 'shuffle_cp_styling_function', 'shuffle_licence', 'side', 'core');
+    add_meta_box('shuffle_con_licence', 'Connect this product to a licence', 'shuffle_cl_styling_function', 'shuffle_product', 'side', 'core');
 }
 
 function shuffle_ta_styling_function($post){
@@ -280,46 +339,79 @@ function shuffle_ta_styling_function($post){
         <?php
 }
 
-
-function shuffle_cp_styling_function($post){
-    wp_nonce_field('connected_product_nonce_action', 'connected_product_nonce_field');
+// STYLING FUNCTION FOR CONNECTED LICENCE METABOX
+function shuffle_cl_styling_function($post){
+    wp_nonce_field('connected_licence_nonce_action', 'connected_licence_nonce_field');
 
     global $wpdb;
 
-    $query = 'SELECT * FROM shuffleposts AS p LEFT JOIN shuffle_licence_product AS slp ON slp.id_product = p.id WHERE p.post_type = "shuffle_product" AND NOT p.post_title = "Auto Draft" ';
-    $products = $wpdb->get_results($query);
+    $current_licence = $wpdb->get_results($wpdb->prepare('SELECT * FROM shuffle_licence_product WHERE id_product = %d', $post->ID));
+    $all_licences = $wpdb->get_results('SELECT ID, post_title FROM shuffleposts WHERE post_type = "shuffle_licence" AND NOT post_title = "Auto Draft" AND NOT post_status = "trash"');
+
     $has_results = false;
+
     ?>
 
-        <label class="connected_products label-container">
-            <?php // first show the already coupled products
-            foreach ($products as $product): ?>
-                <?php if ($product->id_licence === $post->ID): ?>
-                    <input id="product-<?php echo $product->ID; ?>" type="checkbox" name="connected_products[]" value="<?php echo $product->ID; ?>" checked>
-                    <label for="product-<?php echo $product->ID; ?>"><?php echo $product->post_title; ?></label><br>
-                <?php $has_results = true;
-
-                // show the available products
-                elseif(empty($product->id_licence)): ?>
-               <input id="product-<?php echo $product->ID; ?>" type="checkbox" name="connected_products[]" value="<?php echo $product->ID; ?>">
-               <label for="product-<?php echo $product->ID; ?>"><?php echo $product->post_title; ?></label><br>
-               <?php $has_results = true;
-
-               endif;
-               endforeach;
-
-               if (!$has_results){echo 'No available products were found.';} ?>
+        <label class="connected_licence label-container">
+            <?php foreach ($current_licence as $c_licence):?>
+                <?php foreach ($all_licences as $a_licence):?>
+                    <?php if($c_licence->id_licence === $a_licence->ID):?>
+                        <input id="product-<?php echo $a_licence->ID; ?>" type="radio" name="connected_licence" value="<?php echo $a_licence->ID; ?>" checked>
+                        <label for="product-<?php echo $a_licence->ID; ?>"><?php echo $a_licence->post_title; ?></label><br>
+                        <?php $has_results = true; ?>
+                    <?php else:?>
+                        <input id="product-<?php echo $a_licence->ID; ?>" type="radio" name="connected_licence" value="<?php echo $a_licence->ID; ?>">
+                        <label for="product-<?php echo $a_licence->ID; ?>"><?php echo $a_licence->post_title; ?></label><br>
+                        <?php $has_results = true; ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            <?php endforeach;?>
+            <?php if (!$has_results){echo 'No available licences were found.';} ?>
+            <hr class="clear-choice">
+            <button type="button" class="clear-choice button">Clear choice</button>
         </label>
 
     <?php
 }
 
+// STYLING FUNCTION FOR CONNECTED PRODUCTS METABOX
+function shuffle_cp_styling_function($post){
+    wp_nonce_field('connected_product_nonce_action', 'connected_product_nonce_field');
 
+    global $wpdb;
+
+    $query = 'SELECT * FROM shuffleposts AS p LEFT JOIN shuffle_licence_product AS slp ON slp.id_product = p.id WHERE p.post_type = "shuffle_product" AND NOT p.post_title = "Auto Draft" AND NOT p.post_status = "trash" ';
+    $products = $wpdb->get_results($query);
+    $has_results = false;
+    ?>
+
+    <label class="connected_products label-container">
+        <?php // first show the already coupled products
+        foreach ($products as $product): ?>
+            <?php if ($product->id_licence === $post->ID): ?>
+                <input id="product-<?php echo $product->ID; ?>" type="checkbox" name="connected_products[]" value="<?php echo $product->ID; ?>" checked>
+                <label for="product-<?php echo $product->ID; ?>"><?php echo $product->post_title; ?></label><br>
+                <?php $has_results = true;
+
+            // show the available products
+            elseif(empty($product->id_licence)): ?>
+                <input id="product-<?php echo $product->ID; ?>" type="checkbox" name="connected_products[]" value="<?php echo $product->ID; ?>">
+                <label for="product-<?php echo $product->ID; ?>"><?php echo $product->post_title; ?></label><br>
+                <?php $has_results = true;
+
+            endif;
+        endforeach;
+
+        if (!$has_results){echo 'No available products were found.';} ?>
+    </label>
+
+    <?php
+}
 
 // REMOVING DUPLICATE OR UNNECESSARY META BOXES
-    function shuffle_remove_dup_meta_boxes(){
-        remove_meta_box('tagsdiv-target_audience', 'shuffle_licence', 'side');
-    }
+function shuffle_remove_dup_meta_boxes(){
+    remove_meta_box('tagsdiv-target_audience', 'shuffle_licence', 'side');
+}
 
-    add_action('add_meta_boxes', 'shuffle_remove_dup_meta_boxes');
+add_action('add_meta_boxes', 'shuffle_remove_dup_meta_boxes');
 

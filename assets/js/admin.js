@@ -5,6 +5,8 @@
 
 (function ($) {
     $(document).ready(function () {
+
+        // this handles the checkbox inputs in inserting licences
         let $cat_list = $('#categorychecklist');
 
         $cat_list.find('input').attr('type', 'radio');
@@ -13,6 +15,11 @@
         $cat_list.find('input').click(function () {
             $cat_list.find('input').parent().removeClass('selected')
             $(this).parent().addClass('selected');
+        })
+
+        // This handles the button to clear the choice when inserting products
+        $('.clear-choice').click(function (e) {
+            $(this).siblings('input').removeAttr('checked');
         })
 
     })
