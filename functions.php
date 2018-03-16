@@ -30,7 +30,7 @@ function shuffle_load_search_results()
     );
 
     set_query_var('args', $args);
-    get_template_part('template-parts/content', 'licence-list');
+    get_template_part('template-parts/content', 'licences');
 
     die();
 }
@@ -49,7 +49,7 @@ function shuffle_load_all_results(){
     );
 
     set_query_var('args', $args);
-    get_template_part('template-parts/content', 'licence-list');
+    get_template_part('template-parts/content', 'licences');
 
     die();
 }

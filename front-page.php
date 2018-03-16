@@ -43,7 +43,7 @@
     <section class="licence">
         <?php
             set_query_var('args', array('post_type' => 'shuffle_licence', 'ignore_sticky_posts' => 1, 'orderby' => 'post_title', 'order' => 'ASC'));
-            get_template_part('template-parts/content', 'licence-list')
+            get_template_part('template-parts/content', 'licences')
         ?>
     </section>
 </main>

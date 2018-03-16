@@ -28,8 +28,17 @@
     </figure>
     <h2 class="licence-single__h2 h2-secondary-title"><?php echo get_the_title();?></h2>
 </section>
-<section class="section-products">
-
+<section class="section-products <?php echo $term; ?>">
+    <?php
+        set_query_var('args', array(
+                'post_type' => 'shuffle_product',
+                'ignore_sticky_posts' => 1,
+                'orderby' => 'post_title',
+                'order' => 'ASC'
+        ));
+        set_query_var('parent_licence', $post->ID);
+        get_template_part('template-parts/content', 'product')
+    ?>
 </section>
 <?php get_footer(); ?>
 </body>

@@ -549,13 +549,15 @@ a {
       }
     }
   }
+
+  .family:hover { background-color: $red };
+  .kids:hover { background-color: $orange };
+  .girls:hover { background-color: $purple };
+  .boys:hover{ background-color: $blue};
+  .adult:hover { background-color: $green};
 }
 
-.family:hover { background-color: $red };
-.kids:hover { background-color: $orange };
-.girls:hover { background-color: $purple };
-.boys:hover{ background-color: $blue};
-.adult:hover { background-color: $green};
+
 
 // LICENCE SINGLE
 
@@ -586,7 +588,7 @@ a {
   height: 24px;
   width: 100%;
   margin-top: -125px;
-  z-index: 3;
+  z-index: 0;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -620,7 +622,39 @@ a {
 .section-products{
   padding: 0 0 50px;
   background-color: $bg;
+  position: relative;
+  top: -20px;
+  display: flex;
+  flex-direction: column;
+
 }
+
+.single-product{
+  display: flex;
+  flex-direction:row;
+
+}
+
+.single-product__section{
+  width: 50%;
+  margin-top: 10px;
+  min-height: 430px;
+}
+
+.boys .single-product:nth-child(even) .left{background: $blue;}
+.boys .single-product:nth-child(odd) .right{background: $blue;}
+.girls .single-product:nth-child(even) .left{background: $purple;}
+.girls .single-product:nth-child(odd) .right{background: $purple;}
+.kids .single-product:nth-child(even) .left{background: $orange;}
+.kids .single-product:nth-child(odd) .right{background: $orange;}
+.adult .single-product:nth-child(even) .left{background: $green;}
+.adult .single-product:nth-child(odd) .right{background: $green;}
+.family .single-product:nth-child(even) .left{background: $red;}
+.family .single-product:nth-child(odd) .right{background: $red;}
+
+.single-product:nth-child(odd) .left{background: #FFF;}
+.single-product:nth-child(even) .right{background: #FFF;}
+
 
 // FOOTER
 

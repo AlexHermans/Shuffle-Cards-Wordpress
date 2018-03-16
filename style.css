@@ -502,21 +502,16 @@ a {
     background-size: 150%; }
     .licence__a .boys:hover .licence__h1, .licence__a .family:hover .licence__h1, .licence__a .adult:hover .licence__h1, .licence__a .kids:hover .licence__h1, .licence__a .girls:hover .licence__h1 {
       opacity: 1; }
-
-.family:hover {
-  background-color: #e2261b; }
-
-.kids:hover {
-  background-color: #f59b00; }
-
-.girls:hover {
-  background-color: #923a80; }
-
-.boys:hover {
-  background-color: #008ad2; }
-
-.adult:hover {
-  background-color: #64b32b; }
+  .licence__a .family:hover {
+    background-color: #e2261b; }
+  .licence__a .kids:hover {
+    background-color: #f59b00; }
+  .licence__a .girls:hover {
+    background-color: #923a80; }
+  .licence__a .boys:hover {
+    background-color: #008ad2; }
+  .licence__a .adult:hover {
+    background-color: #64b32b; }
 
 .licence-single__header {
   height: 500px;
@@ -555,7 +550,7 @@ a {
   height: 24px;
   width: 100%;
   margin-top: -125px;
-  z-index: 3;
+  z-index: 0;
   position: relative;
   display: flex;
   flex-direction: row; }
@@ -598,7 +593,56 @@ a {
 
 .section-products {
   padding: 0 0 50px;
-  background-color: #eee; }
+  background-color: #eee;
+  position: relative;
+  top: -20px;
+  display: flex;
+  flex-direction: column; }
+
+.single-product {
+  display: flex;
+  flex-direction: row; }
+
+.single-product__section {
+  width: 50%;
+  margin-top: 10px;
+  min-height: 430px; }
+
+.boys .single-product:nth-child(even) .left {
+  background: #008ad2; }
+
+.boys .single-product:nth-child(odd) .right {
+  background: #008ad2; }
+
+.girls .single-product:nth-child(even) .left {
+  background: #923a80; }
+
+.girls .single-product:nth-child(odd) .right {
+  background: #923a80; }
+
+.kids .single-product:nth-child(even) .left {
+  background: #f59b00; }
+
+.kids .single-product:nth-child(odd) .right {
+  background: #f59b00; }
+
+.adult .single-product:nth-child(even) .left {
+  background: #64b32b; }
+
+.adult .single-product:nth-child(odd) .right {
+  background: #64b32b; }
+
+.family .single-product:nth-child(even) .left {
+  background: #e2261b; }
+
+.family .single-product:nth-child(odd) .right {
+  background: #e2261b; }
+
+.single-product:nth-child(odd) .left {
+  background: #FFF; }
+
+.single-product:nth-child(even) .right {
+  background: #FFF; }
 
 .footer {
   display: flex;
