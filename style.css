@@ -305,17 +305,14 @@ a {
   flex-direction: row;
   justify-content: center; }
 
-.categories__li {
-  display: block;
-  width: 80px;
+.category {
   background-color: #7f8184;
   background-image: url(assets/img/Shuffle_Pattern_White.png);
   -webkit-background-size: 500%;
   background-size: 500%;
   background-position: 0, 0;
   text-align: center;
-  padding: 30px 0;
-  cursor: pointer;
+  color: white;
   border: 17px solid white;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   -webkit-border-top-left-radius: 100px;
@@ -330,12 +327,17 @@ a {
   -webkit-border-bottom-left-radius: 100px;
   -moz-border-bottom-left-radius: 100px;
   border-bottom-left-radius: 100px;
-  position: relative;
-  top: -75px;
   font-weight: 700;
   font-size: 120%;
-  margin: 0 8%;
-  color: white; }
+  padding: 30px 0;
+  width: 80px; }
+
+.categories__li {
+  display: block;
+  cursor: pointer;
+  position: relative;
+  top: -75px;
+  margin: 0 8%; }
 
 .form-controls {
   display: flex;
@@ -601,11 +603,26 @@ a {
 
 .single-product {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  margin-top: 10px;
+  justify-content: center; }
+  .single-product .boys {
+    background-color: #008ad2; }
+  .single-product .kids {
+    background-color: #f59b00; }
+  .single-product .girls {
+    background-color: #923a80; }
+  .single-product .adult {
+    background-color: #64b32b; }
+  .single-product .family {
+    background-color: #e2261b; }
+
+.single-product-category {
+  position: absolute;
+  margin-top: 10px; }
 
 .single-product__section {
   width: 50%;
-  margin-top: 10px;
   min-height: 430px; }
 
 .boys .single-product:nth-child(even) .left {
@@ -643,6 +660,18 @@ a {
 
 .single-product:nth-child(even) .right {
   background: #FFF; }
+
+.single-product-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; }
+
+.single-product__img {
+  max-width: 42vw;
+  display: block;
+  -webkit-filter: drop-shadow(-3px 0px 3px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(-3px 0px 3px rgba(0, 0, 0, 0.2)); }
 
 .footer {
   display: flex;

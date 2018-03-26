@@ -371,25 +371,28 @@ a {
   justify-content: center;
 }
 
-.categories__li{
-  display: block;
-  width: 80px;
+.category{
   background-color: $dgray;
   background-image: url(assets/img/Shuffle_Pattern_White.png);
   @include background-size(500%);
   background-position: 0, 0;
   text-align: center;
-  padding: 30px 0;
-  cursor: pointer;
+  color: white;
   border: 17px solid white;
   @include box-shadow;
   @include border-radius-separate(100px, 100px, 100px, 100px);
-  position: relative;
-  top:-75px;
   font-weight: 700;
   font-size: 120%;
+  padding: 30px 0;
+  width: 80px;
+}
+
+.categories__li{
+  display: block;
+  cursor: pointer;
+  position: relative;
+  top:-75px;
   margin: 0 8%;
-  color: white;
 }
 
 .form-controls{
@@ -626,18 +629,29 @@ a {
   top: -20px;
   display: flex;
   flex-direction: column;
-
 }
 
 .single-product{
   display: flex;
   flex-direction:row;
+  margin-top: 10px;
+  justify-content: center;
 
+  .boys{background-color: $blue}
+  .kids{background-color: $orange}
+  .girls{background-color: $purple}
+  .adult{background-color: $green}
+  .family{background-color: $red}
 }
+
+.single-product-category {
+  position: absolute;
+  margin-top: 10px;
+}
+
 
 .single-product__section{
   width: 50%;
-  margin-top: 10px;
   min-height: 430px;
 }
 
@@ -655,6 +669,19 @@ a {
 .single-product:nth-child(odd) .left{background: #FFF;}
 .single-product:nth-child(even) .right{background: #FFF;}
 
+.single-product-image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.single-product__img{
+  max-width: 42vw;
+  display: block;
+  -webkit-filter: drop-shadow(-3px 0px 3px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(-3px 0px 3px rgba(0, 0, 0, 0.2));
+}
 
 // FOOTER
 
