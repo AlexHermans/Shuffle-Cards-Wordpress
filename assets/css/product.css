@@ -1,0 +1,77 @@
+.single-product-information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 60px; }
+
+.gameplay-icons {
+  display: flex; }
+
+.single-gp {
+  padding-top: 50px;
+  width: 50px;
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin: 25px 25px;
+  color: #008ad2;
+  font-weight: 500;
+  font-size: 110%; }
+
+.boys .age_group {
+  background-image: url(../img/gameplay_icons/icon_age_blue.png); }
+.boys .number_of_players {
+  background-image: url(../img/gameplay_icons/icon_playercount_blue.png); }
+.boys .duration-10 {
+  background-image: url(../img/gameplay_icons/icon_duration_10_blue.png); }
+.boys .duration-15 {
+  background-image: url(../img/gameplay_icons/icon_duration_15_blue.png); }
+.boys .duration-20 {
+  background-image: url(../img/gameplay_icons/icon_duration_20_blue.png); }
+
+.girls .age_group {
+  background-image: url(../img/gameplay_icons/icon_age_purple.png); }
+.girls .number_of_players {
+  background-image: url(../img/gameplay_icons/icon_playercount_purple.png); }
+.girls .duration-10 {
+  background-image: url(../img/gameplay_icons/icon_duration_10_purple.png); }
+.girls .duration-15 {
+  background-image: url(../img/gameplay_icons/icon_duration_15_purple.png); }
+.girls .duration-20 {
+  background-image: url(../img/gameplay_icons/icon_duration_20_purple.png); }
+
+.kids .age_group {
+  background-image: url(../img/gameplay_icons/icon_age_orange.png); }
+.kids .number_of_players {
+  background-image: url(../img/gameplay_icons/icon_playercount_orange.png); }
+.kids .duration-10 {
+  background-image: url(../img/gameplay_icons/icon_duration_10_orange.png); }
+.kids .duration-15 {
+  background-image: url(../img/gameplay_icons/icon_duration_15_orange.png); }
+.kids .duration-20 {
+  background-image: url(../img/gameplay_icons/icon_duration_20_orange.png); }
+
+.adult .age_group {
+  background-image: url(../img/gameplay_icons/icon_age_green.png); }
+.adult .number_of_players {
+  background-image: url(../img/gameplay_icons/icon_playercount_green.png); }
+.adult .duration-10 {
+  background-image: url(../img/gameplay_icons/icon_duration_10_green.png); }
+.adult .duration-15 {
+  background-image: url(../img/gameplay_icons/icon_duration_15_green.png); }
+.adult .duration-20 {
+  background-image: url(../img/gameplay_icons/icon_duration_20_green.png); }
+
+.family .age_group {
+  background-image: url(../img/gameplay_icons/icon_age_red.png); }
+.family .number_of_players {
+  background-image: url(../img/gameplay_icons/icon_playercount_red.png); }
+.family .duration-10 {
+  background-image: url(../img/gameplay_icons/icon_duration_10_red.png); }
+.family .duration-15 {
+  background-image: url(../img/gameplay_icons/icon_duration_15_red.png); }
+.family .duration-20 {
+  background-image: url(../img/gameplay_icons/icon_duration_20_red.png); }
+
+/*# sourceMappingURL=product.css.map */

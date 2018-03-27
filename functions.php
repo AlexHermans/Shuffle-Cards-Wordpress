@@ -60,6 +60,11 @@ add_action('wp_ajax_nopriv_shuffle_load_all_results', 'shuffle_load_all_results'
 // ENQUEUE STYLES
 function enqueue_styles()
 {
+    if (get_post_type() == 'shuffle_licence'){
+        wp_register_style('product-css', THEME_DIR . '/assets/css/product.css', array(), '1.0', 'all');
+        wp_enqueue_style('product-css');
+    }
+
     wp_register_style('reset-css', THEME_DIR . '/assets/css/reset.css', array(), '1.0', 'all');
     wp_enqueue_style('reset-css');
 
@@ -315,6 +320,7 @@ function shuffle_add_meta_box(){
     add_meta_box('shuffle_ta_box', 'Target Audiences', 'shuffle_ta_styling_function', 'shuffle_licence', 'side', 'core');
     add_meta_box('shuffle_con_prod', 'Connect products to this licence', 'shuffle_cp_styling_function', 'shuffle_licence', 'side', 'core');
     add_meta_box('shuffle_con_licence', 'Connect this product to a licence', 'shuffle_cl_styling_function', 'shuffle_product', 'side', 'core');
+    add_meta_box('shuffle_product_gameplay_icons', 'Gameplay Icons', 'shuffle_gp_styling_function', 'shuffle_product', 'side', 'core');
 }
 
 function shuffle_ta_styling_function($post){
@@ -423,6 +429,18 @@ function shuffle_cp_styling_function($post){
 
     <?php
 }
+
+// STYLING FUNCTION FOR GAMEPLAY ICON METABOX
+function shuffle_gp_styling_function($post){
+    wp_nonce_field('gp_nonce_action', 'gp_nonce_field');
+
+    global $wpdb;
+
+    $query = $wpdb->get_results($wpdb->prepare('SELECT t.name, t.slug FROM shuffleterm_relationships AS tr LEFT JOIN shuffleterms AS t ON tr.term_taxonomy_id = t.term_id WHERE tr.object_id = %d', $post->ID));
+
+    var_dump($query);
+}
+
 
 // REMOVING DUPLICATE OR UNNECESSARY META BOXES
 function shuffle_remove_dup_meta_boxes(){
