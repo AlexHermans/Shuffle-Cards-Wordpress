@@ -22,7 +22,9 @@ $query = $wpdb->get_results($wpdb->prepare('SELECT t.name, t.slug, tt.taxonomy F
             </div>
         <?php endforeach; ?>
     </section>
-    <h2 class="single-product__h2 product-title"><?php echo $product->post_title; ?></h2>
-    <p class="single-product__p product-description"></p>
-    <a href="" class="single-product__a"></a>
+    <h2 class="single-product__h2 product-title"><?= $product->post_title; ?></h2>
+    <div class="single-product__div product-description">
+        <?= apply_filters('the_content', $product->post_content); ?>
+    </div>
+    <? // TODO: Insert link naar de waar te kopen knop indien die beschikbaar is ?>
 </div>

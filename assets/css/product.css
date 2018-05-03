@@ -4,6 +4,13 @@
   align-items: flex-end;
   margin-right: 60px; }
 
+.product-description {
+  text-align: right; }
+
+.product-title {
+  font-size: 150%;
+  font-weight: 700; }
+
 .gameplay-icons {
   display: flex; }
 

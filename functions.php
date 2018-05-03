@@ -436,11 +436,79 @@ function shuffle_gp_styling_function($post){
 
     global $wpdb;
 
-    $query = $wpdb->get_results($wpdb->prepare('SELECT t.name, t.slug FROM shuffleterm_relationships AS tr LEFT JOIN shuffleterms AS t ON tr.term_taxonomy_id = t.term_id WHERE tr.object_id = %d', $post->ID));
+    $all_gp_terms =  $wpdb->get_results('SELECT st.name, st.slug FROM shuffleterms as st INNER JOIN shuffletermmeta as stm on st.term_id = stm.term_id WHERE meta_value = "gameplay_icon"');
 
-    var_dump($query);
+    $active_terms = $wpdb->get_results($wpdb->prepare('SELECT t.name, t.slug FROM shuffleterm_relationships AS tr LEFT JOIN shuffleterms AS t ON tr.term_taxonomy_id = t.term_id RIGHT JOIN shuffletermmeta AS stm ON t.term_id = stm.term_id WHERE tr.object_id = %d AND stm.meta_value = "gameplay_icon" ', $post->ID));
+
+    $term_group_age = [];
+    $term_group_nop = [];
+    $term_group_dur = [];
+    $skip = false;
+
+    foreach ($all_gp_terms as $term) {
+        $term_group = substr($term->slug, 0, strpos($term->slug, '-'));
+
+        if ($term_group === 'age') {
+            $term_group_age[$term->slug] = $term->name;
+        } elseif ($term_group === 'nop') {
+            $term_group_nop[$term->slug] = $term->name;
+        } elseif ($term_group === 'duration') {
+            $term_group_dur[$term->slug] = $term->name;
+        }
+    }
+
+    ?>
+
+    <label for="term_group_age">Age</label>
+    <select name="term_group_age">
+        <?php foreach ($term_group_age as $term_slug => $term_name): ?>
+            <?php foreach ($active_terms as $a_term): ?>
+                <?php if ($a_term->slug === $term_slug): ?>
+                    <option selected value="<?= $term_slug?>"><?= $term_name?> </option>
+                    <?php $skip = true; ?>
+                <?php endif; ?>
+            <?php endforeach;?>
+            <?php if (!$skip): ?>
+                <option value="<?= $term_slug?>"><?= $term_name?> </option>
+            <?php endif; ?>
+            <?php $skip = false;?>
+        <?php endforeach;?>
+    </select>
+
+    <label for="term_group_nop">Number of players</label>
+    <select name="term_group_nop">
+        <?php foreach ($term_group_nop as $term_slug => $term_name): ?>
+            <?php foreach ($active_terms as $a_term): ?>
+                <?php if ($a_term->slug === $term_slug): ?>
+                    <option selected value="<?= $term_slug?>"><?= $term_name?> </option>
+                    <?php $skip = true; ?>
+                <?php endif; ?>
+            <?php endforeach;?>
+            <?php if (!$skip): ?>
+                <option value="<?= $term_slug?>"><?= $term_name?> </option>
+            <?php endif; ?>
+            <?php $skip = false;?>
+        <?php endforeach;?>
+    </select>
+
+    <label for="term_group_dur">Duration</label>
+    <select name="term_group_dur">
+        <?php foreach ($term_group_dur as $term_slug => $term_name): ?>
+            <?php foreach ($active_terms as $a_term): ?>
+                <?php if ($a_term->slug === $term_slug): ?>
+                    <option selected value="<?= $term_slug?>"><?= $term_name?> </option>
+                    <?php $skip = true; ?>
+                <?php endif; ?>
+            <?php endforeach;?>
+            <?php if (!$skip): ?>
+                <option value="<?= $term_slug?>"><?= $term_name?> </option>
+            <?php endif; ?>
+            <?php $skip = false;?>
+        <?php endforeach;?>
+    </select>
+
+    <?php
 }
-
 
 // REMOVING DUPLICATE OR UNNECESSARY META BOXES
 function shuffle_remove_dup_meta_boxes(){
