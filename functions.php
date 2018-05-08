@@ -262,13 +262,27 @@ function shuffle_insert_product($post_id, $post_obj){
     global $wpdb;
 
     // checking nonces
-//    if(check_admin_referer('connected_licence_nonce_action', 'connected_licence_nonce_field')){return false;}
+    if(
+            !check_admin_referer('connected_licence_nonce_action', 'connected_licence_nonce_field') ||
+            !check_admin_referer('gp_nonce_action', 'gp_nonce_field')
+    ){return false;}
 
     // checking to see whether the product already exists in DB and getting the connected licence if so
     $old_licence = $wpdb->get_results($wpdb->prepare('SELECT * FROM shuffle_licence_product WHERE id_product = %d', $post_id));
+    $old_gp_meta = $wpdb->get_results($wpdb->prepare('SELECT term_taxonomy_id FROM shuffleterm_relationships WHERE object_id = %d', $post_id));
 
     if(isset($_POST['connected_licence'])){
         $new_licence = $_POST['connected_licence'];
+    }
+
+    // are there old meta connected to this product?
+    $old_gp_meta = $wpdb->get_results($wpdb->prepare('SELECT term_taxonomy_id FROM shuffleterm_relationships WHERE object_id = %d', $post_id), 'ARRAY_N');
+    $new_gp_meta = [];
+
+    if (isset($_POST['term_group_age']) && isset($_POST['term_group_nop']) && isset($_POST['term_group_dur'])){
+        $new_gp_meta['age'] = $_POST['term_group_age'];
+        $new_gp_meta['nop'] = $_POST['term_group_nop'];
+        $new_gp_meta['dur'] = $_POST['term_group_dur'];
     }
 
     if (!empty($new_licence)){
@@ -276,9 +290,37 @@ function shuffle_insert_product($post_id, $post_obj){
         if(!empty($old_licence)){
             error_log('There are old licences');
             // updating the licence instead of inserting
-            $success = $wpdb->update('shuffle_licence_product', array('id_licence' => $new_licence), array('id_product' => $post_id), array('%d'), array('%d'));
+            $wpdb->update('shuffle_licence_product', array('id_licence' => $new_licence), array('id_product' => $post_id), array('%d'), array('%d'));
 
-            if($success){error_log('Product updated: '.$post_obj->post_title.' was updated in DB');}
+            // after updating the product, let's also update the gameplay icon terms
+            function deleteElement($element, &$array){
+                $index = array_search($element, $array);
+                if($index !== false){
+                    unset($array[$index]);
+                }
+            }
+
+            foreach ($new_gp_meta as $new_meta_key => $new_meta_value){
+                foreach ($old_gp_meta as $old_meta_key => $old_meta_value){
+                    if ($new_meta_value == $old_meta_value[0]) {
+                        error_log('match');
+                        deleteElement($new_meta_value, $new_gp_meta);
+                        deleteElement($old_meta_value, $old_gp_meta);
+                    }
+                }
+            };
+
+            foreach ($new_gp_meta as $new_meta_key => $new_meta_value){error_log('NM : '.$new_meta_value);};
+            foreach ($old_gp_meta as $old_meta_key => $old_meta_value){error_log('OM : '.$old_meta_value[0]);};
+
+            foreach ($old_gp_meta as $old_meta_key => $old_meta_value){
+                foreach ($new_gp_meta as $new_meta_key => $new_meta_value){
+                    $wpdb->update('shuffleterm_relationships', array('term_taxonomy_id' => $new_meta_value), array('object_id' => $post_id, 'term_taxonomy_id' => $old_meta_value[0]), array('%d'), array('%d'));
+                }
+            }
+
+            error_log('Product updated: '.$post_obj->post_title.' was updated in DB');
+
         } else {
             // inserting the licence
             error_log('There are no old licences');
@@ -287,6 +329,17 @@ function shuffle_insert_product($post_id, $post_obj){
                 'id_licence' => $new_licence,
                 'id_product' => $post_id
             ));
+
+            //product has been made, inserting gameplayicon rows into term_relationships table
+            foreach ($new_gp_meta as $meta_key => $meta_value){
+                $success = $wpdb->insert('shuffleterm_relationships', array(
+                        'object_id' => $post_id,
+                        'term_taxonomy_id' => $meta_value,
+                        'term_order' => '0'
+                ));
+
+                if($success){error_log('GP meta added: '.$meta_key.' was added.');}
+            }
 
             if($success){error_log('Product created: '.$post_obj->post_title.' was created in DB');}
         }
@@ -436,9 +489,9 @@ function shuffle_gp_styling_function($post){
 
     global $wpdb;
 
-    $all_gp_terms =  $wpdb->get_results('SELECT st.name, st.slug FROM shuffleterms as st INNER JOIN shuffletermmeta as stm on st.term_id = stm.term_id WHERE meta_value = "gameplay_icon"');
+    $all_gp_terms =  $wpdb->get_results('SELECT st.name, st. slug, st.term_id FROM shuffleterms as st INNER JOIN shuffletermmeta as stm on st.term_id = stm.term_id WHERE meta_value = "gameplay_icon"');
 
-    $active_terms = $wpdb->get_results($wpdb->prepare('SELECT t.name, t.slug FROM shuffleterm_relationships AS tr LEFT JOIN shuffleterms AS t ON tr.term_taxonomy_id = t.term_id RIGHT JOIN shuffletermmeta AS stm ON t.term_id = stm.term_id WHERE tr.object_id = %d AND stm.meta_value = "gameplay_icon" ', $post->ID));
+    $active_terms = $wpdb->get_results($wpdb->prepare('SELECT t.name, t.slug, t.term_id FROM shuffleterm_relationships AS tr LEFT JOIN shuffleterms AS t ON tr.term_taxonomy_id = t.term_id RIGHT JOIN shuffletermmeta AS stm ON t.term_id = stm.term_id WHERE tr.object_id = %d AND stm.meta_value = "gameplay_icon" ', $post->ID));
 
     $term_group_age = [];
     $term_group_nop = [];
@@ -449,11 +502,11 @@ function shuffle_gp_styling_function($post){
         $term_group = substr($term->slug, 0, strpos($term->slug, '-'));
 
         if ($term_group === 'age') {
-            $term_group_age[$term->slug] = $term->name;
+            $term_group_age[$term->term_id] = $term->name;
         } elseif ($term_group === 'nop') {
-            $term_group_nop[$term->slug] = $term->name;
+            $term_group_nop[$term->term_id] = $term->name;
         } elseif ($term_group === 'duration') {
-            $term_group_dur[$term->slug] = $term->name;
+            $term_group_dur[$term->term_id] = $term->name;
         }
     }
 
@@ -461,15 +514,15 @@ function shuffle_gp_styling_function($post){
 
     <label for="term_group_age">Age</label>
     <select name="term_group_age">
-        <?php foreach ($term_group_age as $term_slug => $term_name): ?>
+        <?php foreach ($term_group_age as $term_id => $term_name): ?>
             <?php foreach ($active_terms as $a_term): ?>
-                <?php if ($a_term->slug === $term_slug): ?>
-                    <option selected value="<?= $term_slug?>"><?= $term_name?> </option>
+                <?php if ($a_term->term_id == $term_id): ?>
+                    <option selected value="<?= $term_id?>"><?= $term_name?> </option>
                     <?php $skip = true; ?>
                 <?php endif; ?>
             <?php endforeach;?>
             <?php if (!$skip): ?>
-                <option value="<?= $term_slug?>"><?= $term_name?> </option>
+                <option value="<?= $term_id?>"><?= $term_name?> </option>
             <?php endif; ?>
             <?php $skip = false;?>
         <?php endforeach;?>
@@ -477,15 +530,15 @@ function shuffle_gp_styling_function($post){
 
     <label for="term_group_nop">Number of players</label>
     <select name="term_group_nop">
-        <?php foreach ($term_group_nop as $term_slug => $term_name): ?>
+        <?php foreach ($term_group_nop as $term_id => $term_name): ?>
             <?php foreach ($active_terms as $a_term): ?>
-                <?php if ($a_term->slug === $term_slug): ?>
-                    <option selected value="<?= $term_slug?>"><?= $term_name?> </option>
+                <?php if ($a_term->term_id == $term_id): ?>
+                    <option selected value="<?= $term_id?>"><?= $term_name?> </option>
                     <?php $skip = true; ?>
                 <?php endif; ?>
             <?php endforeach;?>
             <?php if (!$skip): ?>
-                <option value="<?= $term_slug?>"><?= $term_name?> </option>
+                <option value="<?= $term_id?>"><?= $term_name?> </option>
             <?php endif; ?>
             <?php $skip = false;?>
         <?php endforeach;?>
@@ -493,15 +546,15 @@ function shuffle_gp_styling_function($post){
 
     <label for="term_group_dur">Duration</label>
     <select name="term_group_dur">
-        <?php foreach ($term_group_dur as $term_slug => $term_name): ?>
+        <?php foreach ($term_group_dur as $term_id => $term_name): ?>
             <?php foreach ($active_terms as $a_term): ?>
-                <?php if ($a_term->slug === $term_slug): ?>
-                    <option selected value="<?= $term_slug?>"><?= $term_name?> </option>
+                <?php if ($a_term->term_id == $term_id): ?>
+                    <option selected value="<?= $term_id?>"><?= $term_name?> </option>
                     <?php $skip = true; ?>
                 <?php endif; ?>
             <?php endforeach;?>
             <?php if (!$skip): ?>
-                <option value="<?= $term_slug?>"><?= $term_name?> </option>
+                <option value="<?= $term_id?>"><?= $term_name?> </option>
             <?php endif; ?>
             <?php $skip = false;?>
         <?php endforeach;?>
