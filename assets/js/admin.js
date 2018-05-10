@@ -6,6 +6,8 @@
 (function ($) {
     $(document).ready(function () {
 
+        // TODO: Ik zou een laoding screen kunnen toevoegen om deze veranderingen niet te laten zien
+
         // this handles the checkbox inputs in inserting licences
         let $cat_list = $('#categorychecklist');
 
@@ -21,6 +23,34 @@
         $('.clear-choice').click(function (e) {
             $(this).siblings('input').removeAttr('checked');
         })
+
+
+        // TODO: Nakijken of error checking nog nodig / nuttig is
+        // // This handles the error checking
+        //
+        // let $allowed_publish = false
+        //
+        // if(!$allowed_publish){
+        //     $('#publish').attr('disabled', 'disabled');
+        // }
+        //
+        // $('form#post').on('change', function (e) {
+        //
+        //     // check if a cat has been chosen
+        //     $.each($('ul#categorychecklist').find('input'), function () {
+        //         console.log(this);
+        //         if ($(this).attr('checked')){
+        //             $allowed_publish = true;
+        //         }
+        //     })
+        //
+        //     $.each($)
+        //
+        //     // at the end, if all checks were good: enable the button
+        //     if($allowed_publish){
+        //         $('#publish').removeAttribute('disabled');
+        //     }
+        // })
 
     })
 })(jQuery)

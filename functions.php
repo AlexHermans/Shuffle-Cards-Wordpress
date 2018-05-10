@@ -259,6 +259,7 @@ function shuffle_delete_licence($post_id, $post_obj){
 }
 
 function shuffle_insert_product($post_id, $post_obj){
+
     global $wpdb;
 
     // checking nonces
@@ -269,7 +270,6 @@ function shuffle_insert_product($post_id, $post_obj){
 
     // checking to see whether the product already exists in DB and getting the connected licence if so
     $old_licence = $wpdb->get_results($wpdb->prepare('SELECT * FROM shuffle_licence_product WHERE id_product = %d', $post_id));
-    $old_gp_meta = $wpdb->get_results($wpdb->prepare('SELECT term_taxonomy_id FROM shuffleterm_relationships WHERE object_id = %d', $post_id));
 
     if(isset($_POST['connected_licence'])){
         $new_licence = $_POST['connected_licence'];
@@ -279,73 +279,71 @@ function shuffle_insert_product($post_id, $post_obj){
     $old_gp_meta = $wpdb->get_results($wpdb->prepare('SELECT term_taxonomy_id FROM shuffleterm_relationships WHERE object_id = %d', $post_id), 'ARRAY_N');
     $new_gp_meta = [];
 
-    if (isset($_POST['term_group_age']) && isset($_POST['term_group_nop']) && isset($_POST['term_group_dur'])){
+    if (isset($_POST['term_group_age']) && isset($_POST['term_group_nop']) && isset($_POST['term_group_dur']) && isset($_POST['term_group_dur'])){
         $new_gp_meta['age'] = $_POST['term_group_age'];
         $new_gp_meta['nop'] = $_POST['term_group_nop'];
         $new_gp_meta['dur'] = $_POST['term_group_dur'];
+        $new_gp_meta['cat'] = $_POST['post_category'][1];
     }
 
-    if (!empty($new_licence)){
-        error_log('There are new licences to add');
-        if(!empty($old_licence)){
-            error_log('There are old licences');
-            // updating the licence instead of inserting
-            $wpdb->update('shuffle_licence_product', array('id_licence' => $new_licence), array('id_product' => $post_id), array('%d'), array('%d'));
+    error_log($new_gp_meta['cat']);
 
-            // after updating the product, let's also update the gameplay icon terms
-            function deleteElement($element, &$array){
-                $index = array_search($element, $array);
-                if($index !== false){
-                    unset($array[$index]);
-                }
+    error_log('There are new licences to add');
+    if(!empty($old_licence)){
+        error_log('There are old licences');
+        // updating the licence instead of inserting
+        $wpdb->update('shuffle_licence_product', array('id_licence' => $new_licence), array('id_product' => $post_id), array('%d'), array('%d'));
+
+        // after updating the product, let's also update the gameplay icon terms
+        function deleteElement($element, &$array){
+            $index = array_search($element, $array);
+            if($index !== false){
+                unset($array[$index]);
             }
+        }
 
-            foreach ($new_gp_meta as $new_meta_key => $new_meta_value){
-                foreach ($old_gp_meta as $old_meta_key => $old_meta_value){
-                    if ($new_meta_value == $old_meta_value[0]) {
-                        error_log('match');
-                        deleteElement($new_meta_value, $new_gp_meta);
-                        deleteElement($old_meta_value, $old_gp_meta);
-                    }
-                }
-            };
-
-            foreach ($new_gp_meta as $new_meta_key => $new_meta_value){error_log('NM : '.$new_meta_value);};
-            foreach ($old_gp_meta as $old_meta_key => $old_meta_value){error_log('OM : '.$old_meta_value[0]);};
-
+        foreach ($new_gp_meta as $new_meta_key => $new_meta_value){
             foreach ($old_gp_meta as $old_meta_key => $old_meta_value){
-                foreach ($new_gp_meta as $new_meta_key => $new_meta_value){
-                    $wpdb->update('shuffleterm_relationships', array('term_taxonomy_id' => $new_meta_value), array('object_id' => $post_id, 'term_taxonomy_id' => $old_meta_value[0]), array('%d'), array('%d'));
+                if ($new_meta_value == $old_meta_value[0]) {
+                    error_log('match');
+                    deleteElement($new_meta_value, $new_gp_meta);
+                    deleteElement($old_meta_value, $old_gp_meta);
                 }
             }
+        };
 
-            error_log('Product updated: '.$post_obj->post_title.' was updated in DB');
+        foreach ($new_gp_meta as $new_meta_key => $new_meta_value){error_log('NM : '.$new_meta_value);};
+        foreach ($old_gp_meta as $old_meta_key => $old_meta_value){error_log('OM : '.$old_meta_value[0]);};
 
-        } else {
-            // inserting the licence
-            error_log('There are no old licences');
-            $success = $wpdb->insert('shuffle_licence_product', array(
-                'id' => '',
-                'id_licence' => $new_licence,
-                'id_product' => $post_id
+        foreach ($old_gp_meta as $old_meta_key => $old_meta_value){
+            foreach ($new_gp_meta as $new_meta_key => $new_meta_value){
+                $wpdb->update('shuffleterm_relationships', array('term_taxonomy_id' => $new_meta_value), array('object_id' => $post_id, 'term_taxonomy_id' => $old_meta_value[0]), array('%d'), array('%d'));
+            }
+        }
+
+        error_log('Product updated: '.$post_obj->post_title.' was updated in DB');
+
+    } else {
+        // inserting the licence
+        error_log('There are no old licences');
+        $success = $wpdb->insert('shuffle_licence_product', array(
+            'id' => '',
+            'id_licence' => $new_licence,
+            'id_product' => $post_id
+        ));
+
+        //product has been made, inserting gameplayicon rows into term_relationships table
+        foreach ($new_gp_meta as $meta_key => $meta_value){
+            $success = $wpdb->insert('shuffleterm_relationships', array(
+                    'object_id' => $post_id,
+                    'term_taxonomy_id' => $meta_value,
+                    'term_order' => '0'
             ));
 
-            //product has been made, inserting gameplayicon rows into term_relationships table
-            foreach ($new_gp_meta as $meta_key => $meta_value){
-                $success = $wpdb->insert('shuffleterm_relationships', array(
-                        'object_id' => $post_id,
-                        'term_taxonomy_id' => $meta_value,
-                        'term_order' => '0'
-                ));
-
-                if($success){error_log('GP meta added: '.$meta_key.' was added.');}
-            }
-
-            if($success){error_log('Product created: '.$post_obj->post_title.' was created in DB');}
+            if($success){error_log('GP meta added: '.$meta_key.' was added.');}
         }
-    } else {
-        // the licence should be deleted
-        shuffle_delete_product($post_id, $post_obj);
+
+        if($success){error_log('Product created: '.$post_obj->post_title.' was created in DB');}
     }
 }
 
