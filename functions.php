@@ -355,6 +355,12 @@ function shuffle_delete_product($post_id, $post_obj){
     $success = $wpdb->delete('shuffle_licence_product', array(
         'id_product' => $post_id,
     ));
+
+    // Deleting references to gameplay meta
+    $wpdb->delete('shuffleterm_relationships', array(
+            'object_id' => $post_id,
+    ));
+
     if ($success) {
         error_log('Product deleted: ' . $post_obj->post_title . ' was deleted from DB');
     }

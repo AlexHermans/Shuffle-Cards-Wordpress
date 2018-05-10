@@ -59,7 +59,7 @@
       <file leaf-file-name="product-information.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template-parts/product-information.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
+            <state relative-caret-position="340">
               <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
               <folding>
                 <element signature="e#6#200#0#PHP" expanded="true" />
@@ -72,8 +72,8 @@
       <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2048">
-              <caret line="317" column="21" lean-forward="false" selection-start-line="317" selection-start-column="21" selection-end-line="317" selection-end-column="21" />
+            <state relative-caret-position="456">
+              <caret line="360" column="36" lean-forward="false" selection-start-line="360" selection-start-column="36" selection-end-line="360" selection-end-column="36" />
               <folding>
                 <element signature="e#6#179#0#PHP" expanded="true" />
                 <element signature="n#shuffle_load_search_results#0;n#!!top" expanded="false" />
@@ -86,28 +86,24 @@
                 <element signature="n#shuffle_actions_licence#0;n#!!top" expanded="false" />
                 <element signature="n#shuffle_insert_licence#0;n#!!top" expanded="false" />
                 <element signature="n#shuffle_delete_licence#0;n#!!top" expanded="false" />
-                <element signature="n#shuffle_delete_product#0;n#!!top" expanded="false" />
                 <element signature="n#shuffle_add_admin_menus#0;n#!!top" expanded="false" />
                 <element signature="n#shuffle_add_meta_box#0;n#!!top" expanded="false" />
                 <element signature="n#shuffle_ta_styling_function#0;n#!!top" expanded="false" />
                 <element signature="n#shuffle_cl_styling_function#0;n#!!top" expanded="false" />
                 <element signature="n#shuffle_cp_styling_function#0;n#!!top" expanded="false" />
-                <marker date="1525786506129" expanded="true" signature="5907:5966" ph="SELECT * FRO... shuffle_licence_product" />
-                <marker date="1525786506129" expanded="true" signature="8770:8829" ph="SELECT * FRO... shuffle_licence_product" />
-                <marker date="1525786506129" expanded="true" signature="8898:8973" ph="SELECT term_... shuffleterm_relationships" />
-                <marker date="1525786506129" expanded="true" signature="9199:9274" ph="SELECT term_... shuffleterm_relationships" />
-                <marker date="1525786506129" expanded="true" signature="13815:13874" ph="..." />
-                <marker date="1525786506129" expanded="true" signature="14749:14808" ph="SELECT * FRO... shuffle_licence_product" />
-                <marker date="1525786506129" expanded="true" signature="14864:15003" ph="SELECT ID, p... shuffleposts" />
-                <marker date="1525786506129" expanded="true" signature="15145:16195" ph="..." />
-                <marker date="1525786506129" expanded="true" signature="16457:16910" ph="..." />
-                <marker date="1525786506129" expanded="true" signature="17350:17553" ph="SELECT * FRO... shuffleposts" />
-                <marker date="1525786506129" expanded="true" signature="17688:18631" ph="..." />
-                <marker date="1525786506129" expanded="true" signature="18909:19066" ph="SELECT st.na... shuffleterms" />
-                <marker date="1525786506129" expanded="true" signature="19126:19380" ph="SELECT t.nam... shuffleterm_relationships" />
-                <marker date="1525786506129" expanded="true" signature="20015:20609" ph="..." />
-                <marker date="1525786506129" expanded="true" signature="20703:21297" ph="..." />
-                <marker date="1525786506129" expanded="true" signature="21382:21976" ph="..." />
+                <marker date="1525941053034" expanded="true" signature="5907:5966" ph="SELECT * FRO... shuffle_licence_product" />
+                <marker date="1525941053034" expanded="true" signature="8770:8829" ph="SELECT * FRO... shuffle_licence_product" />
+                <marker date="1525941053034" expanded="true" signature="8898:8973" ph="SELECT term_... shuffleterm_relationships" />
+                <marker date="1525941053034" expanded="true" signature="9199:9274" ph="SELECT term_... shuffleterm_relationships" />
+                <marker date="1525941053034" expanded="true" signature="13960:14019" ph="..." />
+                <marker date="1525941053034" expanded="true" signature="14894:14953" ph="SELECT * FRO... shuffle_licence_product" />
+                <marker date="1525941053034" expanded="true" signature="15009:15148" ph="SELECT ID, p... shuffleposts" />
+                <marker date="1525941053034" expanded="true" signature="15290:16340" ph="..." />
+                <marker date="1525941053034" expanded="true" signature="16602:17055" ph="..." />
+                <marker date="1525941053034" expanded="true" signature="17495:17698" ph="SELECT * FRO... shuffleposts" />
+                <marker date="1525941053034" expanded="true" signature="17833:18776" ph="..." />
+                <marker date="1525941053034" expanded="true" signature="19054:19211" ph="SELECT st.na... shuffleterms" />
+                <marker date="1525941053034" expanded="true" signature="19271:19525" ph="SELECT t.nam... shuffleterm_relationships" />
               </folding>
             </state>
           </provider>
@@ -116,7 +112,7 @@
       <file leaf-file-name="debug.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../debug.log">
           <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="-2316">
+            <state relative-caret-position="0">
               <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
             </state>
           </provider>
@@ -246,6 +242,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -338,8 +336,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -483,12 +479,13 @@
       <workItem from="1525528502689" duration="975000" />
       <workItem from="1525601476981" duration="1431000" />
       <workItem from="1525679943666" duration="4945000" />
-      <workItem from="1525769671347" duration="9790000" />
+      <workItem from="1525769671347" duration="10506000" />
+      <workItem from="1525940935253" duration="209000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="399036000" />
+    <option name="totallyTimeSpent" value="399961000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -750,7 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -842,7 +838,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/template-parts/product-information.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
+        <state relative-caret-position="340">
           <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
           <folding>
             <element signature="e#6#200#0#PHP" expanded="true" />
@@ -853,7 +849,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../debug.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="-2316">
+        <state relative-caret-position="0">
           <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
         </state>
       </provider>
@@ -865,8 +861,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2048">
-          <caret line="317" column="21" lean-forward="false" selection-start-line="317" selection-start-column="21" selection-end-line="317" selection-end-column="21" />
+        <state relative-caret-position="456">
+          <caret line="360" column="36" lean-forward="false" selection-start-line="360" selection-start-column="36" selection-end-line="360" selection-end-column="36" />
           <folding>
             <element signature="e#6#179#0#PHP" expanded="true" />
             <element signature="n#shuffle_load_search_results#0;n#!!top" expanded="false" />
@@ -879,28 +875,24 @@
             <element signature="n#shuffle_actions_licence#0;n#!!top" expanded="false" />
             <element signature="n#shuffle_insert_licence#0;n#!!top" expanded="false" />
             <element signature="n#shuffle_delete_licence#0;n#!!top" expanded="false" />
-            <element signature="n#shuffle_delete_product#0;n#!!top" expanded="false" />
             <element signature="n#shuffle_add_admin_menus#0;n#!!top" expanded="false" />
             <element signature="n#shuffle_add_meta_box#0;n#!!top" expanded="false" />
             <element signature="n#shuffle_ta_styling_function#0;n#!!top" expanded="false" />
             <element signature="n#shuffle_cl_styling_function#0;n#!!top" expanded="false" />
             <element signature="n#shuffle_cp_styling_function#0;n#!!top" expanded="false" />
-            <marker date="1525786506129" expanded="true" signature="5907:5966" ph="SELECT * FRO... shuffle_licence_product" />
-            <marker date="1525786506129" expanded="true" signature="8770:8829" ph="SELECT * FRO... shuffle_licence_product" />
-            <marker date="1525786506129" expanded="true" signature="8898:8973" ph="SELECT term_... shuffleterm_relationships" />
-            <marker date="1525786506129" expanded="true" signature="9199:9274" ph="SELECT term_... shuffleterm_relationships" />
-            <marker date="1525786506129" expanded="true" signature="13815:13874" ph="..." />
-            <marker date="1525786506129" expanded="true" signature="14749:14808" ph="SELECT * FRO... shuffle_licence_product" />
-            <marker date="1525786506129" expanded="true" signature="14864:15003" ph="SELECT ID, p... shuffleposts" />
-            <marker date="1525786506129" expanded="true" signature="15145:16195" ph="..." />
-            <marker date="1525786506129" expanded="true" signature="16457:16910" ph="..." />
-            <marker date="1525786506129" expanded="true" signature="17350:17553" ph="SELECT * FRO... shuffleposts" />
-            <marker date="1525786506129" expanded="true" signature="17688:18631" ph="..." />
-            <marker date="1525786506129" expanded="true" signature="18909:19066" ph="SELECT st.na... shuffleterms" />
-            <marker date="1525786506129" expanded="true" signature="19126:19380" ph="SELECT t.nam... shuffleterm_relationships" />
-            <marker date="1525786506129" expanded="true" signature="20015:20609" ph="..." />
-            <marker date="1525786506129" expanded="true" signature="20703:21297" ph="..." />
-            <marker date="1525786506129" expanded="true" signature="21382:21976" ph="..." />
+            <marker date="1525941053034" expanded="true" signature="5907:5966" ph="SELECT * FRO... shuffle_licence_product" />
+            <marker date="1525941053034" expanded="true" signature="8770:8829" ph="SELECT * FRO... shuffle_licence_product" />
+            <marker date="1525941053034" expanded="true" signature="8898:8973" ph="SELECT term_... shuffleterm_relationships" />
+            <marker date="1525941053034" expanded="true" signature="9199:9274" ph="SELECT term_... shuffleterm_relationships" />
+            <marker date="1525941053034" expanded="true" signature="13960:14019" ph="..." />
+            <marker date="1525941053034" expanded="true" signature="14894:14953" ph="SELECT * FRO... shuffle_licence_product" />
+            <marker date="1525941053034" expanded="true" signature="15009:15148" ph="SELECT ID, p... shuffleposts" />
+            <marker date="1525941053034" expanded="true" signature="15290:16340" ph="..." />
+            <marker date="1525941053034" expanded="true" signature="16602:17055" ph="..." />
+            <marker date="1525941053034" expanded="true" signature="17495:17698" ph="SELECT * FRO... shuffleposts" />
+            <marker date="1525941053034" expanded="true" signature="17833:18776" ph="..." />
+            <marker date="1525941053034" expanded="true" signature="19054:19211" ph="SELECT st.na... shuffleterms" />
+            <marker date="1525941053034" expanded="true" signature="19271:19525" ph="SELECT t.nam... shuffleterm_relationships" />
           </folding>
         </state>
       </provider>
