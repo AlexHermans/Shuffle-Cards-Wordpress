@@ -16,3 +16,23 @@
 hr.clear-choice{
     margin-top: 18px !important;
 }
+
+#shuffle_product_gameplay_icons label{
+    display: block;
+    font-size: 100%;
+}
+
+#shuffle_product_gameplay_icons select{
+    width: 33%;
+}
+
+#normal-sortables{
+    display: flex;
+}
+
+#normal-sortables #shuffle_con_licence,
+#normal-sortables #shuffle_product_gameplay_icons {
+    width: 45%;
+    margin-right: 2.5%;
+}
+

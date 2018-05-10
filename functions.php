@@ -378,8 +378,8 @@ shuffle_add_admin_menus();
 function shuffle_add_meta_box(){
     add_meta_box('shuffle_ta_box', 'Target Audiences', 'shuffle_ta_styling_function', 'shuffle_licence', 'side', 'core');
     add_meta_box('shuffle_con_prod', 'Connect products to this licence', 'shuffle_cp_styling_function', 'shuffle_licence', 'side', 'core');
-    add_meta_box('shuffle_con_licence', 'Connect this product to a licence', 'shuffle_cl_styling_function', 'shuffle_product', 'side', 'core');
-    add_meta_box('shuffle_product_gameplay_icons', 'Gameplay Icons', 'shuffle_gp_styling_function', 'shuffle_product', 'side', 'core');
+//    add_meta_box('shuffle_con_licence', 'Connect this product to a licence', 'shuffle_cl_styling_function', 'shuffle_product', 'center', 'core');
+//    add_meta_box('shuffle_product_gameplay_icons', 'Gameplay Icons', 'shuffle_gp_styling_function', 'shuffle_product', 'side', 'core');
 }
 
 function shuffle_ta_styling_function($post){
@@ -572,7 +572,26 @@ function shuffle_gp_styling_function($post){
 // REMOVING DUPLICATE OR UNNECESSARY META BOXES
 function shuffle_remove_dup_meta_boxes(){
     remove_meta_box('tagsdiv-target_audience', 'shuffle_licence', 'side');
+    remove_meta_box('tagsdiv-age_group', 'shuffle_product', 'side');
+    remove_meta_box('tagsdiv-number_of_players', 'shuffle_product', 'side');
+    remove_meta_box('tagsdiv-durations', 'shuffle_product', 'side');
 }
 
 add_action('add_meta_boxes', 'shuffle_remove_dup_meta_boxes');
+
+// MOVING METABOXES TO FIT IN A SINGLE SCREEN
+function shuffle_move_meta_boxes(){
+
+    //removing them
+    remove_meta_box('revisionsdiv', 'shuffle_product', 'normal');
+    remove_meta_box('shuffle_con_licence', 'shuffle_product', 'side');
+    remove_meta_box('shuffle_product_gameplay_icons', 'shuffle_product', 'side');
+
+    //moving them
+    add_meta_box('shuffle_con_licence', 'Connect this product to a licence', 'shuffle_cl_styling_function', 'shuffle_product', 'normal', 'high');
+    add_meta_box('shuffle_product_gameplay_icons', 'Gameplay Icons', 'shuffle_gp_styling_function', 'shuffle_product', 'normal', 'high');
+//    add_meta_box('categorydiv', 'shuffle_product', 'normal');
+}
+
+add_action('add_meta_boxes', 'shuffle_move_meta_boxes');
 
