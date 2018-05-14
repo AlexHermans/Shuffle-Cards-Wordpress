@@ -18,9 +18,13 @@
 <?php get_header(); ?>
 <body <?php body_class(); ?>>
 <main class="main-front-page">
+    <nav class="social-menu">
+        <?php wp_nav_menu(array('theme_location' => 'social-menu', 'fallback_cb' => false)); ?>
+    </nav>
     <section class="section-carousel carousel-front-page">
         <?php get_template_part('template-parts/content', 'carousel') ?>
     </section>
+
     <section class="section-controls">
         <ul class="controls-categories">
             <li class="category categories__li categories-go">go</li>

@@ -204,6 +204,38 @@ a {
     background-size: 100%;
     top: -10.1px; }
 
+.social-menu {
+  position: fixed;
+  right: 0;
+  z-index: 1;
+  text-indent: -9000px;
+  background: white;
+  -webkit-border-top-left-radius: 20px;
+  -moz-border-top-left-radius: 20px;
+  border-top-left-radius: 20px;
+  -webkit-border-top-right-radius: 0;
+  -moz-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 20px;
+  -moz-border-bottom-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 13px 0;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); }
+  .social-menu li {
+    width: 40px;
+    height: 40px;
+    padding: 3px 13px 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer; }
+  .social-menu li:first-of-type {
+    background-image: url(assets/img/icon_fb.png); }
+  .social-menu li:nth-of-type(2) {
+    background-image: url(assets/img/icon_yt.png); }
+
 .section-carousel {
   height: 500px;
   display: flex;

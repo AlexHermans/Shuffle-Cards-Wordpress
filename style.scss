@@ -271,6 +271,29 @@ a {
   }
 }
 
+// SOCIAL-MENU
+.social-menu{
+  position: fixed;
+  right: 0;
+  z-index: 1;
+  text-indent: -9000px;
+  background: white;
+  @include border-radius-separate(20px, 0, 0, 20px);
+  padding: 13px 0;
+  @include box-shadow();
+
+  & li{
+    @include size(40px, 40px);
+    padding: 3px 13px 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+  }
+
+  & li:first-of-type{ background-image: url(assets/img/icon_fb.png); }
+  & li:nth-of-type(2){ background-image: url(assets/img/icon_yt.png); }
+}
+
 // CAROUSEL
 
 .section-carousel {
