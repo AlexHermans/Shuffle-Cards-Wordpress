@@ -27,9 +27,9 @@
 
     <section class="section-controls">
         <ul class="controls-categories">
-            <li class="category categories__li categories-go">go</li>
-            <li class="category categories__li categories-fun">fun</li>
-            <li class="category categories__li categories-aqua">aqua</li>
+            <li class="category categories__li categories-go" id="go">go</li>
+            <li class="category categories__li categories-fun" id="fun">fun</li>
+            <li class="category categories__li categories-aqua" id="aqua">aqua</li>
         </ul>
         <div class="form-controls">
             <form action="#" class="form controls-sort">

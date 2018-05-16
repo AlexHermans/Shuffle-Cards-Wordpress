@@ -25,6 +25,7 @@ if ($loop->have_posts()) : ?>
         </a>
     <?php endwhile; ?>
     <?php else : ?>
+    <?php var_dump($args) ?>
         <div class="error">
             <h1 class="error-no-posts">No licences were found.</h1>
         </div>

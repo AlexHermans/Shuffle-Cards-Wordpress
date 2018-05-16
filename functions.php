@@ -57,6 +57,62 @@ function shuffle_load_all_results(){
 add_action('wp_ajax_shuffle_load_all_results', 'shuffle_load_all_results');
 add_action('wp_ajax_nopriv_shuffle_load_all_results', 'shuffle_load_all_results');
 
+function shuffle_load_results_per_category(){
+    $cat = $_REQUEST['cat'];
+    $product_ids= [];
+    $ids = [];
+
+    global $wpdb;
+
+    $query = $wpdb->get_results($wpdb->prepare('
+        SELECT SP.ID FROM shuffleposts as SP 
+        INNER JOIN shuffleterm_relationships AS STR 
+        ON SP.ID = STR.object_id 
+        INNER JOIN shuffleterms AS ST 
+        ON STR.term_taxonomy_id = ST.term_id 
+        INNER JOIN shuffleterm_taxonomy AS STT 
+        ON ST.term_id = STT.term_id
+          WHERE SP.post_type = "shuffle_product" 
+          AND SP.post_status = "publish" 
+          AND STT.taxonomy = "category" 
+          AND ST.slug = %s', $cat), 'ARRAY_N');
+
+    foreach ($query as $key => $value){
+        foreach ($value as $row_value){
+            $product_ids[] = $row_value;
+        }
+    }
+
+    $product_ids_placeholders = implode(', ', array_fill(0, count($product_ids), '%s'));
+
+    $filtered_licences = $wpdb->get_results($wpdb->prepare('
+        SELECT SP_licence.id FROM shuffleposts as SP_licence
+        INNER JOIN shuffle_licence_product AS SLP
+        ON SP_licence.ID = SLP.id_licence
+        INNER JOIN shuffleposts AS SP_product
+        ON SLP.id_product = SP_product.ID
+        WHERE SP_product.ID IN ( '.$product_ids_placeholders.' )
+        GROUP BY SLP.id_licence', $product_ids), 'ARRAY_N');
+
+    foreach ($filtered_licences as $row){
+        $ids[] = $row[0];
+    }
+
+    $args = array(
+        'post__in' => $ids,
+        'post_type' => 'shuffle_licence',
+        'post_status' => 'publish',
+    );
+
+    set_query_var('args', $args);
+    get_template_part('template-parts/content', 'licences');
+
+    die();
+}
+
+add_action('wp_ajax_shuffle_load_results_per_category', 'shuffle_load_results_per_category');
+add_action('wp_ajax_nopriv_shuffle_load_results_per_category', 'shuffle_load_results_per_category');
+
 // ENQUEUE STYLES
 function enqueue_styles()
 {
@@ -104,6 +160,10 @@ function enqueue_scripts()
     wp_register_script('ajax-results', THEME_DIR . '/assets/js/ajax/results.ajax.js', array('jquery'), '1.0', false);
     wp_enqueue_script('ajax-results');
     wp_localize_script('ajax-results', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
+
+    wp_register_script('ajax-filter', THEME_DIR . '/assets/js/ajax/filter.ajax.js', array('jquery'), '1.0', false);
+    wp_enqueue_script('ajax-filter');
+    wp_localize_script('ajax-filter', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts');

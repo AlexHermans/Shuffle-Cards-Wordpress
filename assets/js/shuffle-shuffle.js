@@ -17,7 +17,8 @@ function arrange_items($el, $rand){
     let c = 0;
     let x = 1;
     let y = 1;
-    let $arr = []
+    let $arr = [];
+
     // populate multi dimensional array
     for (let i = 0; i<$el.length; i++) {
         c = c + 1;
