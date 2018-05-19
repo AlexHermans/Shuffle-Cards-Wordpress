@@ -148,6 +148,24 @@ a {
   text-indent: -9000px;
 }
 
+#language-selector{
+  margin-right: 20%;
+  border: none;
+  font-family: $font_stack;
+  //font-weight: 700;
+  font-size: 150%;
+
+  &:focus{
+    outline: none;
+    background: #EEE;
+    transition: all 200ms;
+  }
+
+  & option{
+    border: none;
+  }
+}
+
 .header__nav {
   flex-grow: 1;
   margin-left: 15%;
@@ -746,6 +764,10 @@ a {
 }
 
 // OVERRIDES
+
+.loading{
+  //TODO: Nog een goeie loading animation maken voor de main content na het filteren
+}
 
 .loading-gif{
   background-image: url(assets/img/loading.gif);

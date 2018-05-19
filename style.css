@@ -72,6 +72,18 @@ a {
 .a-logo__h1 {
   text-indent: -9000px; }
 
+#language-selector {
+  margin-right: 20%;
+  border: none;
+  font-family: "MuseoSans", SansSerif;
+  font-size: 150%; }
+  #language-selector:focus {
+    outline: none;
+    background: #EEE;
+    transition: all 200ms; }
+  #language-selector option {
+    border: none; }
+
 .header__nav {
   flex-grow: 1;
   margin-left: 15%; }

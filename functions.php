@@ -113,6 +113,33 @@ function shuffle_load_results_per_category(){
 add_action('wp_ajax_shuffle_load_results_per_category', 'shuffle_load_results_per_category');
 add_action('wp_ajax_nopriv_shuffle_load_results_per_category', 'shuffle_load_results_per_category');
 
+// AJAX - SET SITE SPECIFIC COOKIES
+
+function shuffle_set_cookies()
+{
+
+    die();
+}
+
+add_action('wp_ajax_shuffle_set_cookies', 'shuffle_set_cookies');
+add_action('wp_ajax_nopriv_shuffle_set_cookies', 'shuffle_set_cookies');
+
+function shuffle_set_language_cookie()
+{
+    $lang = $_REQUEST['lang'];
+
+    if (setcookie('lang', $lang,  time() + 10 * 365 * 24 * 60 * 60, '/')){
+        echo json_encode('success');
+    } else {
+        echo json_encode('failure');
+    }
+
+    die();
+}
+
+add_action('wp_ajax_shuffle_set_language_cookie', 'shuffle_set_language_cookie');
+add_action('wp_ajax_nopriv_shuffle_set_language_cookie', 'shuffle_set_language_cookie');
+
 // ENQUEUE STYLES
 function enqueue_styles()
 {
@@ -164,6 +191,10 @@ function enqueue_scripts()
     wp_register_script('ajax-filter', THEME_DIR . '/assets/js/ajax/filter.ajax.js', array('jquery'), '1.0', false);
     wp_enqueue_script('ajax-filter');
     wp_localize_script('ajax-filter', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
+
+    wp_register_script('ajax-language', THEME_DIR . '/assets/js/ajax/language.ajax.js', array('jquery'), '1.0', false);
+    wp_enqueue_script('ajax-language');
+    wp_localize_script('ajax-language', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
@@ -174,8 +205,6 @@ function enqueue_admin_scripts(){
 }
 
 add_action('admin_enqueue_scripts', 'enqueue_admin_scripts');
-
-
 
 // REGISTER MENU'S
 function register_menus()
@@ -190,6 +219,14 @@ function register_menus()
 }
 
 add_action('init', 'register_menus');
+
+// TRANSLATION FUNCTIONS
+function shuffle_translate_placeholders(){
+
+}
+
+add_action('init', 'shuffle_translate_placeholders');
+
 
 // PURE DEBUG FUNCTION
 // TODO: Delete this function before going live.

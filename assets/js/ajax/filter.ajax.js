@@ -18,7 +18,6 @@
                     cat: $(this).attr('id')
                 },
                 beforeSend: function(){
-                    console.log('fetching')
                     $content.addClass('loading');
                 },
                 success: function(response){
