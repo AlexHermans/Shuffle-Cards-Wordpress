@@ -41,7 +41,7 @@
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
     <!--=== TITLE ===-->
-    <title><?php wp_title(); ?> - <?php bloginfo( 'name' ); ?></title>
+    <title><?php wp_title(); ?> - <?php bloginfo( 'page' ); ?></title>
 
     <!--=== WP_HEAD() ===-->
     <?php wp_head(); ?>

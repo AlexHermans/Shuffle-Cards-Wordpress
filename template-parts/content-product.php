@@ -21,11 +21,11 @@ if ($products): ?>
 
         <div class="single-product">
             <div class="category single-product-category <?=$licence['target_audience']?>"><?=get_the_category($product->ID)[0]->name ; ?></div>
-            <section class="single-product__section left">
-                <?php if (!$layout_switch) {get_template_part('template-parts/product', 'information');} else {get_template_part('template-parts/product', 'image');} ?>
+            <section class="single-product__section left i18n-multilingual">
+                <?php if (!$layout_switch) {__(get_template_part('template-parts/product', 'information'));} else {__(get_template_part('template-parts/product', 'image'));} ?>
             </section>
-            <section class="single-product__section right">
-                <?php if ($layout_switch) {get_template_part('template-parts/product', 'information');} else {get_template_part('template-parts/product', 'image');} ?>
+            <section class="single-product__section right i18n-multilingual">
+                <?php if ($layout_switch) {__(get_template_part('template-parts/product', 'information'));} else {__(get_template_part('template-parts/product', 'image'));} ?>
             </section>
         </div>
         <?php $layout_switch = !$layout_switch; ?>
