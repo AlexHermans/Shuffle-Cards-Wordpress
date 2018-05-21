@@ -54,7 +54,6 @@
             <a href="<?php echo get_home_url(); ?>" class="a header__a header__a-logo">
                 <h1 class="h1 a-logo__h1">Shuffle</h1>
             </a>
-            <?php get_template_part('template-parts/content', 'language') ?>
         </div>
         <div class="header__div header__div-bottom">
             <figure class="figure header__figure-swirl-banner">

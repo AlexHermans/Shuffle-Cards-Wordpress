@@ -17,9 +17,20 @@ hr.clear-choice{
     margin-top: 18px !important;
 }
 
-#shuffle_product_gameplay_icons label{
+#shuffle_product_gameplay_icons label,
+#shuffle_ml_box label{
     display: block;
     font-size: 100%;
+}
+
+#shuffle_ml_box label{
+    margin-top: 10px;
+}
+
+#shuffle_ml_box input::placeholder{
+    font-weight: 100;
+    font-size: 80%;
+    color: #AAA;
 }
 
 #shuffle_product_gameplay_icons select{

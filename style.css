@@ -638,12 +638,13 @@ a {
   color: #FFF; }
 
 .section-products {
-  padding: 0 0 50px;
+  padding: 0 0 100px;
   background-color: #eee;
   position: relative;
   top: -20px;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  margin-bottom: -50px; }
 
 .single-product {
   display: flex;
@@ -722,7 +723,8 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 15px;
+  position: relative;
+  top: -10px;
   margin-bottom: 30px; }
 
 .footer__nav {
@@ -740,6 +742,39 @@ a {
 .footer__p--copyright {
   margin-top: 15px;
   font-weight: 500; }
+
+.footer__div-top {
+  height: 125px;
+  width: 100%;
+  margin-bottom: 25px; }
+  .footer__div-top .header__figure-rounded-corner {
+    position: relative;
+    top: 23px; }
+  .footer__div-top .figure-swirl-banner__div-orange {
+    -webkit-border-top-left-radius: 65px;
+    -moz-border-top-left-radius: 65px;
+    border-top-left-radius: 65px;
+    -webkit-border-top-right-radius: 0;
+    -moz-border-top-right-radius: 0;
+    border-top-right-radius: 0;
+    -webkit-border-bottom-right-radius: 0;
+    -moz-border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+    -moz-border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0; }
+  .footer__div-top .figure-swirl-banner__div-green, .footer__div-top .figure-swirl-banner__div-swirl {
+    border-radius: 0; }
+  .footer__div-top .figure-rounded-corner__div-left {
+    background-image: url(assets/img/shuffle_swirl_down_transparent.png);
+    position: relative;
+    top: -10px; }
+  .footer__div-top .figure-rounded-corner__div-right {
+    background-image: url(assets/img/shuffle-swirl-up-adult.png);
+    position: relative;
+    top: -53px;
+    background-position: center;
+    background-size: 100%; }
 
 .section-search-results {
   margin-top: 160px; }

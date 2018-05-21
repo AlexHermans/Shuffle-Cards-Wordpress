@@ -3,6 +3,9 @@
 // Andy Mixins
 @import '../css/andy-master/andy';
 
+//private mixins
+@import "mixins";
+
 $orange: rgb(245, 155, 0);
 $purple: rgb(146, 58, 128);
 $blue: rgb(0, 138, 210);
@@ -16,20 +19,27 @@ $dgray: #7f8184;
   flex-direction: column;
   align-items: flex-end;
   margin-right: 60px;
+  padding-left: 60px;
 }
 
 .product-description{
   text-align: right;
-
+  margin-top: 2%;
+  line-height: 130%;
+  font-weight: 100;
+  color: #4d4d4d;
 }
 
 .product-title{
-  font-size: 150%;
+  font-size: 300%;
   font-weight: 700;
+  margin-top: 2%;
 }
 
 .gameplay-icons{
   display: flex;
+  width: 100%;
+  justify-content: flex-end;
 }
 
 .single-gp{
@@ -93,4 +103,57 @@ $dgray: #7f8184;
   .duration-10{background-image: url(../img/gameplay_icons/icon_duration_10_red.png);}
   .duration-15{background-image: url(../img/gameplay_icons/icon_duration_15_red.png);}
   .duration-20{background-image: url(../img/gameplay_icons/icon_duration_20_red.png);}
+}
+
+.buy-link{
+  display: block;
+  @include size(80px, 80px);
+  background-image: url(../img/icon_buy.png);
+  background-position: center;
+  background-repeat:no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  margin-right: 5%;
+  margin-top: 5%;
+}
+
+.game-guide-link{
+  width: 100%;
+  display: block;
+  @include box-shadow();
+  @include border-semi-rounded;
+  padding: 15px 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 120%;
+}
+
+.app-links{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.app-store-link,
+.play-store-link{
+  display: block;
+  width: 50%;
+  text-align: center;
+  -webkit-background-size:contain;
+  background-size:contain;
+  text-indent: -9999px;
+  height: 63px;
+  margin-bottom: 10px;
+  background-repeat:no-repeat;
+  background-position: center;
+}
+
+.app-store-link{
+  background-image: url(../img/icon_appstore.svg);
+
+}
+
+.play-store-link{
+  background-image: url(../img/icon_googleplay.png);
 }

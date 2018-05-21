@@ -20,8 +20,14 @@
         })
 
         // This handles the button to clear the choice when inserting products
-        $('.clear-choice').click(function (e) {
+        $('.clear-choice').click(function () {
             $(this).siblings('input').removeAttr('checked');
+        })
+
+        // This does the same thing but with meta links
+        $('.clear-meta').click(function () {
+            console.log('clicked')
+            $(this).prev().val('').removeAttr('value');
         })
 
 

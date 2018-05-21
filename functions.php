@@ -113,33 +113,6 @@ function shuffle_load_results_per_category(){
 add_action('wp_ajax_shuffle_load_results_per_category', 'shuffle_load_results_per_category');
 add_action('wp_ajax_nopriv_shuffle_load_results_per_category', 'shuffle_load_results_per_category');
 
-// AJAX - SET SITE SPECIFIC COOKIES
-
-function shuffle_set_cookies()
-{
-
-    die();
-}
-
-add_action('wp_ajax_shuffle_set_cookies', 'shuffle_set_cookies');
-add_action('wp_ajax_nopriv_shuffle_set_cookies', 'shuffle_set_cookies');
-
-function shuffle_set_language_cookie()
-{
-    $lang = $_REQUEST['lang'];
-
-    if (setcookie('lang', $lang,  time() + 10 * 365 * 24 * 60 * 60, '/')){
-        echo json_encode('success');
-    } else {
-        echo json_encode('failure');
-    }
-
-    die();
-}
-
-add_action('wp_ajax_shuffle_set_language_cookie', 'shuffle_set_language_cookie');
-add_action('wp_ajax_nopriv_shuffle_set_language_cookie', 'shuffle_set_language_cookie');
-
 // ENQUEUE STYLES
 function enqueue_styles()
 {
@@ -191,10 +164,6 @@ function enqueue_scripts()
     wp_register_script('ajax-filter', THEME_DIR . '/assets/js/ajax/filter.ajax.js', array('jquery'), '1.0', false);
     wp_enqueue_script('ajax-filter');
     wp_localize_script('ajax-filter', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
-
-    wp_register_script('ajax-language', THEME_DIR . '/assets/js/ajax/language.ajax.js', array('jquery'), '1.0', false);
-    wp_enqueue_script('ajax-language');
-    wp_localize_script('ajax-language', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
@@ -219,13 +188,6 @@ function register_menus()
 }
 
 add_action('init', 'register_menus');
-
-// TRANSLATION FUNCTIONS
-function shuffle_translate_placeholders(){
-
-}
-
-add_action('init', 'shuffle_translate_placeholders');
 
 
 // PURE DEBUG FUNCTION
@@ -373,6 +335,20 @@ function shuffle_insert_product($post_id, $post_obj){
         $new_licence = $_POST['connected_licence'];
     }
 
+    //adding, updating or deleting link meta
+    $link_types = ['buy_link', 'game_guide_link', 'app_store_link', 'play_store_link', 'video_link'];
+
+    foreach ($link_types as $type) {
+        if (!empty($_REQUEST[$type])) {
+            if (!add_post_meta($post_id, $type, esc_url($_REQUEST[$type]), true)) {
+                update_post_meta($post_id, $type, esc_url($_REQUEST[$type]));
+            }
+        } elseif (empty($_REQUEST[$type])) {
+            error_log('meta is being deleted');
+            delete_post_meta($post_id, $type);
+        }
+    };
+
     // are there old meta connected to this product?
     $old_gp_meta = $wpdb->get_results($wpdb->prepare('SELECT term_taxonomy_id FROM shuffleterm_relationships WHERE object_id = %d', $post_id), 'ARRAY_N');
     $new_gp_meta = [];
@@ -473,11 +449,11 @@ shuffle_add_admin_menus();
 
 function shuffle_add_meta_box(){
     add_meta_box('shuffle_ta_box', 'Target Audiences', 'shuffle_ta_styling_function', 'shuffle_licence', 'side', 'core');
-    add_meta_box('shuffle_con_prod', 'Connect products to this licence', 'shuffle_cp_styling_function', 'shuffle_licence', 'side', 'core');
-//    add_meta_box('shuffle_con_licence', 'Connect this product to a licence', 'shuffle_cl_styling_function', 'shuffle_product', 'center', 'core');
-//    add_meta_box('shuffle_product_gameplay_icons', 'Gameplay Icons', 'shuffle_gp_styling_function', 'shuffle_product', 'side', 'core');
+    add_meta_box('shuffle_con_prod_box', 'Connect products to this licence', 'shuffle_cp_styling_function', 'shuffle_licence', 'side', 'core');
+    add_meta_box('shuffle_ml_box', 'Add links to this product', 'shuffle_ml_styling_function', 'shuffle_product', 'side', 'core');
 }
 
+// STYLING FUNCTION FOR TARGET AUDIENCE METABOX
 function shuffle_ta_styling_function($post){
     wp_nonce_field('target_audience_nonce_action', 'target_audience_nonce_field');
 
@@ -665,12 +641,47 @@ function shuffle_gp_styling_function($post){
     <?php
 }
 
+// STYLING FUNCTION FOR META LINK METABOX
+function shuffle_ml_styling_function($post){
+    wp_nonce_field('ml_nonce_action', 'ml_nonce_field');
+
+    function is_type_set($type){
+        if(isset($type[0])){
+            echo $type[0];
+        } else {
+            echo '';
+        }
+    };
+
+    ?>
+
+    <label for="buy_link_input">Buy Link</label>
+    <input type="url" id='buy_link_input' name="buy_link" placeholder="Example: http://www.example.com/" value="<?php is_type_set( get_post_meta($post->ID, 'buy_link')); ?>">
+    <button type="button" class="clear-meta button"> Clear </button>
+    <label for="game_guide_link_input">Game Guide Link</label>
+    <input type="url" id='game_guide_link_input' name="game_guide_link" placeholder="Example: http://www.example.com/" value="<?php is_type_set( get_post_meta($post->ID, 'game_guide_link')); ?>">
+    <button type="button" class="clear-meta button"> Clear </button>
+    <label for="app_store_link_input">App Store Link</label>
+    <input type="url" id='app_store_link_input' name="app_store_link" placeholder="Example: http://www.example.com/" value="<?php  is_type_set( get_post_meta($post->ID, 'app_store_link')); ?>">
+    <button type="button" class="clear-meta button"> Clear </button>
+    <label for="play_store_link_input">Google Play Store</label>
+    <input type="url" id='play_store_link_input' name="play_store_link" placeholder="Example: http://www.example.com/" value="<?php  is_type_set( get_post_meta($post->ID, 'play_store_link')); ?>">
+    <button type="button" class="clear-meta button"> Clear </button>
+    <label for="video_link_input">Video Link</label>
+    <input type="url" id='video_link_input' name="video_link" placeholder="Example: http://www.example.com/" value="<?php  is_type_set( get_post_meta($post->ID, 'video_link')); ?>">
+    <button type="button" class="clear-meta button"> Clear </button>
+
+<?php 
+}
+
 // REMOVING DUPLICATE OR UNNECESSARY META BOXES
 function shuffle_remove_dup_meta_boxes(){
     remove_meta_box('tagsdiv-target_audience', 'shuffle_licence', 'side');
     remove_meta_box('tagsdiv-age_group', 'shuffle_product', 'side');
     remove_meta_box('tagsdiv-number_of_players', 'shuffle_product', 'side');
     remove_meta_box('tagsdiv-durations', 'shuffle_product', 'side');
+    remove_meta_box('qtranxs-meta-box-lsb', 'shuffle_product', 'normal');
+    remove_meta_box('qtranxs-meta-box-lsb', 'shuffle_licence', 'normal');
 }
 
 add_action('add_meta_boxes', 'shuffle_remove_dup_meta_boxes');
