@@ -24,33 +24,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="659" column="20" lean-forward="false" selection-start-line="659" selection-start-column="20" selection-end-line="659" selection-end-column="20" />
+            <state relative-caret-position="702">
+              <caret line="423" column="23" lean-forward="false" selection-start-line="423" selection-start-column="23" selection-end-line="423" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/header.php">
+      <file leaf-file-name="filter.ajax.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/js/ajax/filter.ajax.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="57" column="36" lean-forward="false" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
-              <folding>
-                <marker date="1526827309076" expanded="true" signature="749:882" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/footer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="19" column="83" lean-forward="false" selection-start-line="19" selection-start-column="83" selection-end-line="19" selection-end-column="83" />
+            <state relative-caret-position="400">
+              <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -164,8 +152,6 @@
       <find>nav</find>
       <find>section-pro</find>
       <find>categories__li</find>
-      <find>category</find>
-      <find>boys</find>
       <find>border</find>
       <find>box-shadow</find>
       <find>&amp; li</find>
@@ -176,6 +162,8 @@
       <find>single</find>
       <find>footer</find>
       <find>section-pr</find>
+      <find>boys</find>
+      <find>category</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -220,7 +208,6 @@
         <option value="$PROJECT_DIR$/assets/js/shuffle-shuffle.js" />
         <option value="$PROJECT_DIR$/front-page.php" />
         <option value="$PROJECT_DIR$/template-parts/content-licences.php" />
-        <option value="$PROJECT_DIR$/assets/js/ajax/filter.ajax.js" />
         <option value="$PROJECT_DIR$/assets/js/cookie.js" />
         <option value="$PROJECT_DIR$/template-parts/content-language.php" />
         <option value="$PROJECT_DIR$/assets/js/ajax/cookie.ajax.js" />
@@ -235,6 +222,7 @@
         <option value="$PROJECT_DIR$/assets/css/product.scss" />
         <option value="$PROJECT_DIR$/footer.php" />
         <option value="$PROJECT_DIR$/style.scss" />
+        <option value="$PROJECT_DIR$/assets/js/ajax/filter.ajax.js" />
       </list>
     </option>
   </component>
@@ -534,12 +522,12 @@
       <workItem from="1526735748324" duration="4309000" />
       <workItem from="1526818960790" duration="1474000" />
       <workItem from="1526826774743" duration="14263000" />
-      <workItem from="1526904177959" duration="3736000" />
+      <workItem from="1526904177959" duration="4762000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="467710000" />
+    <option name="totallyTimeSpent" value="468736000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -667,13 +655,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/ajax/sort.ajax.js" />
-    <entry file="file://$PROJECT_DIR$/assets/js/shuffle-carousel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="35" column="60" lean-forward="false" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template-parts/content-carousel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -782,24 +763,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/shuffle-shuffle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/ajax/search.ajax.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/ajax/filter.ajax.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -950,10 +917,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/shuffle-carousel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="35" column="60" lean-forward="false" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/shuffle-shuffle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="685">
+          <caret line="97" column="91" lean-forward="true" selection-start-line="94" selection-start-column="12" selection-end-line="97" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="659" column="20" lean-forward="false" selection-start-line="659" selection-start-column="20" selection-end-line="659" selection-end-column="20" />
+        <state relative-caret-position="702">
+          <caret line="423" column="23" lean-forward="false" selection-start-line="423" selection-start-column="23" selection-end-line="423" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/ajax/filter.ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
           <folding />
         </state>
       </provider>
