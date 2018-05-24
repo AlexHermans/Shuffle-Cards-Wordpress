@@ -27,55 +27,66 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="423" column="23" lean-forward="false" selection-start-line="423" selection-start-column="23" selection-end-line="423" selection-end-column="23" />
+            <state relative-caret-position="20">
+              <caret line="653" column="0" lean-forward="false" selection-start-line="653" selection-start-column="0" selection-end-line="653" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filter.ajax.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/js/ajax/filter.ajax.js">
+      <file leaf-file-name="product.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/css/product.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+            <state relative-caret-position="793">
+              <caret line="283" column="19" lean-forward="false" selection-start-line="283" selection-start-column="19" selection-end-line="283" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="front-page.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-page.php">
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="24" column="72" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="72" />
+            <state relative-caret-position="333">
+              <caret line="57" column="67" lean-forward="false" selection-start-line="57" selection-start-column="67" selection-end-line="57" selection-end-column="67" />
               <folding>
-                <marker date="1526482577011" expanded="true" signature="535:568" ph="..." />
-                <marker date="1526482577011" expanded="true" signature="1555:1596" ph="..." />
+                <marker date="1526919786890" expanded="true" signature="749:882" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="content-product.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template-parts/content-product.php">
+      <file leaf-file-name="product-image.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template-parts/product-image.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="30" column="50" lean-forward="false" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+            <state relative-caret-position="420">
+              <caret line="29" column="49" lean-forward="false" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
               <folding>
-                <marker date="1526820230355" expanded="true" signature="307:499" ph="SELECT * FRO... shuffleposts" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <marker date="1527155638485" expanded="true" signature="257:558" ph="SELECT image... shuffleposts" />
+                <marker date="1527155638485" expanded="true" signature="607:1029" ph="SELECT guid shuffleposts" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product-information.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template-parts/product-information.php">
+      <file leaf-file-name="shuffle-video.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/js/shuffle-video.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="860">
-              <caret line="51" column="10" lean-forward="false" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
+            <state relative-caret-position="620">
+              <caret line="31" column="52" lean-forward="false" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="single-shuffle_licence.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/single-shuffle_licence.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="640">
+              <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
               <folding>
-                <marker date="1526840915247" expanded="true" signature="593:867" ph="SELECT t.nam... shuffleterms" />
+                <marker date="1527166273468" expanded="true" signature="1424:1457" ph="..." />
               </folding>
             </state>
           </provider>
@@ -84,17 +95,15 @@
       <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4500">
-              <caret line="655" column="4" lean-forward="false" selection-start-line="655" selection-start-column="4" selection-end-line="655" selection-end-column="4" />
+            <state relative-caret-position="638">
+              <caret line="168" column="97" lean-forward="false" selection-start-line="168" selection-start-column="97" selection-end-line="168" selection-end-column="97" />
               <folding>
                 <element signature="n#shuffle_load_search_results#0;n#!!top" expanded="false" />
                 <element signature="n#shuffle_load_all_results#0;n#!!top" expanded="false" />
                 <element signature="n#shuffle_load_results_per_category#0;n#!!top" expanded="false" />
                 <element signature="n#enqueue_styles#0;n#!!top" expanded="false" />
                 <element signature="n#enqueue_admin_styles#0;n#!!top" expanded="false" />
-                <element signature="n#enqueue_scripts#0;n#!!top" expanded="false" />
                 <element signature="n#enqueue_admin_scripts#0;n#!!top" expanded="false" />
-                <element signature="n#register_menus#0;n#!!top" expanded="false" />
                 <element signature="n#actions#0;n#!!top" expanded="false" />
                 <element signature="n#shuffle_actions_licence#0;n#!!top" expanded="false" />
                 <element signature="n#shuffle_insert_licence#0;n#!!top" expanded="false" />
@@ -105,17 +114,17 @@
                 <element signature="n#shuffle_cp_styling_function#0;n#!!top" expanded="false" />
                 <element signature="n#shuffle_gp_styling_function#0;n#!!top" expanded="false" />
                 <element signature="n#shuffle_move_meta_boxes#0;n#!!top" expanded="false" />
-                <marker date="1526838616892" expanded="true" signature="1612:2065" ph="SELECT SP.ID... shuffleposts" />
-                <marker date="1526838616892" expanded="true" signature="1663:2063" ph="SELECT * FRO... shuffleposts" />
-                <marker date="1526838616892" expanded="true" signature="2385:2714" ph="SELECT SP_li... shuffleposts" />
-                <marker date="1526838616892" expanded="true" signature="8042:8101" ph="SELECT * FRO... shuffle_licence_product" />
-                <marker date="1526838616892" expanded="true" signature="10906:10965" ph="SELECT * FRO... shuffle_licence_product" />
-                <marker date="1526838616892" expanded="true" signature="11750:11825" ph="SELECT term_... shuffleterm_relationships" />
-                <marker date="1526838616892" expanded="true" signature="17142:17201" ph="SELECT * FRO... shuffle_licence_product" />
-                <marker date="1526838616892" expanded="true" signature="17257:17396" ph="SELECT ID, p... shuffleposts" />
-                <marker date="1526838616892" expanded="true" signature="19743:19946" ph="SELECT * FRO... shuffleposts" />
-                <marker date="1526838616892" expanded="true" signature="21302:21459" ph="SELECT st.na... shuffleterms" />
-                <marker date="1526838616892" expanded="true" signature="21519:21773" ph="SELECT t.nam... shuffleterm_relationships" />
+                <marker date="1527153532266" expanded="true" signature="1612:2065" ph="SELECT SP.ID... shuffleposts" />
+                <marker date="1527153532266" expanded="true" signature="1663:2063" ph="SELECT * FRO... shuffleposts" />
+                <marker date="1527153532266" expanded="true" signature="2385:2714" ph="SELECT SP_li... shuffleposts" />
+                <marker date="1527153532266" expanded="true" signature="8250:8309" ph="SELECT * FRO... shuffle_licence_product" />
+                <marker date="1527153532266" expanded="true" signature="11114:11173" ph="SELECT * FRO... shuffle_licence_product" />
+                <marker date="1527153532266" expanded="true" signature="11958:12033" ph="SELECT term_... shuffleterm_relationships" />
+                <marker date="1527153532266" expanded="true" signature="17350:17409" ph="SELECT * FRO... shuffle_licence_product" />
+                <marker date="1527153532266" expanded="true" signature="17465:17604" ph="SELECT ID, p... shuffleposts" />
+                <marker date="1527153532266" expanded="true" signature="19951:20154" ph="SELECT * FRO... shuffleposts" />
+                <marker date="1527153532266" expanded="true" signature="21510:21667" ph="SELECT st.na... shuffleterms" />
+                <marker date="1527153532266" expanded="true" signature="21727:21981" ph="SELECT t.nam... shuffleterm_relationships" />
               </folding>
             </state>
           </provider>
@@ -134,9 +143,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>backg</find>
-      <find>background-size</find>
-      <find>hiddd</find>
       <find>licence__d</find>
       <find>licence__a</find>
       <find>hidden</find>
@@ -152,7 +158,6 @@
       <find>nav</find>
       <find>section-pro</find>
       <find>categories__li</find>
-      <find>border</find>
       <find>box-shadow</find>
       <find>&amp; li</find>
       <find>loading</find>
@@ -164,6 +169,10 @@
       <find>section-pr</find>
       <find>boys</find>
       <find>category</find>
+      <find>.licence</find>
+      <find>langua</find>
+      <find>border</find>
+      <find>single-pro</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -172,8 +181,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/page.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/style.min.css" />
         <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/shuffle-carousel.php" />
@@ -202,27 +209,29 @@
         <option value="$PROJECT_DIR$/assets/js/ajax/admin.js" />
         <option value="$PROJECT_DIR$/template-parts/content-product-image.php" />
         <option value="$PROJECT_DIR$/../../plugins/shuffle-ctp_plugin/shuffle-ctp_plugin.php" />
-        <option value="$PROJECT_DIR$/template-parts/product-image.php" />
         <option value="$PROJECT_DIR$/../../plugins/shuffle-custom_taxonomies/shuffle-custom_taxonomies.php" />
-        <option value="$PROJECT_DIR$/single-shuffle_licence.php" />
         <option value="$PROJECT_DIR$/assets/js/shuffle-shuffle.js" />
         <option value="$PROJECT_DIR$/front-page.php" />
-        <option value="$PROJECT_DIR$/template-parts/content-licences.php" />
         <option value="$PROJECT_DIR$/assets/js/cookie.js" />
         <option value="$PROJECT_DIR$/template-parts/content-language.php" />
         <option value="$PROJECT_DIR$/assets/js/ajax/cookie.ajax.js" />
         <option value="$PROJECT_DIR$/template-parts/content-product.php" />
-        <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/assets/css/admin.css" />
         <option value="$PROJECT_DIR$/assets/js/admin.js" />
         <option value="$PROJECT_DIR$/../../debug.log" />
-        <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/assets/css/mixins.scss" />
         <option value="$PROJECT_DIR$/template-parts/product-information.php" />
-        <option value="$PROJECT_DIR$/assets/css/product.scss" />
         <option value="$PROJECT_DIR$/footer.php" />
-        <option value="$PROJECT_DIR$/style.scss" />
+        <option value="$PROJECT_DIR$/template-parts/content-licences.php" />
+        <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/assets/js/ajax/filter.ajax.js" />
+        <option value="$PROJECT_DIR$/page.php" />
+        <option value="$PROJECT_DIR$/functions.php" />
+        <option value="$PROJECT_DIR$/style.scss" />
+        <option value="$PROJECT_DIR$/template-parts/product-image.php" />
+        <option value="$PROJECT_DIR$/assets/css/product.scss" />
+        <option value="$PROJECT_DIR$/single-shuffle_licence.php" />
+        <option value="$PROJECT_DIR$/assets/js/shuffle-video.js" />
       </list>
     </option>
   </component>
@@ -254,7 +263,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -370,6 +378,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -522,12 +531,14 @@
       <workItem from="1526735748324" duration="4309000" />
       <workItem from="1526818960790" duration="1474000" />
       <workItem from="1526826774743" duration="14263000" />
-      <workItem from="1526904177959" duration="4762000" />
+      <workItem from="1526904177959" duration="9370000" />
+      <workItem from="1526993088435" duration="6096000" />
+      <workItem from="1527151680840" duration="11091000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="468736000" />
+    <option name="totallyTimeSpent" value="490531000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -593,15 +604,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Desktop/shuffle-ctp_plugin/shuffle-ctp_plugin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/shuffle-custom-taxonomies/shuffle-ctp_plugin.php" />
-    <entry file="file://$PROJECT_DIR$/../../plugins/shuffle-custom-taxonomies/shuffle-ctp_plugin.php" />
     <entry file="file://$PROJECT_DIR$/../../plugins/shuffle-custom-taxonomies/shuffle-custom_taxonomies.php" />
     <entry file="file://$PROJECT_DIR$/../../../wp-admin/admin-ajax.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -655,21 +657,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/ajax/sort.ajax.js" />
-    <entry file="file://$PROJECT_DIR$/template-parts/content-carousel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/ajax/results.ajax.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/img/licences/battleship/header_background.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -725,18 +712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template-parts/product-image.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="24" column="2" lean-forward="false" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
-          <folding>
-            <element signature="e#6#193#0#PHP" expanded="false" />
-            <marker date="1521208407116" expanded="true" signature="257:558" ph="SELECT image... shuffleposts" />
-            <marker date="1521208407116" expanded="true" signature="607:760" ph="SELECT guid shuffleposts" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -753,16 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/single-shuffle_licence.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="22" column="71" lean-forward="false" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
-          <folding>
-            <marker date="1522056994915" expanded="true" signature="1424:1457" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/ajax/search.ajax.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -776,7 +741,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -784,17 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="24" column="72" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="72" />
-          <folding>
-            <marker date="1526482577011" expanded="true" signature="535:568" ph="..." />
-            <marker date="1526482577011" expanded="true" signature="1555:1596" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -817,56 +770,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template-parts/content-licences.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4500">
-          <caret line="655" column="4" lean-forward="false" selection-start-line="655" selection-start-column="4" selection-end-line="655" selection-end-column="4" />
-          <folding>
-            <element signature="n#shuffle_load_search_results#0;n#!!top" expanded="false" />
-            <element signature="n#shuffle_load_all_results#0;n#!!top" expanded="false" />
-            <element signature="n#shuffle_load_results_per_category#0;n#!!top" expanded="false" />
-            <element signature="n#enqueue_styles#0;n#!!top" expanded="false" />
-            <element signature="n#enqueue_admin_styles#0;n#!!top" expanded="false" />
-            <element signature="n#enqueue_scripts#0;n#!!top" expanded="false" />
-            <element signature="n#enqueue_admin_scripts#0;n#!!top" expanded="false" />
-            <element signature="n#register_menus#0;n#!!top" expanded="false" />
-            <element signature="n#actions#0;n#!!top" expanded="false" />
-            <element signature="n#shuffle_actions_licence#0;n#!!top" expanded="false" />
-            <element signature="n#shuffle_insert_licence#0;n#!!top" expanded="false" />
-            <element signature="n#shuffle_delete_licence#0;n#!!top" expanded="false" />
-            <element signature="n#shuffle_add_admin_menus#0;n#!!top" expanded="false" />
-            <element signature="n#shuffle_ta_styling_function#0;n#!!top" expanded="false" />
-            <element signature="n#shuffle_cl_styling_function#0;n#!!top" expanded="false" />
-            <element signature="n#shuffle_cp_styling_function#0;n#!!top" expanded="false" />
-            <element signature="n#shuffle_gp_styling_function#0;n#!!top" expanded="false" />
-            <element signature="n#shuffle_move_meta_boxes#0;n#!!top" expanded="false" />
-            <marker date="1526838616892" expanded="true" signature="1612:2065" ph="SELECT SP.ID... shuffleposts" />
-            <marker date="1526838616892" expanded="true" signature="1663:2063" ph="SELECT * FRO... shuffleposts" />
-            <marker date="1526838616892" expanded="true" signature="2385:2714" ph="SELECT SP_li... shuffleposts" />
-            <marker date="1526838616892" expanded="true" signature="8042:8101" ph="SELECT * FRO... shuffle_licence_product" />
-            <marker date="1526838616892" expanded="true" signature="10906:10965" ph="SELECT * FRO... shuffle_licence_product" />
-            <marker date="1526838616892" expanded="true" signature="11750:11825" ph="SELECT term_... shuffleterm_relationships" />
-            <marker date="1526838616892" expanded="true" signature="17142:17201" ph="SELECT * FRO... shuffle_licence_product" />
-            <marker date="1526838616892" expanded="true" signature="17257:17396" ph="SELECT ID, p... shuffleposts" />
-            <marker date="1526838616892" expanded="true" signature="19743:19946" ph="SELECT * FRO... shuffleposts" />
-            <marker date="1526838616892" expanded="true" signature="21302:21459" ph="SELECT st.na... shuffleterms" />
-            <marker date="1526838616892" expanded="true" signature="21519:21773" ph="SELECT t.nam... shuffleterm_relationships" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/mixins.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="19" column="83" lean-forward="false" selection-start-line="19" selection-start-column="83" selection-end-line="19" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/shuffle-carousel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="35" column="60" lean-forward="false" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template-parts/content-carousel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/shuffle-shuffle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1940">
+          <caret line="97" column="91" lean-forward="true" selection-start-line="94" selection-start-column="12" selection-end-line="97" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../plugins/qtranslate-x/i18n-config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1927">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/ajax/results.ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="6" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="17" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template-parts/content-licences.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="22" column="75" lean-forward="false" selection-start-line="22" selection-start-column="75" selection-end-line="22" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template-parts/product-information.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="39" column="64" lean-forward="false" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="64" />
+          <folding>
+            <marker date="1526840915247" expanded="true" signature="593:867" ph="SELECT t.nam... shuffleterms" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/ajax/filter.ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="38" column="49" lean-forward="false" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="24" column="72" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="72" />
+          <folding>
+            <marker date="1526482577011" expanded="true" signature="535:568" ph="..." />
+            <marker date="1526482577011" expanded="true" signature="1555:1596" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -881,70 +877,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template-parts/product-information.php">
+    <entry file="file://$PROJECT_DIR$/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="51" column="10" lean-forward="false" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
-          <folding>
-            <marker date="1526840915247" expanded="true" signature="593:867" ph="SELECT t.nam... shuffleterms" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/product.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="19" column="83" lean-forward="false" selection-start-line="19" selection-start-column="83" selection-end-line="19" selection-end-column="83" />
+        <state relative-caret-position="20">
+          <caret line="653" column="0" lean-forward="false" selection-start-line="653" selection-start-column="0" selection-end-line="653" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="57" column="36" lean-forward="false" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+        <state relative-caret-position="333">
+          <caret line="57" column="67" lean-forward="false" selection-start-line="57" selection-start-column="67" selection-end-line="57" selection-end-column="67" />
           <folding>
-            <marker date="1526827309076" expanded="true" signature="749:882" ph="..." />
+            <marker date="1526919786890" expanded="true" signature="749:882" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/shuffle-carousel.js">
+    <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="35" column="60" lean-forward="false" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
+        <state relative-caret-position="638">
+          <caret line="168" column="97" lean-forward="false" selection-start-line="168" selection-start-column="97" selection-end-line="168" selection-end-column="97" />
+          <folding>
+            <element signature="n#shuffle_load_search_results#0;n#!!top" expanded="false" />
+            <element signature="n#shuffle_load_all_results#0;n#!!top" expanded="false" />
+            <element signature="n#shuffle_load_results_per_category#0;n#!!top" expanded="false" />
+            <element signature="n#enqueue_styles#0;n#!!top" expanded="false" />
+            <element signature="n#enqueue_admin_styles#0;n#!!top" expanded="false" />
+            <element signature="n#enqueue_admin_scripts#0;n#!!top" expanded="false" />
+            <element signature="n#actions#0;n#!!top" expanded="false" />
+            <element signature="n#shuffle_actions_licence#0;n#!!top" expanded="false" />
+            <element signature="n#shuffle_insert_licence#0;n#!!top" expanded="false" />
+            <element signature="n#shuffle_delete_licence#0;n#!!top" expanded="false" />
+            <element signature="n#shuffle_add_admin_menus#0;n#!!top" expanded="false" />
+            <element signature="n#shuffle_ta_styling_function#0;n#!!top" expanded="false" />
+            <element signature="n#shuffle_cl_styling_function#0;n#!!top" expanded="false" />
+            <element signature="n#shuffle_cp_styling_function#0;n#!!top" expanded="false" />
+            <element signature="n#shuffle_gp_styling_function#0;n#!!top" expanded="false" />
+            <element signature="n#shuffle_move_meta_boxes#0;n#!!top" expanded="false" />
+            <marker date="1527153532266" expanded="true" signature="1612:2065" ph="SELECT SP.ID... shuffleposts" />
+            <marker date="1527153532266" expanded="true" signature="1663:2063" ph="SELECT * FRO... shuffleposts" />
+            <marker date="1527153532266" expanded="true" signature="2385:2714" ph="SELECT SP_li... shuffleposts" />
+            <marker date="1527153532266" expanded="true" signature="8250:8309" ph="SELECT * FRO... shuffle_licence_product" />
+            <marker date="1527153532266" expanded="true" signature="11114:11173" ph="SELECT * FRO... shuffle_licence_product" />
+            <marker date="1527153532266" expanded="true" signature="11958:12033" ph="SELECT term_... shuffleterm_relationships" />
+            <marker date="1527153532266" expanded="true" signature="17350:17409" ph="SELECT * FRO... shuffle_licence_product" />
+            <marker date="1527153532266" expanded="true" signature="17465:17604" ph="SELECT ID, p... shuffleposts" />
+            <marker date="1527153532266" expanded="true" signature="19951:20154" ph="SELECT * FRO... shuffleposts" />
+            <marker date="1527153532266" expanded="true" signature="21510:21667" ph="SELECT st.na... shuffleterms" />
+            <marker date="1527153532266" expanded="true" signature="21727:21981" ph="SELECT t.nam... shuffleterm_relationships" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template-parts/product-image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="29" column="49" lean-forward="false" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <marker date="1527155638485" expanded="true" signature="257:558" ph="SELECT image... shuffleposts" />
+            <marker date="1527155638485" expanded="true" signature="607:1029" ph="SELECT guid shuffleposts" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/product.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="793">
+          <caret line="283" column="19" lean-forward="false" selection-start-line="283" selection-start-column="19" selection-end-line="283" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/shuffle-shuffle.js">
+    <entry file="file://$PROJECT_DIR$/single-shuffle_licence.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="97" column="91" lean-forward="true" selection-start-line="94" selection-start-column="12" selection-end-line="97" selection-end-column="91" />
-          <folding />
+        <state relative-caret-position="640">
+          <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+          <folding>
+            <marker date="1527166273468" expanded="true" signature="1424:1457" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style.scss">
+    <entry file="file://$PROJECT_DIR$/assets/js/shuffle-video.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="423" column="23" lean-forward="false" selection-start-line="423" selection-start-column="23" selection-end-line="423" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/ajax/filter.ajax.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+        <state relative-caret-position="620">
+          <caret line="31" column="52" lean-forward="false" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
           <folding />
         </state>
       </provider>

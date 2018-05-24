@@ -22,8 +22,14 @@ $query = 'SELECT image.guid
 
 $image = $wpdb->get_row($wpdb->prepare($query, $product->ID), 'OBJECT');
 
+$video_link = get_post_meta($product->ID, 'video_link', true)
+
 ?>
 
 <div class="single-product-image">
-    <img class="single-product__img" src="<?php echo $image->guid; ?>" alt="">
+            <div class="single-product__div-image" style="background-image: url(<?php echo $image->guid; ?>)" >
+                <?php if (!empty($video_link)): ?>
+                    <a href="<?= $video_link?>" class="video-link"></a>
+                <?php endif;?>
+            </div>
 </div>

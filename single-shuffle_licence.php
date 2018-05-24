@@ -37,6 +37,14 @@
         get_template_part('template-parts/content', 'product')
     ?>
 </section>
+<div class="video-overlay">
+    <div class="video-wrapper">
+        <video autoplay controls>
+            <!-- Video file is placed here by shuffle-video. !-->
+        </video>
+        <button type="button" class="close-video">X</button>
+    </div>
+</div>
 <?php get_footer(); ?>
 </body>
 </html>

@@ -55,6 +55,76 @@ $dgray: #7f8184;
   font-size: 110%;
 }
 
+.section-products{
+  padding: 0 0 100px;
+  background-color: $bg;
+  position: relative;
+  top: -20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -50px;
+}
+
+.single-product{
+  display: flex;
+  flex-direction:row;
+  margin-top: 10px;
+  justify-content: center;
+
+  .boys{background-color: $blue}
+  .kids{background-color: $orange}
+  .girls{background-color: $purple}
+  .adult{background-color: $green}
+  .family{background-color: $red}
+}
+
+.single-product-category {
+  position: absolute;
+  margin-top: 10px;
+}
+
+
+.single-product__section{
+  width: 50%;
+  min-height: 430px;
+}
+
+.boys .single-product:nth-child(even) .left{background: $blue;}
+.boys .single-product:nth-child(odd) .right{background: $blue;}
+.girls .single-product:nth-child(even) .left{background: $purple;}
+.girls .single-product:nth-child(odd) .right{background: $purple;}
+.kids .single-product:nth-child(even) .left{background: $orange;}
+.kids .single-product:nth-child(odd) .right{background: $orange;}
+.adult .single-product:nth-child(even) .left{background: $green;}
+.adult .single-product:nth-child(odd) .right{background: $green;}
+.family .single-product:nth-child(even) .left{background: $red;}
+.family .single-product:nth-child(odd) .right{background: $red;}
+
+.single-product:nth-child(odd) .left{background: #FFF;}
+.single-product:nth-child(even) .right{background: #FFF;}
+
+.single-product-image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.single-product__div-image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100%;
+  width: 100%;
+  background: no-repeat center;
+  -webkit-background-size:contain;
+  background-size:contain;
+  max-width: 42vw;
+  -webkit-filter: drop-shadow(-3px 0px 3px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(-3px 0px 3px rgba(0, 0, 0, 0.2));
+}
+
 .boys{
   .age_group{background-image: url(../img/gameplay_icons/icon_age_blue.png);}
   .number_of_players{background-image: url(../img/gameplay_icons/icon_playercount_blue.png);}
@@ -156,4 +226,61 @@ $dgray: #7f8184;
 
 .play-store-link{
   background-image: url(../img/icon_googleplay.png);
+}
+
+.video-link{
+  background-image: url(../img/icon_play_white.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size:contain;
+  background-size:contain;
+  z-index:1;
+  display: block;
+  height:50%;
+  width:50%;
+  opacity: 0.4;
+  transition: opacity 200ms;
+
+  &:hover{
+    opacity: 1;
+  }
+}
+
+.video-overlay{
+  position: fixed;
+  top:0;
+  z-index:4;
+  width:100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.8);
+  display: none;
+}
+
+.video-wrapper{
+  width: 70vw;
+  background-color: #fff;
+  height: 80vh;
+  margin: 10vh auto;
+}
+
+.close-video{
+  position: relative;
+  top: -87vh;
+  left: 71vw;
+  border: none;
+  background: none;
+  font-size: 200%;
+  font-weight: 700;
+  opacity: 0.5;
+  color: white;
+  cursor: pointer;
+  transition: opacity 200ms;
+
+  &:hover{
+    opacity: 1;
+  }
+
+  &:active{
+    font-size: 250%;
+  }
 }

@@ -14,6 +14,7 @@
  * @since 1.0
  * @version 1.0
  */
+
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +22,7 @@
 <?php get_header(); ?>
 <body <?php body_class(); ?>>
 <main>
-
+    <?php echo apply_filters('the_content', get_post_field('post_content', $post->ID)); ?>
 </main>
 <?php get_footer(); ?>
 </body>

@@ -132,12 +132,12 @@ a {
   text-indent: -9000px;
 }
 
-#language-selector{
-  margin-right: 20%;
+#qtranxs_select_qtranslate-chooser{
+  margin-right: 10%;
   border: none;
   font-family: $font_stack;
   //font-weight: 700;
-  font-size: 150%;
+  font-size: 100%;
 
   &:focus{
     outline: none;
@@ -553,7 +553,7 @@ a {
   background-color: #4d4d4d;
   background-position: center;
   background-repeat: no-repeat;
-  @include background-size(contain)
+  @include background-size(cover)
   // TODO: Om de achtergronden correct te laten werken moeten de bg images ook vierkant zijn
   // anders komt dat gewoon niet goed door het feit dat die verhoudingen niet kloppen.
 }
@@ -651,67 +651,7 @@ a {
 }
 
 // SECTION-PRODUCTS
-.section-products{
-  padding: 0 0 100px;
-  background-color: $bg;
-  position: relative;
-  top: -20px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: -50px;
-}
 
-.single-product{
-  display: flex;
-  flex-direction:row;
-  margin-top: 10px;
-  justify-content: center;
-
-  .boys{background-color: $blue}
-  .kids{background-color: $orange}
-  .girls{background-color: $purple}
-  .adult{background-color: $green}
-  .family{background-color: $red}
-}
-
-.single-product-category {
-  position: absolute;
-  margin-top: 10px;
-}
-
-
-.single-product__section{
-  width: 50%;
-  min-height: 430px;
-}
-
-.boys .single-product:nth-child(even) .left{background: $blue;}
-.boys .single-product:nth-child(odd) .right{background: $blue;}
-.girls .single-product:nth-child(even) .left{background: $purple;}
-.girls .single-product:nth-child(odd) .right{background: $purple;}
-.kids .single-product:nth-child(even) .left{background: $orange;}
-.kids .single-product:nth-child(odd) .right{background: $orange;}
-.adult .single-product:nth-child(even) .left{background: $green;}
-.adult .single-product:nth-child(odd) .right{background: $green;}
-.family .single-product:nth-child(even) .left{background: $red;}
-.family .single-product:nth-child(odd) .right{background: $red;}
-
-.single-product:nth-child(odd) .left{background: #FFF;}
-.single-product:nth-child(even) .right{background: #FFF;}
-
-.single-product-image{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.single-product__img{
-  max-width: 42vw;
-  display: block;
-  -webkit-filter: drop-shadow(-3px 0px 3px rgba(0, 0, 0, 0.2));
-  filter: drop-shadow(-3px 0px 3px rgba(0, 0, 0, 0.2));
-}
 
 // FOOTER
 
@@ -782,6 +722,21 @@ a {
 // SEARCH.PHP
 .section-search-results{
   margin-top: 160px;
+}
+
+// PAGE.PHP
+
+body.page main{
+  padding: 35px;
+}
+.shuffle_title{
+  color: white;
+  background-color: black;
+  display: block;
+  @include border-radius-separate(100px, 0, 100px, 0);
+  padding: 5px 40px;
+  margin: 35px 0 10px;
+  font-size: 150%;
 }
 
 // OVERRIDES
