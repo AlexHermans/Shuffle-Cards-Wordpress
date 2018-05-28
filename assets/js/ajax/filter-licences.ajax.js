@@ -21,7 +21,7 @@
             $button.css('background-color', '#7f8184')
             let $active_button = $(this);
 
-            if ($current_filter != $active_button.attr('id')){
+            if ($current_filter !== $active_button.attr('id')){
                 $.ajax({
                     type: 'POST',
                     url: myAjax.ajaxurl,
@@ -33,15 +33,12 @@
                         $content.addClass('loading');
                     },
                     success: function(response){
-                        if ($current_filter === ''){
-                            $current_filter = $active_button.attr('id');
-                        } else {
-                            $current_filter = '';
-                        }
+                        $current_filter = $active_button.attr('id');
 
                         if(counter < colours.length-1){
                             counter += 1;
                         } else { counter = 0 }
+
                         $active_button.css('background-color' , colours[counter])
                         $content.html(response);
                         layout();
@@ -59,6 +56,7 @@
                     },
                     success: function (response) {
                         $content.html(response);
+                        $current_filter = ''
                         layout();
                     }
                 })

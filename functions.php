@@ -144,6 +144,11 @@ function enqueue_styles()
         wp_enqueue_style('product-css');
     }
 
+    if (is_page('faq')){
+        wp_register_style('faq-css', THEME_DIR . '/assets/css/faq.css', array(), '1.0', 'all');
+        wp_enqueue_style('faq-css');
+    }
+
     wp_register_style('reset-css', THEME_DIR . '/assets/css/reset.css', array(), '1.0', 'all');
     wp_enqueue_style('reset-css');
 
@@ -166,17 +171,19 @@ wp_enqueue_scripts('jquery');
 
 function enqueue_scripts()
 {
-    wp_register_script('html5-shim', 'http://html5shim.googlecode.com/svn/trunk/html5.js', array('jquery'), '1.0', false);
-    wp_enqueue_script('html5-shim');
 
     wp_register_script('shuffle-carousel', THEME_DIR . '/assets/js/shuffle-carousel.js', array('jquery'), '1.0', false);
     wp_enqueue_script('shuffle-carousel');
 
-    wp_register_script('shuffle-video', THEME_DIR . '/assets/js/shuffle-video.js', array('jquery'), '1.0', false);
-    wp_enqueue_script('shuffle-video');
+    if(get_post_type() === 'shuffle_licence'){
+        wp_register_script('shuffle-video', THEME_DIR . '/assets/js/shuffle-video.js', array('jquery'), '1.0', false);
+        wp_enqueue_script('shuffle-video');
+    }
 
-    wp_register_script('shuffle-faq', THEME_DIR . '/assets/js/shuffle-faq.js', array('jquery'), '1.0', false);
-    wp_enqueue_script('shuffle-faq');
+    if(is_page('faq')){
+        wp_register_script('shuffle-faq', THEME_DIR . '/assets/js/shuffle-faq.js', array('jquery'), '1.0', false);
+        wp_enqueue_script('shuffle-faq');
+    }
 
     wp_register_script('shuffle-shuffle', THEME_DIR . '/assets/js/shuffle-shuffle.js', array('jquery'), '1.0', false);
     wp_enqueue_script('shuffle-shuffle');

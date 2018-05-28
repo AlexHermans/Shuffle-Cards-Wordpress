@@ -1,0 +1,86 @@
+// PAGE-FAQ.PHP
+
+// Andy Mixins
+@import '../css/andy-master/andy';
+
+//private mixins
+@import "mixins";
+
+// PAGE-FAQ.php
+.page h2{
+  font-size: 150%;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 40px 0 10px;
+
+  &:before{
+    content: '';
+    display: inline-block;
+    width:20px;
+    height:20px;
+    background-image: url(assets/img/dropdownArrow.png);
+    background-repeat: no-repeat;
+    -webkit-background-size:contain;
+    background-size:contain;
+  }
+}
+
+.page main p{
+  font-size: 100%;
+  font-weight: 100;
+  margin-bottom: 6px;
+}
+
+.page main ul{
+  list-style-type: disc;
+  margin: 0 15px;
+  font-weight: 100;
+
+  & main li{
+    margin: 3px 0;
+  }
+}
+
+.page-id-36{
+  background-color: #EEE;
+
+  & main{
+    background-color: #fff;
+    padding: 15px 12% 35px!important;
+  }
+
+  & h1{
+    font-size: 150%;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+}
+
+.form-faq{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 25px;
+
+  // We hide the original radio buttons to make it look like the original
+  // but keep the inputs themselves for accessibility and SEO friendliness.
+  & input[type='radio']{
+    opacity:0;
+  }
+
+  & label {
+    display: flex;
+    padding: 15px 25px;
+    background-color: #EEE;
+    font-weight: 700;
+    font-size: 150%;
+    cursor: pointer;
+    transition: all 200ms;
+    @include border-semi-rounded();
+    @include box-shadow();
+  }
+
+  & .checked {
+    background-color: white;
+  }
+}
