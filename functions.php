@@ -113,6 +113,29 @@ function shuffle_load_results_per_category(){
 add_action('wp_ajax_shuffle_load_results_per_category', 'shuffle_load_results_per_category');
 add_action('wp_ajax_nopriv_shuffle_load_results_per_category', 'shuffle_load_results_per_category');
 
+function shuffle_stores_per_country(){
+    $filter = $_REQUEST['country'];
+
+    $args = array(
+        'post_type' => 'shuffle_store',
+        'tax_query' => array(
+                array(
+                        'taxonomy' => 'countries',
+                        'field' => 'slug',
+                        'terms' => $filter
+                )
+        )
+    );
+
+    set_query_var('args', $args);
+    get_template_part('template-parts/content', 'stores');
+
+    die();
+}
+
+add_action('wp_ajax_shuffle_stores_per_country', 'shuffle_stores_per_country');
+add_action('wp_ajax_nopriv_shuffle_stores_per_country', 'shuffle_stores_per_country');
+
 // ENQUEUE STYLES
 function enqueue_styles()
 {
@@ -152,6 +175,9 @@ function enqueue_scripts()
     wp_register_script('shuffle-video', THEME_DIR . '/assets/js/shuffle-video.js', array('jquery'), '1.0', false);
     wp_enqueue_script('shuffle-video');
 
+    wp_register_script('shuffle-faq', THEME_DIR . '/assets/js/shuffle-faq.js', array('jquery'), '1.0', false);
+    wp_enqueue_script('shuffle-faq');
+
     wp_register_script('shuffle-shuffle', THEME_DIR . '/assets/js/shuffle-shuffle.js', array('jquery'), '1.0', false);
     wp_enqueue_script('shuffle-shuffle');
     wp_localize_script('shuffle-shuffle', 'js_obj', array('theme_dir' => get_template_directory_uri()));
@@ -164,9 +190,13 @@ function enqueue_scripts()
     wp_enqueue_script('ajax-results');
     wp_localize_script('ajax-results', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
 
-    wp_register_script('ajax-filter', THEME_DIR . '/assets/js/ajax/filter.ajax.js', array('jquery'), '1.0', false);
-    wp_enqueue_script('ajax-filter');
-    wp_localize_script('ajax-filter', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
+    wp_register_script('ajax-filter-licences', THEME_DIR . '/assets/js/ajax/filter-licences.ajax.js', array('jquery'), '1.0', false);
+    wp_enqueue_script('ajax-filter-licences');
+    wp_localize_script('ajax-filter-licences', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
+
+    wp_register_script('ajax-filter-stores', THEME_DIR . '/assets/js/ajax/filter-stores.ajax.js', array('jquery'), '1.0', false);
+    wp_enqueue_script('ajax-filter-stores');
+    wp_localize_script('ajax-filter-stores', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
@@ -232,6 +262,11 @@ function shuffle_actions_licence($post_id, $post)
 
         error_log('Product is being deleted');
         shuffle_delete_product($post_id, $post);
+
+    } elseif ($post->post_type === 'shuffle_store' && $post->post_status === 'publish'){
+
+        error_log('Store is being updated');
+        shuffle_update_store($post_id, $post);
 
     }
 }
@@ -442,6 +477,19 @@ function shuffle_delete_product($post_id, $post_obj){
     }
 }
 
+function shuffle_update_store($post_id, $post_object){
+    if (!check_admin_referer('wtb_nonce_action', 'wtb_nonce_field')){return false;}
+
+    if (!empty($_REQUEST['wtb_link'])) {
+        if (!add_post_meta($post_id, 'wtb_link', esc_url($_REQUEST['wtb_link']), true)) {
+            update_post_meta($post_id, 'wtb_link', esc_url($_REQUEST['wtb_link']));
+        }
+    } elseif (empty($_REQUEST['wtb_link'])) {
+        error_log('meta is being deleted');
+        delete_post_meta($post_id, 'wtb_link');
+    }
+}
+
 function shuffle_add_admin_menus(){
     if (!is_admin()){
         return;
@@ -455,6 +503,7 @@ function shuffle_add_meta_box(){
     add_meta_box('shuffle_ta_box', 'Target Audiences', 'shuffle_ta_styling_function', 'shuffle_licence', 'side', 'core');
     add_meta_box('shuffle_con_prod_box', 'Connect products to this licence', 'shuffle_cp_styling_function', 'shuffle_licence', 'side', 'core');
     add_meta_box('shuffle_ml_box', 'Add links to this product', 'shuffle_ml_styling_function', 'shuffle_product', 'side', 'core');
+    add_meta_box('shuffle_wtb_box', 'Link to store website', 'shuffle_wtb_styling_function', 'shuffle_store', 'normal', 'core');
 }
 
 // STYLING FUNCTION FOR TARGET AUDIENCE METABOX
@@ -676,6 +725,27 @@ function shuffle_ml_styling_function($post){
     <button type="button" class="clear-meta button"> Clear </button>
 
 <?php 
+}
+
+// STYLING FUNCTION FOR WHERE TO BUY METABOX
+function shuffle_wtb_styling_function($post){
+    wp_nonce_field('wtb_nonce_action', 'wtb_nonce_field');
+
+    function is_link_set($link){
+        if(isset($link[0])){
+            echo $link[0];
+        } else {
+            echo '';
+        }
+    };
+
+    ?>
+
+    <label for="wtb_link"></label>
+    <input type="url" id="wtb_link" name="wtb_link" placeholder="Example: http://www.example.com/" value="<?php is_link_set(get_post_meta($post->ID, 'wtb_link')); ?>">
+    <button type="button" class="clear-meta button"> Clear </button>
+
+<?php
 }
 
 // REMOVING DUPLICATE OR UNNECESSARY META BOXES

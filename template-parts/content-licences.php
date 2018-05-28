@@ -20,12 +20,11 @@ if ($loop->have_posts()) : ?>
     <?php while ($loop->have_posts()) : $loop->the_post();?>
         <a href="<?php echo get_permalink()?>"  class="licence__a <?php echo preg_replace('/\s+/', '-', get_the_title()); ?>">
             <div style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" class="licence__div <?php echo get_the_terms($post->ID, 'target_audience')[0]->slug; ?>">
-                <h1 class="licence__h1"><?php echo get_the_title(); ?></h1>
+                <h1 class="licence__h1"><?php the_title(); ?></h1>
             </div>
         </a>
     <?php endwhile; ?>
     <?php else : ?>
-    <?php var_dump($args) ?>
         <div class="error">
             <h1 class="error-no-posts">No licences were found.</h1>
         </div>
