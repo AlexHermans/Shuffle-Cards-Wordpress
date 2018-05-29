@@ -18,7 +18,7 @@
     display: inline-block;
     width:20px;
     height:20px;
-    background-image: url(assets/img/dropdownArrow.png);
+    background-image: url(../img/dropdownArrow.png);
     background-repeat: no-repeat;
     -webkit-background-size:contain;
     background-size:contain;
@@ -43,6 +43,7 @@
 
 .page-id-36{
   background-color: #EEE;
+  padding-top: 200px;
 
   & main{
     background-color: #fff;
