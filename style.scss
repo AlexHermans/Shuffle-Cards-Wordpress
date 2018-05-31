@@ -112,20 +112,18 @@ a {
 }
 
 .header__div-top {
-  padding-top: 10px;
   height: 35px;
   background-color: #fff;
 }
 
 .header__a-logo {
-  flex-grow: 1;
+  width:100px;
   background-image: url('assets/img/Shuffle_Clip_CorporateTop.png');
   display: block;
   background-repeat: no-repeat;
   @include background-size(contain);
-  height: 150px;
-  margin-top: -10px;
-  z-index: 2;
+  height: 200%;
+  z-index: 7;
 }
 
 .a-logo__h1 {
@@ -152,7 +150,38 @@ a {
 
 .header__nav {
   flex-grow: 1;
-  margin-left: 15%;
+
+  & #menu-main-menu{
+    flex-direction: column;
+  }
+
+  & .menu-main-menu-container{
+    width:100%;
+    position: absolute;
+    background-color: #fff;
+    display: none;
+  }
+
+
+  & #menu-main-menu li{
+    background-color: white;
+    width: 100%;
+    z-index: 5;
+    padding: 10px 25px;
+  }
+
+  & .button-nav{
+    background-image: url(assets/img/burger.png);
+    -webkit-background-size:contain;
+    background-size:contain;
+    background-color: transparent;
+    background-position: center;
+    background-repeat:no-repeat;
+    border: none;
+    text-indent: -9999px;
+    width: 50px;
+    height: 100%;
+  }
 
   & a:hover::after{
     display: block;
@@ -161,6 +190,20 @@ a {
     margin-top: 4px;
     background-color: $orange;
     animation:a-after 0.2s forwards ease-out;
+  }
+}
+
+.menu-main-menu-container ul,
+.menu-footer-menu-container ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+
+  li {
+    padding: 0 25px;
+    white-space: nowrap;
+    font-size: 130%;
+    font-weight: 500;
   }
 }
 
@@ -202,7 +245,7 @@ a {
 
 .figure-swirl-banner__div-green {
   background: $green;
-  @include border-radius-separate(0, 0, 75px, 0)
+  @include border-radius-separate(0, 0, 65px, 0)
 }
 
 .figure-swirl-banner__div-swirl {
@@ -221,7 +264,7 @@ a {
 .header__figure-rounded-corner {
   height: 24px;
   width: 100%;
-  margin-top: -20px;
+  margin-top: -16px;
   z-index: 3;
   position: relative;
   display: flex;
@@ -236,7 +279,7 @@ a {
 .figure-rounded-corner__div-middle {
   background-color: #fff;
   width: 100%;
-  height: 21px;
+  height: 65%;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.5) 0 0 20px;
 }
@@ -246,7 +289,7 @@ a {
   @include background-size(100%);
   flex-grow: 1;
   width: 60px;
-  top: -53px;
+  top: -60px;
   position: relative;
 
   &.family  { background-image: url(assets/img/shuffle-swirl-up-family.png)};
@@ -261,7 +304,7 @@ a {
   flex-grow: 1;
   position: relative;
   @include background-size(100%);
-  top: -11px;
+  top: -9px;
   width: 60px;
   z-index: 2;
 
@@ -351,22 +394,6 @@ a {
   @include background-size(cover)
 }
 
-// NAV STYLING
-
-.menu-main-menu-container ul,
-.menu-footer-menu-container ul {
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-
-  li {
-    margin: 0 25px;
-    white-space: nowrap;
-    font-size: 130%;
-    font-weight: 500;
-  }
-}
-
 // CONTROLS SECTION
 
 .section-controls {
@@ -408,12 +435,12 @@ a {
   background-position: 0, 0;
   text-align: center;
   color: white;
-  border: 17px solid white;
+  border: 8px solid white;
   @include box-shadow;
   @include border-radius-separate(100px, 100px, 100px, 100px);
   font-weight: 700;
-  font-size: 120%;
-  padding: 30px 0;
+  font-size: 100%;
+  padding: 20px 10px;
   width: 80px;
 }
 
@@ -422,17 +449,25 @@ a {
   cursor: pointer;
   position: relative;
   top:-75px;
-  margin: 0 8%;
+  margin: 0 5%;
   transition: all 200ms;
 }
 
 .form-controls{
   display: flex;
   justify-content: center;
-  width: 66%;
+  width: 100%;
   align-self: center;
   position: relative;
   top:-30px;
+
+  > .controls-sort{
+    font-size: 50%;
+  }
+
+  > .controls-search{
+    font-size: 50%;
+  }
 
   > *{
     margin: 0 2.5%;
@@ -473,6 +508,8 @@ a {
     background-repeat:no-repeat;
     background-position: 90% center;
     animation: select 0.4s forwards  cubic-bezier(0.955, 0.165, 0.215, 0.995);
+    -webkit-background-size: 15%;
+    background-size: 15%;
 
     &.sort-asc{
       animation: sort-desc 0.4s cubic-bezier(0.955, 0.165, 0.215, 0.995) forwards;
@@ -507,7 +544,6 @@ a {
 .form-search__input-search{
   border:none;
   padding: 0 0 0 24px;
-  font-size: 150%;
   font-weight: 500;
   @include border-semi-rounded();
   width: 100%;
@@ -556,8 +592,6 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   @include background-size(cover)
-  // TODO: Om de achtergronden correct te laten werken moeten de bg images ook vierkant zijn
-  // anders komt dat gewoon niet goed door het feit dat die verhoudingen niet kloppen.
 }
 
 .licence__h1{
@@ -569,9 +603,8 @@ a {
 
 .licence__a{
   position: absolute;
-  width: 25%;
-  padding-bottom: 25%;
-  // TODO: Hier moeten nog breakpoints ingesteld worden
+  width: 100%;
+  //padding-bottom: 25%;
 
   .boys, .family, .adult, .kids, .girls{
     &:hover{
@@ -738,11 +771,152 @@ body.page main{
   font-size: 150%;
 }
 
-
-
 // OVERRIDES
 
 .loading-gif{
   background-image: url(assets/img/loading.gif);
 }
 
+
+// MEDIAQUERIES
+
+@media (max-width: 320px) {
+  .header{
+  width: 96%;
+  }
+
+  .footer{
+    width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .controls-sort select{
+    background-image: none;
+  }
+}
+
+@media (min-width: 375px) {
+  .figure-rounded-corner__div-left{
+    top: -9px;
+  }
+
+  .figure-rounded-corner__div-right{
+    top: -58px
+  }
+
+  .figure-rounded-corner__div-middle{
+    height: 72%;
+  }
+}
+
+@media (min-width: 400px) {
+  .figure-rounded-corner__div-left{
+    top: -10px;
+  }
+
+  .category{
+    padding: 30px 0;
+  }
+
+  .categories__li{
+    margin: 0 6%;
+  }
+}
+
+@media (min-width: 550px) {
+  .header__figure-rounded-corner{
+    margin-top: -17px;
+  }
+
+  .figure-rounded-corner__div-left{
+    top: -10px;
+  }
+
+  .figure-rounded-corner__div-right{
+    top: -56px
+  }
+
+  .figure-rounded-corner__div-middle{
+    height: 77%;
+  }
+}
+
+@media (min-width: 700px) {
+  .category{
+    border: 17px solid white;
+  }
+
+  .header__nav #menu-main-menu li{
+    display: flex;
+  }
+
+  .header__a-logo{
+    width: 150px;
+    height: 300%
+  }
+
+  .figure-rounded-corner__div-middle{
+    height: 80%;
+  }
+
+  .figure-rounded-corner__div-right{
+    top: -55px
+  }
+
+  .header__figure-rounded-corner{
+    margin-top: -19px;
+  }
+
+  .figure-rounded-corner__div-left{
+    top: -11px;
+  }
+
+  .form-controls{
+    > .controls-sort{
+      font-size: 100%;
+    }
+
+    > .controls-search{
+      font-size: 100%;
+    }
+  }
+
+  .licence__a{
+    width: 50%;
+  }
+}
+
+@media (min-width: 850px) {
+  .header__nav{
+    margin-left: 15%;
+
+    & .menu-main-menu-container{
+      display: flex;
+      width: initial;
+    }
+
+    & #menu-main-menu{
+      flex-direction: row
+    }
+
+    & #menu-main-menu li{
+      background: none;
+    }
+  }
+
+  .button-nav{
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+
+  .form-controls{
+    width: 66%;
+  }
+
+  .licence__a{
+    width: 25%;
+  }
+}

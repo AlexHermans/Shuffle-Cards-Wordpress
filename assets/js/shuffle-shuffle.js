@@ -8,23 +8,58 @@ function set_position_attr(el, pX, pY) {
 };
 
 function set_parent_height(parent_el, example_el){
-    let height_el = jQuery(example_el).outerHeight();
+    let $p_columns = determine_columns();
+    // let height_el = jQuery(example_el).outerHeight();
+    let $width = jQuery(window).innerWidth()
 
-    parent_el.css('height', Math.ceil(example_el.length/4)*height_el);
+    let $height_el = ($width/$p_columns);
+
+    console.log('indivial element height = '+$height_el);
+    console.log('indivial element length = '+example_el.length);
+    console.log('$p_columns = '+$p_columns);
+
+    example_el.css('height', $height_el)
+    parent_el.css('height', Math.ceil(example_el.length/$p_columns)*$height_el);
 };
+
+function determine_columns() {
+    // We're going to determine how the items are going to be placed in the columns
+    // based upon the size of the browser. This is needed to work correctly with
+    // the media queries in style.css
+
+    let $width = jQuery(window).innerWidth()
+    console.log($width)
+
+    if ($width >= 1000){
+        return 4;
+    } else if ($width >= 700){
+        return 2;
+    } else {
+        return 1;
+    }
+}
 
 function arrange_items($el, $rand){
     let c = 0;
     let x = 1;
     let y = 1;
     let $arr = [];
+    let $columns = determine_columns();
+    console.log($columns);
+
 
     // populate multi dimensional array
     for (let i = 0; i<$el.length; i++) {
         c = c + 1;
         x = c;
 
-        if (x > 4) {y += 1;c = 1;x = 1;}
+        console.log('x = '+x)
+        console.log('y = '+y)
+
+        if (x > $columns) {y += 1;c = 1;x = 1;}
+
+        console.log('new x = '+x)
+        console.log('new    y = '+y)
 
         $arr.push([x,y])
     }
@@ -33,6 +68,8 @@ function arrange_items($el, $rand){
         // if needed, randomize the array
         $arr = $arr.sort(function (a,b) {return 0.5 - Math.random()})
     }
+
+    console.log('final y = '+y)
 
     let $fraction = (100/y);
 
@@ -44,8 +81,11 @@ function arrange_items($el, $rand){
         let vector_x = $arr[i][0]-1;
         let vector_y = $arr[i][1]-1;
 
+
+
+
         jQuery(el).animate({
-            left : (25*vector_x) + '%'
+            left : ((100/$columns)*vector_x) + '%'
         }, 'fast');
         jQuery(el).animate({
             top: ($fraction*vector_y) + '%'

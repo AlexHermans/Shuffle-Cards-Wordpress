@@ -50,7 +50,10 @@
 <body <?php body_class(); ?>>
     <header class="header">
         <div class="header__div header__div-top">
-            <nav class="nav header__nav"><?php wp_nav_menu(array('theme_location' => 'header-menu')); ?></nav>
+            <nav class="nav header__nav">
+                <button type="button" class="button header__button button-nav">menu</button>
+                <?php wp_nav_menu(array('theme_location' => 'header-menu')); ?>
+            </nav>
             <a href="<?php echo get_home_url(); ?>" class="a header__a header__a-logo">
                 <h1 class="h1 a-logo__h1">Shuffle</h1>
             </a>
