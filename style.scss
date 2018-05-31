@@ -624,67 +624,6 @@ a {
   .adult:hover { background-color: $green};
 }
 
-
-
-// LICENCE SINGLE
-
-.licence-single__header{
-  height: 500px;
-  position: relative;
-  top:-90px;
-  display: flex;
-  justify-content:center;
-  align-items: center;
-  @include border-radius-separate(0, 0, 70px, 0);
-  @include background-size(cover)
-}
-
-.licence-logo{
-  height:100%;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position: center 55%;
-  @include background-size(45%);
-}
-
-.licence-single__h1{
-  font-weight: 700;
-}
-
-.licence__figure-rounded-corner {
-  height: 24px;
-  width: 100%;
-  margin-top: -125px;
-  z-index: 0;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-}
-
-.section-licence-title{
-  top:-20px;
-  position: relative;
-  background-image: url(assets/img/Shuffle_Pattern_White.png);
-  @include background-size(35%);
-  @include border-radius-separate(60px, 0, 0, 0);
-
-  &.family  { background-color: $red;};
-  &.kids    { background-color: $orange };
-  &.girls   { background-color: $purple };
-  &.boys    { background-color: $blue};
-  &.adult   { background-color: $green};
-}
-
-.licence-single__h2{
-  &.h2-secondary-title{
-    text-align: center;
-    padding: 50px 0;
-    font-size: 450%;
-    font-weight: 700;
-    color: #FFF;
-  }
-}
-
 // FOOTER
 
 .footer {
@@ -779,16 +718,6 @@ body.page main{
 
 
 // MEDIAQUERIES
-
-@media (max-width: 320px) {
-  .header{
-  width: 96%;
-  }
-
-  .footer{
-    width: 100%;
-  }
-}
 
 @media (max-width: 375px) {
   .controls-sort select{

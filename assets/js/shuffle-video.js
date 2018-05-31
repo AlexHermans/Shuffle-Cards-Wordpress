@@ -40,6 +40,8 @@
                     $wrapper
                         .find('source').remove();
                 })
+                // unlock scrolling
+                $('body').css('overflow', 'initial');
             })
         })
     })

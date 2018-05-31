@@ -585,84 +585,6 @@ a {
   .licence__a .adult:hover {
     background-color: #64b32b; }
 
-.licence-single__header {
-  height: 500px;
-  position: relative;
-  top: -90px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  -webkit-border-top-left-radius: 0;
-  -moz-border-top-left-radius: 0;
-  border-top-left-radius: 0;
-  -webkit-border-top-right-radius: 0;
-  -moz-border-top-right-radius: 0;
-  border-top-right-radius: 0;
-  -webkit-border-bottom-right-radius: 70px;
-  -moz-border-bottom-right-radius: 70px;
-  border-bottom-right-radius: 70px;
-  -webkit-border-bottom-left-radius: 0;
-  -moz-border-bottom-left-radius: 0;
-  border-bottom-left-radius: 0;
-  -webkit-background-size: cover;
-  background-size: cover; }
-
-.licence-logo {
-  height: 100%;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position: center 55%;
-  -webkit-background-size: 45%;
-  background-size: 45%; }
-
-.licence-single__h1 {
-  font-weight: 700; }
-
-.licence__figure-rounded-corner {
-  height: 24px;
-  width: 100%;
-  margin-top: -125px;
-  z-index: 0;
-  position: relative;
-  display: flex;
-  flex-direction: row; }
-
-.section-licence-title {
-  top: -20px;
-  position: relative;
-  background-image: url(assets/img/Shuffle_Pattern_White.png);
-  -webkit-background-size: 35%;
-  background-size: 35%;
-  -webkit-border-top-left-radius: 60px;
-  -moz-border-top-left-radius: 60px;
-  border-top-left-radius: 60px;
-  -webkit-border-top-right-radius: 0;
-  -moz-border-top-right-radius: 0;
-  border-top-right-radius: 0;
-  -webkit-border-bottom-right-radius: 0;
-  -moz-border-bottom-right-radius: 0;
-  border-bottom-right-radius: 0;
-  -webkit-border-bottom-left-radius: 0;
-  -moz-border-bottom-left-radius: 0;
-  border-bottom-left-radius: 0; }
-  .section-licence-title.family {
-    background-color: #e2261b; }
-  .section-licence-title.kids {
-    background-color: #f59b00; }
-  .section-licence-title.girls {
-    background-color: #923a80; }
-  .section-licence-title.boys {
-    background-color: #008ad2; }
-  .section-licence-title.adult {
-    background-color: #64b32b; }
-
-.licence-single__h2.h2-secondary-title {
-  text-align: center;
-  padding: 50px 0;
-  font-size: 450%;
-  font-weight: 700;
-  color: #FFF; }
-
 .footer {
   display: flex;
   flex-direction: column;
@@ -750,12 +672,6 @@ body.page main {
 .loading-gif {
   background-image: url(assets/img/loading.gif); }
 
-@media (max-width: 320px) {
-  .header {
-    width: 96%; }
-
-  .footer {
-    width: 100%; } }
 @media (max-width: 375px) {
   .controls-sort select {
     background-image: none; } }

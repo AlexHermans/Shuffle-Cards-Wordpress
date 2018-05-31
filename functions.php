@@ -187,6 +187,10 @@ function enqueue_scripts()
         wp_register_script('ajax-filter-licences', THEME_DIR . '/assets/js/ajax/filter-licences.ajax.js', array('jquery'), '1.0', false);
         wp_enqueue_script('ajax-filter-licences');
         wp_localize_script('ajax-filter-licences', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
+
+        wp_register_script('ajax-results', THEME_DIR . '/assets/js/ajax/results.ajax.js', array('jquery'), '1.0', false);
+        wp_enqueue_script('ajax-results');
+        wp_localize_script('ajax-results', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
     }
 
     if(get_post_type() === 'shuffle_licence'){
@@ -199,16 +203,17 @@ function enqueue_scripts()
         wp_enqueue_script('shuffle-faq');
     }
 
+    if(is_page('where-to-buy')){
+        wp_register_script('ajax-filter-stores', THEME_DIR . '/assets/js/ajax/filter-stores.ajax.js', array('jquery'), '1.0', false);
+        wp_enqueue_script('ajax-filter-stores');
+        wp_localize_script('ajax-filter-stores', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
+    }
+
+    // This is a global script
     wp_register_script('shuffle-menu', THEME_DIR . '/assets/js/shuffle-menu.js', array('jquery'), '1.0', false);
     wp_enqueue_script('shuffle-menu');
 
-    wp_register_script('ajax-results', THEME_DIR . '/assets/js/ajax/results.ajax.js', array('jquery'), '1.0', false);
-    wp_enqueue_script('ajax-results');
-    wp_localize_script('ajax-results', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
 
-    wp_register_script('ajax-filter-stores', THEME_DIR . '/assets/js/ajax/filter-stores.ajax.js', array('jquery'), '1.0', false);
-    wp_enqueue_script('ajax-filter-stores');
-    wp_localize_script('ajax-filter-stores', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts');

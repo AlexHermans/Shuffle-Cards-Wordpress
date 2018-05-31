@@ -71,10 +71,10 @@
 
   & label {
     display: flex;
-    padding: 15px 25px;
+    padding: 12px 25px;
     background-color: #EEE;
     font-weight: 700;
-    font-size: 150%;
+    font-size: 100%;
     cursor: pointer;
     transition: all 200ms;
     @include border-semi-rounded();
@@ -83,5 +83,14 @@
 
   & .checked {
     background-color: white;
+  }
+}
+
+@media (min-width:700px){
+  .form-faq{
+    & label{
+      padding: 15px 25px;
+      font-size: 150%;
+    }
   }
 }
