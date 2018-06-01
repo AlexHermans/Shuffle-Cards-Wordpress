@@ -25,9 +25,20 @@ $countries = get_terms(array('taxonomy' => 'countries', 'hide_empty' => 0));
 <?php get_header(); ?>
 <body <?php body_class(); ?>>
 <main>
-    <form action="#">
-        <label for="country-select"></label>
+    <form action="#" id="country-select-form">
+        <label for="country-select">
+            <?php
+                echo __(
+                        '[:en]Please select your country
+                         [:de]Wählen Sie Ihr Land
+                         [:fr]Sélectionnez votre pays
+                         [:it]Scegli lo Stato
+                         [:nl]Kies uw land
+                         [:pl]Wybierz kraj[:]'
+                );
+            ?></label>
         <select name="country-select" id="country-select" class="country-select">
+            <option> </option>
             <?php foreach($countries as $country): ?>
                 <option value="<?= $country->slug; ?>"><?= $country->name; ?></option>
             <?php endforeach; ?>

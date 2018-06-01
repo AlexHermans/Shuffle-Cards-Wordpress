@@ -291,7 +291,7 @@ function shuffle_actions_licence($post_id, $post)
 add_action('wp_insert_post', 'shuffle_actions_licence', 10, 2);
 
 // DELETE REFERENCES WHEN DELETING LICENCES
-function shuffle_insert_licence($post_id, $post_obj){
+ function shuffle_insert_licence($post_id, $post_obj){
 
     // first checking all nonces
     if (
@@ -396,8 +396,9 @@ function shuffle_insert_product($post_id, $post_obj){
 
     foreach ($link_types as $type) {
         if (!empty($_REQUEST[$type])) {
-            if (!add_post_meta($post_id, $type, esc_url($_REQUEST[$type]), true)) {
-                update_post_meta($post_id, $type, esc_url($_REQUEST[$type]));
+            error_log($_REQUEST[$type]);
+            if (!add_post_meta($post_id, $type, $_REQUEST[$type], true)) {
+                update_post_meta($post_id, $type, $_REQUEST[$type]);
             }
         } elseif (empty($_REQUEST[$type])) {
             error_log('meta is being deleted');
@@ -435,7 +436,6 @@ function shuffle_insert_product($post_id, $post_obj){
         foreach ($new_gp_meta as $new_meta_key => $new_meta_value){
             foreach ($old_gp_meta as $old_meta_key => $old_meta_value){
                 if ($new_meta_value == $old_meta_value[0]) {
-                    error_log('match');
                     deleteElement($new_meta_value, $new_gp_meta);
                     deleteElement($old_meta_value, $old_gp_meta);
                 }
@@ -726,19 +726,19 @@ function shuffle_ml_styling_function($post){
     ?>
 
     <label for="buy_link_input">Buy Link</label>
-    <input type="url" id='buy_link_input' name="buy_link" placeholder="Example: http://www.example.com/" value="<?php is_type_set( get_post_meta($post->ID, 'buy_link')); ?>">
+    <input type="url" id='buy_link_input' name="buy_link" class="shuffle_translatable" placeholder="Example: http://www.example.com/" value="<?php is_type_set( get_post_meta($post->ID, 'buy_link')); ?>">
     <button type="button" class="clear-meta button"> Clear </button>
     <label for="game_guide_link_input">Game Guide Link</label>
-    <input type="url" id='game_guide_link_input' name="game_guide_link" placeholder="Example: http://www.example.com/" value="<?php is_type_set( get_post_meta($post->ID, 'game_guide_link')); ?>">
+    <input type="url" id='game_guide_link_input' name="game_guide_link" class="shuffle_translatable" placeholder="Example: http://www.example.com/" value="<?php is_type_set( get_post_meta($post->ID, 'game_guide_link')); ?>">
     <button type="button" class="clear-meta button"> Clear </button>
     <label for="app_store_link_input">App Store Link</label>
-    <input type="url" id='app_store_link_input' name="app_store_link" placeholder="Example: http://www.example.com/" value="<?php  is_type_set( get_post_meta($post->ID, 'app_store_link')); ?>">
+    <input type="url" id='app_store_link_input' name="app_store_link" class="shuffle_translatable" placeholder="Example: http://www.example.com/" value="<?php  is_type_set( get_post_meta($post->ID, 'app_store_link')); ?>">
     <button type="button" class="clear-meta button"> Clear </button>
     <label for="play_store_link_input">Google Play Store</label>
-    <input type="url" id='play_store_link_input' name="play_store_link" placeholder="Example: http://www.example.com/" value="<?php  is_type_set( get_post_meta($post->ID, 'play_store_link')); ?>">
+    <input type="url" id='play_store_link_input' name="play_store_link" class="shuffle_translatable" placeholder="Example: http://www.example.com/" value="<?php  is_type_set( get_post_meta($post->ID, 'play_store_link')); ?>">
     <button type="button" class="clear-meta button"> Clear </button>
     <label for="video_link_input">Video Link</label>
-    <input type="url" id='video_link_input' name="video_link" placeholder="Example: http://www.example.com/" value="<?php  is_type_set( get_post_meta($post->ID, 'video_link')); ?>">
+    <input type="url" id='video_link_input' name="video_link" class="shuffle_translatable" placeholder="Example: http://www.example.com/" value="<?php  is_type_set( get_post_meta($post->ID, 'video_link')); ?>">
     <button type="button" class="clear-meta button"> Clear </button>
 
 <?php 

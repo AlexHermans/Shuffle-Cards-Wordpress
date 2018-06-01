@@ -114,6 +114,7 @@ a {
 .header__div-top {
   height: 35px;
   background-color: #fff;
+  padding-bottom: 7px;
 }
 
 .header__a-logo {
@@ -689,6 +690,46 @@ a {
     background-size: 100%;
   }
 }
+
+// WHERE TO BUY
+
+
+#country-select-form{
+align-items: center;
+display: flex;
+flex-direction: column;
+
+  #country-select{
+    background: white;
+    border: none;
+    font-size: 150%;
+    font-family: $font_stack;
+    font-weight: 100;
+    padding: 15px;
+    @include box-shadow();
+    @include border-semi-rounded()
+  }
+
+  label{
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 150%;
+  }
+}
+
+.stores{
+  display: flex;
+  align-items: center;
+  margin-top:50px;
+  flex-direction: column;
+
+  img {
+    max-width: 20%;
+    margin-bottom: 25px;
+  }
+}
+
+
 
 // SEARCH.PHP
 .section-search-results{
